@@ -1,0 +1,390 @@
+<!--  # KiMoSys - web-based platform for Kinetic Models of biological Systems.
+# Copyright (C) 2013-2013 Rafael Costa
+
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU General Public License
+# as published by the Free Software Foundation; version 2
+# of the License.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+
+
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.-->
+
+<div class="dark-gray italic"><%= link_to "Repository", organisms_path %> » <%= link_to "Data AccessID #{@organism.id}", @organism %> » Model AccessID <%= @associated_model.id %></div>
+
+<h2 class="green">Detail View - Model AccessID <%= @associated_model.id %></h2>
+
+<%= show_message(@associated_model, "Note: This model is UNDER REVIEW by a publisher", "and the user identity is protected") %>
+
+<div class="right">
+	<%- if can? :edit, @associated_model %>
+		<%= link_to "#{image_tag('edit2.jpg')} Edit".html_safe, [:edit,@organism,@associated_model] %> |
+	<%- end %>
+	<%- if can? :destroy, @associated_model %>
+		<%= link_to "#{image_tag('remove_figure.jpg')} Remove".html_safe, [@organism,@associated_model] , confirm: 'Are you sure you want to delete this Model EntryID?', method: :delete %> |
+	<%- end %>
+	<%- if @associated_model.is_admin?(current_user) %>
+		<%= link_to "#{image_tag('AddUser_2.JPG')} Invite".html_safe, new_organism_associated_model_authorization_path(@organism,@associated_model) %> |
+	<%- end %>
+	<%= link_to "#{image_tag('BackImage.JPG')} Back".html_safe, organism_path(@organism) %></div>
+
+
+<br/>
+
+<h3 class="green line">
+  General Information
+  <span class="tooltip-info">
+    <a href="javascript:void(0)"><span>info</span></a>
+    <span class="tooltiptext" style="display:none;">
+      <p>This section provides useful information about the provenance of the model</p>
+      <b>Manuscript title</b> - title of the original publication where the model is published or a general title if not published yet.<br/>
+      <b>PubMed ID</b> -  the PubMed ID related to this manuscript.<br/>
+<b>Journal</b> - the journal name of the manuscript.<br/>
+<b>Year</b> - the year of publication.<br/>
+<b>Authors</b> - the authors of the manuscript.<br/>
+<b>Affiliations</b> - the affilation(s) of the first author. <br/>
+<b>Keywords</b> - general keywords that characterize the model.<br/>
+<b>Full text article</b> - article file where the model is described.<br/>
+<b>Project name</b> - the comprehensive name (acronym) of the project (if the model is part of a general project).<br/>
+<b>Data used for</b> - the data on which the model building/parameterization, refining and/or validation are based.<br/>
+    </span>
+  </span>
+</h3>
+
+<TABLE class="space">
+	<!--  -->
+	<TR>
+	  <TD class="bluelight"><b>Manuscript title</b></TD>
+	  <TD class="bluelight1"><%= notspecified @associated_model.manuscript_title %></TD>
+  </TR>
+	<!--  -->
+	<TR>
+	  <TD class="bluelight"><b>PubMed ID</b></TD>
+	  <TD class="bluelight1"><%= goto_model "http://www.ncbi.nlm.nih.gov/pubmed/" , @associated_model.pubmed_id, target: "_blank" , title: "link to PubMed" %></TD>
+  </TR>
+	<!--  -->
+	<TR>
+	  <TD class="bluelight"><b>Journal</b></TD>
+	  <TD class="bluelight1"><%= notspecified  @associated_model.journal %></TD>
+  </TR>
+	<!--  -->
+	<TR>
+	  <TD class="bluelight"><b>Year</b></TD>
+	  <TD class="bluelight1"><%= notspecified @associated_model.year %></TD>
+  </TR>
+	<!--  -->
+	<TR>
+	  <TD class="bluelight"><b>Authors</b></TD>
+	  <TD class="bluelight1"><%= can?(:see_id,@associated_model) ? notspecified(@associated_model.authors) : content_tag( :span, t("hidden"), class: "red") %></TD>
+  </TR>
+	<!--  -->
+	<TR>
+	  <TD class="bluelight"><b>Affiliations</b></TD>
+	  <TD class="bluelight1"><%= can?(:see_id,@associated_model) ? notspecified(@associated_model.affiliation) : content_tag( :span, t("hidden"), class: "red") %></TD>
+  </TR>
+	<!--  -->
+	<TR>
+	  <TD class="bluelight"><b>Keywords</b></TD>
+	  <TD class="bluelight1"><%= notspecified @associated_model.keywords %></TD>
+  </TR>
+	<!--  -->
+	<TR>
+	  <TD class="bluelight"><b>Full text article</b><br/></TD>
+
+	  <TD class="bluelight1">
+		  <%- if @associated_model.sbml.present? %>
+				<%- if can?(:see_id,@associated_model) %>
+			  	<%= link_to image_tag('DownloadArticle.png'), @associated_model.sbml.url, target: "_blank", class: "blue", title: "full text" %>
+					<%= string_trim(@associated_model.sbml_file_name,true,50) %>
+				<%- else %>
+					<%= content_tag( :span, t("hidden"), class: "red") %>
+				<%- end %>
+			<%- else %>
+			  no file uploaded
+			<%- end %>
+		</TD>
+	</TR>
+	<!--  -->
+	<TR>
+	  <TD class="bluelight"><b>Project name</b></TD>
+	  <TD class="bluelight1"><i><%= notspecified @associated_model.project_name %></i></TD>
+  </TR>
+	<!--  -->
+	<TR>
+	  <TD class="bluelight"><b>Data used for</b></TD>
+	  <TD class="bluelight1"><%= show_list(@associated_model.used_for_list, " and ") %></TD>
+  </TR>
+
+</TABLE>
+
+<br/>
+
+<h3 class="green line">
+  Model Information
+  <span class="tooltip-info">
+    <a href="javascript:void(0)"><span>info</span></a>
+    <span class="tooltiptext" style="display:none;">
+      <p>This section provides model information</p>
+<b>Model name</b> - the general model name.<br/>
+<b>Organism</b> - the scientific organism name for this model.<br/>
+<b>Model type</b> - type of the model uploaded.<br/>
+<b>Category</b> - category of the model (e.g. enzymology, metabolism, etc.).<br/>
+<b>Number of reactions</b> - number of reactions in the model.<br/>
+<b>Number of species</b> - number of species in the model.<br/>
+<b>Number of regulators</b> - number of regulators in the model.<br/>
+<b>Number of parameters</b> - number of parameters in the model.<br/>
+<b>Number of compartments</b> - number of compartments in the model.<br/>
+<b>Dilution rate</b> - the dilution rate(s) used to simulate the model.<br/>
+<b>Model file(s) and history</b> - the attached model file(s). Provides all versions (if available) so that all the model files history can be accessed. For each version the timestamp (timepoint of change) and creator (user performing modifications) are shown.
+Moreover, store information on the model revision history to understand the relationship between them including the current final version model (LATEST version). For each version (if available)
+a comment with the differences are shown.<br/>
+<b>Notes</b> - provide model source (if applicable) and any other pertinent information helpful for researchers.<br/>
+<b>Software</b> - provide web address and name of the tool or programming language used to build/simulate the model.<br/>
+<b>BioModels or JWS Online ID</b> - link to model source: <%= link_to "BioModels", "http://www.ebi.ac.uk/biomodels-main", class: "blue link_out", target: "_blank" %> or <%= link_to "JWS online", "http://jjj.bio.vu.nl:8080", class: "blue link_out", target: "_blank" %> database ID (if applicable).
+<b>Related Model(s)</b> (if available) - model entities with the same PubMed ID, organism or project name.
+    </span>
+  </span>
+</h3>
+
+<TABLE class="space">
+<p>
+	<TR>
+  <TD class="bluelight"><b>Model name</b></TD>
+  <TD class="bluelight1"><%= notspecified  @associated_model.model_name %></TD>
+  </TR>
+</p>
+<p>
+  <TR>
+  <TD class="bluelight"><b>Organism</b>
+  <TD class="bluelight1"><i><%= link_to_taxonomy @associated_model.main_organism %></i></TD>
+</TR>
+</p>
+<% if @associated_model.organisms.size > 1 %>
+	<p>
+	  <TR>
+	  <TD class="bluelight"><b>Associated Data EntryID</b>
+  	  <TD class="bluelight1">
+	  	<% @associated_model.organisms.each do |o|%>
+			<%= link_to o.organism + " (Data EntryID:" + o.id.to_s + ")", o %></b><br/>
+	  <% end -%>
+	  </TD>
+	</TR>
+	</p>
+<%end %>
+
+<p>
+  <TR>
+  <TD class="bluelight"><b>Model type</b></TD>
+  <TD class="bluelight1"><%= notspecified @associated_model.model_type %></TD>
+  </TR>
+</p>
+<p>
+	<TR>
+  <TD class="bluelight"><b>Category</b></TD>
+  <TD class="bluelight1"><%= notspecified @associated_model.category %></b></TD>
+  </TR>
+</p>
+
+<p>
+	<TR>
+  <TD class="bluelight"><b>Number of reactions</b></TD>
+  <TD class="bluelight1"><%= notspecified @associated_model.reactions %></b></TD>
+  </TR>
+</p>
+
+<p>
+	<TR>
+  <TD class="bluelight"><b>Number of species</b></TD>
+  <TD class="bluelight1"><%= notspecified @associated_model.species %></b></TD>
+  </TR>
+</p>
+<p>
+	<TR>
+  <TD class="bluelight"><b>Number of regulators</b></TD>
+  <TD class="bluelight1"><%= notspecified @associated_model.regulators %></b></TD>
+  </TR>
+</p>
+
+<p>
+	<TR>
+  <TD class="bluelight"><b>Number of parameters</b></TD>
+  <TD class="bluelight1"><%= notspecified @associated_model.parameters %></b></TD>
+  </TR>
+</p>
+
+<p>
+	<TR>
+  <TD class="bluelight"><b>Number of compartments</b></TD>
+  <TD class="bluelight1"><%= notspecified @associated_model.compartments %></b></TD>
+  </TR>
+</p>
+<p>
+	<TR>
+  <TD class="bluelight"><b>Dilution rate (h<sup>-1</sup>)</b></TD>
+  <TD class="bluelight1"><%= notspecified @associated_model.dilution_rate, "&mdash;".html_safe %></b></TD>
+  </TR>
+</p>
+<p>
+	<TR>
+  <TD class="bluelight"><b>Model file(s) and history</b><br/></TD>
+<TD class="bluelight1">
+<%- if !@associated_model.public? && !can?(:download, @associated_model)%>
+<%="#{image_tag('PrivateModel2.JPG')}".html_safe %>
+<%- else %>
+<%- version_list(@associated_model.articles , "file").reverse.each do |article| %>
+  <%= link_to "#{image_tag('DownloadModel.png')}".html_safe, [:download,@organism,@associated_model,article[:obj]] %> <span class="small-font italic"><%= article[:version] %></span> <%= article[:filename] %>
+	<span class="small-font">(<%= article[:obj].created_at %> by <%= article[:user].blank? ? "" : show_user(article[:user],nil,true,can?(:see_id, @associated_model)) %>)</span><br/>
+	<%- unless article[:obj].comment.nil? || article[:obj].comment.empty? %>
+		<div class="one_tab small-font"><span class="italic related">version comment:</span> <%= article[:obj].comment %></div>
+	<%- end %>
+
+<%- end %>
+<%- end %>
+</TD>
+</TR>
+</p>
+<p>
+	<TR>
+  <TD class="bluelight"><b>Notes</b></TD>
+  <TD class="bluelight1">
+		<div><%= notspecified parse_it(@associated_model.comments) %></b></div>
+		<div>
+			<%- version_list(@associated_model.articles , "file").reverse.each do |article| %>
+
+
+			<%- end %>
+	</div>
+	</TD>
+  </TR>
+</p>
+
+<p>
+	<TR>
+  <TD class="bluelight"><b>Software</b></TD>
+  <TD class="bluelight1"><%= notspecified parse_link(@associated_model.software) %></b></TD>
+  </TR>
+</p>
+
+<p>
+	<TR>
+  <TD class="bluelight"><b>BioModels or JWS Online ID</b></TD>
+    <TD class="bluelight1"><%= notspecified goto_biomodel(@associated_model.biomodels_id) ,"&mdash;".html_safe %></TD>
+  </TR>
+</p>
+
+<%- if @associated_model.public? || @associated_model.can_edit?(current_user)%>
+<TR class="">
+	<TD class="">
+		<!--Change here to add text -->
+	</TD>
+
+</TR>
+<%- end %>
+
+</TABLE>
+<div class="right">
+<%= link_to 'Cite', documentation_index_path( anchor: "cite"), title: "view how to cite"%>|<%= link_to 'Share','http://twitter.com/share', target: "_blank", title: "click to Tweet this model" %>
+</div>
+<br/>
+<TD class="P-top">
+		<!-- download all link -->
+		<p><%- if (@associated_model.sbml || @associated_model.articles.count > 0) && (@associated_model.can_edit?(current_user) || @associated_model.is_public?) %>
+			<%= link_to image_tag("download_all/associated_model.png", height: 25), [:download_all,@organism,@associated_model], title: "save all available files (model + article + data) as zip"  %>
+		<%- end %>
+		<!-- end of download all link -->
+
+		<!-- combine archive -->
+		<%- unless @associated_model.combine_archive.blank? %>
+		<%= link_to image_tag("download/combine.png", height: 25), @associated_model.combine_archive.url, title: "save COMBINE archive (model + article)" %>
+		<% end -%>
+		<!-- end of combine archive -->
+
+		</p>
+	</TD>
+<br/>
+
+<% if (related = @associated_model.related_models(current_user)).size > 0 %>
+<p>
+<b>Related Model(s): </b>
+<%= related.collect { |o| link_to( "AccessID " + o.id.to_s , [o.get_created_organism,o]) }.join(" | ").html_safe%>
+</p>
+<% end -%>
+
+
+</br>
+<div class="small">
+<fieldset>
+<legend><h5 class="span.light-gray"><b> Submission and curation</b>
+	<span class="tooltip-info">
+    <a href="javascript:void(0)"><span>info</span></a>
+    <span class="tooltiptext" style="display:none;">
+    	<p>This subsection provides information about the submission and curation</p>
+<b>Entered by</b> - user who created this <i>Model EntryID</i>, and who manages it.<br/>
+<b>Created</b> - indicating the date that the <i>EntryID</i> was created and the model file submitted.<br/>
+<b>Team</b> - invited users with permissions (if available) for this <i>Model EntryID</i>.<br/>
+<b>Updated</b> - date that the model file was updated by an user.<br/>
+<b>Version</b> - version number of the model file.<br/>
+<b>Status</b> - "status" indicates whether the <i>Model EntryID</i> has been manually annotated from the original publication by <i>Ki</i>MoSys curators ("reviewed" and date) or awaiting review ("unreviewed").
+	</span>
+  </span>
+
+</h5></legend>
+<p>
+  <b><%= Organism.human_attribute_name("enteredby")%></b>
+	<%= show_user( @oma.user, @oma.user_email, true, can?(:see_id, @associated_model)) %>
+</p>
+
+<p>
+
+  <% if !@oma.original && @oma && @oma.user_email && can?(:see_id, @associated_model) %>
+  <b><%= Organism.human_attribute_name("associatedby")%></b>
+  <%= @oma.user_email.gsub(/@/,' (at) ') %>
+  <% end %>
+</p>
+
+<p>
+  <b><%= Organism.human_attribute_name("dataadded")%></b>
+  <%= @associated_model.created_at %>
+</p>
+
+<% if @list_users && @list_users.size > 0 && can?(:see_id, @associated_model) -%>
+		<p class=""><b>Team</b>
+			<%= @list_users.collect { |u| %>
+			<% rem_link = link_to('(x)', [@organism,@associated_model,u], confirm: 'Are you sure you want to remove this user?', method: :delete) if @associated_model.is_admin?(current_user) %>
+			<% show_user(u.user,nil,false) + " " + (if !rem_link.nil? then rem_link.to_s else "" end) %>
+			<% }.join("| ").html_safe %>
+		</p>
+		<% end -%>
+
+
+<p>
+  <b><%= Organism.human_attribute_name("updated_at")%></b>
+  <%= @associated_model.updated_at %>
+</p>
+
+<p>
+<b>Version</b> <%= ver = @associated_model.versions.where(:event=>"update").size  %>
+<%= "".pluralize( ver )%>
+</p>
+<p>
+  <b>Status</b> <% unreviewed(@associated_model, current_user) %>
+</p>
+</div>
+</fieldset>
+
+<br/>
+<br/>
+
+<div class="right">
+<%= link_to "#{image_tag('BackImage.JPG')} Back".html_safe, @organism %> |
+<%= link_to 'Top', "#top" %>
+</div>
+<br/>

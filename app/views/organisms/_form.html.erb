@@ -1,0 +1,227 @@
+<!--  # KiMoSys - web-based platform for Kinetic Models of biological Systems.
+# Copyright (C) 2013-2013 Rafael Costa
+
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU General Public License
+# as published by the Free Software Foundation; version 2
+# of the License.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+
+
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.-->
+
+<%= semantic_form_for(@organism, :multipart => true )  do |f| %>
+  <%= form_errors(f) %>
+  <%= f.inputs do%>
+    <fieldset class="noborder">
+      <legend><h3 class="green"> General Information</h3></legend>
+      <%= f.input :manuscript_title, as: :string , :input_html => { :class => 'long' }%>
+      <%= f.input :pubmed_id %>
+      <span class="light-gray"><p><b>Note:</b> Click <%= link_to "here", "http://www.ncbi.nlm.nih.gov/pubmed", class: "blue link_out", target: "_blank" %> to search ID.</p></span>
+      </br>
+      <%= f.input :journal, as: :string , :input_html => { :class => 'long' }%>
+      <%= f.input :year%>
+      <%= f.input :author, as: :string , :input_html => { :class => 'long' }%>
+      <%= f.input :affiliation, as: :string , :input_html => { :class => 'long' }%>
+      <%= f.input :keywords %>
+      <%= f.input :article%>
+      <% if @organism.article.present? %>
+        <div class="one_tab">
+          <span><%= @organism.article_file_name %></span>
+          <div class="one_tab">
+            <%= f.input :delete_article, label: "Remove Article?", as: :boolean %>
+          </div>
+        </div>
+  	  <% end %>
+    	<%= f.input :project%>
+	  </fieldset>
+
+    <fieldset class="noborder">
+      <legend><h3 class="green"> Experiment Description</h3></legend>
+      <%= f.input :organism%>
+      <span class="light-gray"><p><b>Note:</b> Click <%= link_to "here", "http://www.ncbi.nlm.nih.gov/taxonomy", class: "blue link_out", target: "_blank" %> to search NCBI taxonomy.</p></span>
+      </br>
+  	  <%= f.input :strain%>
+  	  <%= f.input :type_param, as: :select, collection: TypeParam.all, :include_blank => "(please select)"%>
+  	  <%= f.input :data_units %>
+  	  <span class="light-gray"><p><b>Note:</b> It is recommended to use the units listed in the <%= link_to "International System of Units", "http://www.bipm.fr/en/si", class: "blue link_out", target: "_blank" %>.</p></span>
+      </br>
+    	<%= f.input :execution, as: :string%>
+  	</fieldset>
+
+  	<fieldset class="noborder">
+      <legend><h3 class="green"> Experimental Details</h3></legend>
+  	  <%= f.input :temperature, label: Organism.human_attribute_name("temperature2_html").html_safe%>
+    	<%= f.input :ph%>
+    	<%= f.input :carbonsource, as: :string , :input_html => { :class => 'long' }%>
+    	<b>and</b>
+    	</br>
+    	</br>
+
+    	<%= f.input :chebi_id, as: :string , :input_html => { :class => 'long' }%>
+    	<span class="light-gray"><p><b>Note:</b> Click <%= link_to "here", "http://www.ebi.ac.uk/chebi", class: "blue link_out", target: "_blank" %> to search ID.</p></span>
+      </br>
+    	<%= f.input :growthcondition, as: :select, collection: ["batch","fed-batch","chemostat"],:include_blank => "(please select)"%>
+    	<%= f.input :conditions, as: :select, collection: ["aerobic","anaerobic","aerobic and anaerobic","facultative anaerobic"],:include_blank => "(please select)"%>
+    	<%= f.input :dilutionrate,  label: Organism.human_attribute_name("dilutionrate2_html").html_safe%>
+    	<%= f.input :volume%>
+    	<%= f.input :biomass%>
+    	<%= f.input :medium, as: :text , :input_html => { :class => 'long' , rows: '2'}%>
+
+    	<p><b>10. Brief protocol information</b></p>
+      <div class="one_tab hide_when_type" <% if can_show?("metabolites") || can_show?("fluxes") || can_show?("proteomic") %>style="display:none"<% end %> >
+        <br />
+        <span class="light-gray"><p>Please select a data type to determine which protocol information should appear. <%= link_to "go to select option", "#organism_type_param_input" %></p></span>
+        <br />
+      </div>
+
+    	<div id="metabolites" class="one_tab subpoint <%= type_param_menu_class("metabolites") %>" <%unless can_show?"metabolites" %>style="display:none"<%end%>>
+    		<%= f.input :sampling_method , required: true %>
+    		<%= f.input :quenching , required: true%>
+    		<%= f.input :extraction_list, as: :check_boxes, collection: [ "enzymatic" , "perchloric acid", "hot water", "boiling ethanol", "chloroform","chloroform-methanol", "freezing-thawing in methanol", "acidic acetonitrile-methanol", "methanol", "EDTA", "sonication", "methanol-water", "hot ethanol", "not used" ] , required: true%>
+    		<%= f.input :analysis_list, as: :check_boxes, collection: [ "enzymatic" , "HPLC/HIC", "NMR", "GC-MS", "LC-MS", "LC-NMR", "CE-MS", "HPLC-MS", "HPLC-UV/RI", "LC-ESI-MS", "CE-TOF-MS", "GC-TOF", "ID-MS"] , required: true%>
+    	</div>
+
+    	<div id="fluxes" class="one_tab subpoint <%= type_param_menu_class("fluxes") %>" <% unless can_show?"fluxes" %>style="display:none"<%end%>>
+    		<%= f.input :type_analysis_list, as: :check_boxes, collection: [ "isotopomer balancing" , "flux ratio", "13C constrained MFA", "fluxome profiling", "SiDMAP" ] , required: true%>
+    		<%= f.input :platform_list, as: :check_boxes, collection: [ "Online MS" , "NMR", "GC-MS", "LC-MS", "CE-MS", "MALDI-TOF"], required: true%>
+      </div>
+
+      <div id="proteomic" class="one_tab subpoint <%= type_param_menu_class("proteomic") %>" <% unless can_show?"proteomic" %>style="display:none"<%end%>>
+    		<%= f.input :measurement_method_list, as: :check_boxes, collection: [ "LC-MS/MS" , "2D gel-MALDI-TOF", "immunoblotting" ] , required: true%>
+      </div>
+
+    	<%= f.input :comments, :input_html => { :rows => '7' }%>
+<span class="light-gray"><b>Note:</b> Include the <%= link_to "shortDOI", "http://shortdoi.org",
+	class: "blue link_out", target: "_blank"%> for each reference.</p></span>
+<br/>
+
+    	<%= f.input :parameters%>
+
+      <span class="light-gray"><p><b>Important:</b> First, you will need to fill out the Excel template form and then give it a new file name. This upload option is appropriate for uploading updates or new data files.</p></span>
+      <br/>
+
+      <li class="text input">
+        <b><label class="label"> <%= Organism.human_attribute_name("attached_files") %></b></label>
+        <br />
+        <div class="text">
+          <%= f.semantic_fields_for :attached_files do |builder| %>
+              <%= render 'attached_files/fields', attachable: @organism, f: builder %>
+          <% end %>
+          <br />
+          <%= link_to_add_fields "#{image_tag('Add.jpg')} New Alternative File".html_safe, f, :attached_files %>
+  			</div>
+  		</li>
+
+  	  <span class="light-gray"><p><b>Note:</b> Include the Excel spreadsheet in the exchange data table format SBtab (.csv) and/or files (.txt) as input for the <i>"Tools"</i> tab (see <%= link_to "example files", new_dynamic_url %>). The description of the SBtab format is available at  <%= link_to "http://www.sbtab.net", "http://www.sbtab.net", class: "blue link_out", target: "_blank"%> and see <%= link_to "SBtab specification", "http://www.sbtab.net/documents/SBtab_Specification.pdf", class: "blue link_out", target: "_blank"%> for more information.  This upload option is appropriate for uploading updates or new alternative data files.</p></span>
+    <br/>
+    </fieldset>
+
+
+  	<p class="size"> <%= image_tag("danger2.JPG")%>   <b>Note:</b> All fields marked with
+  	(<sup class="red">*</sup>) are mandatory. Must be filled out before the form can be submitted.<br/>
+  	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;You are responsible for any content that you upload and submit.<br/>
+  	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To find out more information about <b>Terms and Conditions</b>, please visit our <%= link_to 'documentation section', documentation_index_path( anchor: "terms"),target: "_blank"%>.</p>
+  <% end %>
+  <br/>
+
+  <%- if  !@organism.new_record? && !@organism.can_remove?(current_user)  %>
+    <!-- nothing here -->
+  <%- else %>
+    <br/>
+    <br/>
+    <b>Sharing:</b>
+      <br/>
+      <br/>
+      <!-- Public -->
+      <div class="one-tab">
+        <div class="hide_review_journal">
+          <%= radio_button_tag "organism[visibility]", Organism::VISIBILITY[:public], @organism.visibility == Organism::VISIBILITY[:public] %>
+          <label for="organism_visibility_1"><b><%= t("activerecord.attributes.organism.is_public") %></b></label><br/><br/>
+          <p class="size upper">  (if checked then <b>data file is public</b>)</p>
+        </div>
+      <!--  -->
+      <b class="light-gray">OR</b><br/><br/>
+      <!-- Private -->
+      <div class="hide_review_journal">
+        <%= radio_button_tag "organism[visibility]", Organism::VISIBILITY[:private], @organism.visibility == Organism::VISIBILITY[:private] %>
+        <label for="organism_visibility_2"><b><%= t("activerecord.attributes.organism.is_private") %></b></label><br/><br/>
+        <p class="size upper">  (if checked then data file is <b>private and EntryID not visible</b>)</p>
+      </div>
+      <!--  -->
+      <b class="light-gray">OR</b><br/><br/>
+      <!-- Review -->
+      <div class="show_review_journal">
+      <%= radio_button_tag "organism[visibility]", Organism::VISIBILITY[:review_journal], @organism.visibility == Organism::VISIBILITY[:review_journal] %>
+      <label for="organism_visibility_3"><b><%= t("activerecord.attributes.organism.is_review_journal") %></b></label><br/><br/>
+      <p class="size upper">  (if checked then data file is <b>private and EntryID not visible, except for reviewers</b>)</p>
+      <div id="review_journal" class="<%= @organism.visibility != AssociatedModel::VISIBILITY[:review_journal] ? 'hide' : '' %>">
+        <%= f.input :review_journal, required: true, as: :select, label: "Journal name", hint: "Please only use drop down list to submit data for the selected journal.", :include_blank => "(please select)" %>
+      </div>
+      </div>
+<br/>
+      <!--  -->
+      <p class="light-gray">
+        <b>Important</b><br/>
+        1) *Curation process is started only if the data is made public.<br/>
+		2) Please change to "public" if your data has been accepted or published.<br/>
+		3) Please upload the article file if your data has been accepted or published.
+        </p>
+
+    </div>
+
+
+    <p>
+  <%- end %>
+  <br/>
+  <br/>
+
+  <!-- -->
+  <% unless @organism.new_record? -%>
+    <b>Share with specific users:</b>
+    <div class="one-tab">
+    	<%- if @organism.is_admin?(current_user) %>
+        <br/>
+      	<%= link_to "#{image_tag('AddUser_2.JPG')} Add user".html_safe, new_organism_organism_association_path(@organism) %>
+      	<br/>
+    	  <br/>
+      <%- end %>
+    	<br/>
+
+      <% if @list_users && @list_users.size > 0 -%>
+      	<p class="size upper"><b>Users with permissions:</b>
+        <%= @list_users.collect do |u| %>
+          <% rem_link = link_to('(x)', [@organism,u], confirm: 'Are you sure you want to remove this user?', method: :delete) if @organism.is_admin?(current_user) %>
+          <% u.user.email_dot + " " + (if !rem_link.nil? then rem_link.to_s else "" end) %>
+        <% end.join("| ").html_safe %>
+      <% end -%>
+    </div>
+  <% end %>
+  <!-- -->
+
+  <br/>
+  <br/>
+  </p>
+
+  <%= f.actions do %>
+    <% if @organism.new_record? %>
+    	<%= f.action :submit, label: "Send Data" %>
+    <% else %>
+    	<%= f.action :submit, label: "Update Data" %>
+    <% end -%>
+    <%= f.action :cancel %>
+  <% end %>
+  <br/>
+  <br/>
+
+<% end %>
+
+<div style="clear:both"></div>

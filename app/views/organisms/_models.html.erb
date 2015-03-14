@@ -1,0 +1,49 @@
+<table id="<%= html_id %>" class='<%= html_class %>' >
+   <thead>
+  <tr>
+	<th class="bluelight">Model<br/>EntryID</th>
+    <th class="bluelight">Model name</th>
+    <th class="bluelight">Category</th>
+    <th class="bluelight">Model Type</th>
+        <th class="bluelight">Data used for</th>
+    <th class="bluelight">Access</th>
+    <th style="display:none">Json</th>
+  </tr>
+</thead>
+  <tbody>
+<% associated_models.each_with_index do |associated_model, index| %>
+  <% if !can?(:show, associated_model) || (current_user && !associated_model.review_journal.nil? && associated_model.review_journal.is_reviewer?(current_user)) %>
+    <% next %>
+  <% end -%>
+
+  <tr class="<%= if index % 2 != 0 then 'color_even' else '' end %>">
+	<td class="space4 center">
+		<%= link_to associated_model.id.to_s, [organism,associated_model], title: "click to view model details"%>
+		<%= describe_model( 'div', associated_model) %>
+	</td>
+    <td class="not_justified"><%= associated_model.model_name %></td>
+    <td><%= associated_model.category %></td>
+    <td class="not_justified"><%= associated_model.model_type %></td>
+    <td class="not_justified"><%= show_list(associated_model.used_for_list," and ") %></td>
+    <td class="space4 center"><%= if associated_model.public? then image_tag('Visto4.JPG') else image_tag('remove_figure2.JPG') end%></td>
+    <td style="display:none">
+      <%= associated_model.to_json(:except => [:sbml_content_type, :sbml_file_size,
+                                  :sbml_updated_at, :article_content_type,
+                                  :article_file_size, :article_updated_at,
+                                  :created_at, :updated_at,
+                                  :is_private, :user_email,
+                                  :user_id, :public,
+                                  :compartments, :species,
+                                  :reactions, :parameters,
+                                  :regulators]) %>
+      <span><%= unless associated_model.user.nil? then "#{associated_model.user.first_name} #{associated_model.user.last_name}" end  %></span>
+    </td>
+
+
+
+ <!--   <td><%= link_to 'Edit', edit_organism_associated_model_path(organism,associated_model) %></td> -->
+ <!--   <td><%= link_to 'Destroy', [organism,associated_model], method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
+  </tr>
+<% end %>
+</tbody>
+</table>

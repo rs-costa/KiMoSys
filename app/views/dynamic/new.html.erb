@@ -1,0 +1,144 @@
+<!--  # KiMoSys - web-based platform for Kinetic Models of biological Systems.
+# Copyright (C) 2013-2013 Rafael Costa
+
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU General Public License
+# as published by the Free Software Foundation; version 2
+# of the License.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+
+
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.-->
+
+<h2 class="green">Specification </h2>
+
+<p>Based on the requirements of kinetic metabolic modeling, we identified a set of steps necessary to be followed
+during initial model construction, in particular, for large-scale metabolic networks. These include:
+
+<br/><b>1.</b> model reduction;
+<br/> <b>2.</b> adding automatically the initial metabolite concentrations and flux data values into rate equations according to each reaction;
+<br/> <b>3.</b> generating automatically approximated rate equations based on the stoichiometric matrix of the network.
+
+<br/>
+<br/>
+The goal is to facilitate the use of tools so as to help system biologysist, when they perform computational research.
+To use these tools, upload the input file(s) and click on the corresponding button. When the job has finished click "save" to download the file. <br/>Note that the metabolites and flux names in the text files should coincide with the ID names included in the SBML file.
+<br/>
+<br/>
+</p>
+<fieldset>
+<legend><h3 class="green">Model reduction</h3></legend>
+<p><div><b> Reduce the model based on the conjunctive method, as described in the paper <%= link_to '[1]',"#{ENV['RAILS_RELATIVE_URL_ROOT']}/documentation/Machado_ModelReduction.pdf", class: "blue", target: "_blank"%>. </b></p></div>
+
+    <%= form_tag( "#{ENV['RAILS_RELATIVE_URL_ROOT']}/dynamic/reduction", multipart: true, id: "reduction" ) do %>
+
+    <p><label for="sbml_file">Upload SBML (.xml)</label>:
+    <%= file_field_tag 'sbml_file',:accept => 'application/xml' %> &nbsp;<%= link_to 'see example file 1', "#{ENV['RAILS_RELATIVE_URL_ROOT']}/documentation/Ec_core_flux1_model.xml", class: 'blue', target: "_blank"%></p>
+
+    <%= render 'sbml_files' %>
+
+    <p><label for="fluxes_file">Upload Fluxes file (.txt)</label>:
+    <%= file_field_tag 'fluxes_file',:accept => 'plain/txt' %> &nbsp;<%= link_to 'see example file 2', "#{ENV['RAILS_RELATIVE_URL_ROOT']}/documentation/Flux_distribution.txt", class: 'blue', target: "_blank"%></p>
+
+    <%= render 'txt_files', organisms_list: @reduction_files, name: "fluxes" %>
+
+    <p><label for="places">Metabolites to remove</label>:
+    <%= text_field_tag 'places' %> &nbsp;<%= link_to 'see example', "#{ENV['RAILS_RELATIVE_URL_ROOT']}/documentation/Remove_Metabolites.txt", class: 'blue', target: "_blank"%></p>
+    <%= submit_tag "Reduction" %>
+    <br/>
+     <%- if flash.key?(:reduction) %>
+	    <%= content_tag(:div, flash[:reduction].html_safe, :class => "flash reduction") %>
+	  <%- end %>
+<% end %>
+</fieldset>
+<br/>
+<br/>
+<fieldset>
+<legend><h3 class="green">Add metabolites</h3></legend>
+<p><div><b> Set automatically the initial metabolite values for all metabolites in the SBML model. </b></p></div>
+
+    <%= form_tag( "#{ENV['RAILS_RELATIVE_URL_ROOT']}/dynamic/substitutions", multipart: true, id: "substitutions" ) do %>
+
+    <p><label for="substitutions_file">Upload SBML (.xml)</label>:
+    <%= file_field_tag 'substitutions_file',:accept => 'application/xml' %> &nbsp;<%= link_to 'see example file 1', "#{ENV['RAILS_RELATIVE_URL_ROOT']}/documentation/reduced_model.xml", class: 'blue', target: "_blank"%></p>
+    <%= render 'sbml_files' %>
+
+    <p><label for="values_file">Upload Metabolites file (.txt)</label>:
+    <%= file_field_tag 'values_file',:accept => 'plain/txt' %>&nbsp;<%= link_to 'see example file 2', "#{ENV['RAILS_RELATIVE_URL_ROOT']}/documentation/Metabolite_concentrations.txt", class: 'blue', target: "_blank"%></p>
+
+    <%= render 'txt_files', organisms_list: @substitutions_files, name: "metabolites" %>
+    <%= submit_tag "Set" %>
+    <br/>
+     <%- if flash.key?(:substitutions) %>
+	    <%= content_tag(:div, flash[:substitutions].html_safe, :class => "flash substitutions") %>
+	  <%- end %>
+<% end %>
+</fieldset>
+<br/>
+<br/>
+<fieldset>
+<legend><h3 class="green">Translate kinetic equations</h3></legend>
+<p><div><b> Convert metabolic network into kinetic model. Generate automatically approximate kinetic rate laws for all reactions based on the stoichiometry of the network in SBML format.</b></p></div>
+
+    <%= form_tag( "#{ENV['RAILS_RELATIVE_URL_ROOT']}/dynamic/kinetic" , multipart: true, id: "kinetic" ) do %>
+
+    <p>
+
+    <label for="URL_file">Upload SBML (.xml)</label>:
+    <%= file_field_tag 'kinetic_file',:accept => 'application/xml' %> &nbsp;<%= link_to 'see example file', "#{ENV['RAILS_RELATIVE_URL_ROOT']}/documentation/Reduced_model_withMetabolites.xml", class: 'blue', target: "_blank"%></p>
+    <%= render 'sbml_files' %>
+
+    <!-- Este texto esta comentado e as 2 proximas linhas para quando estiver a
+    funcionar<span class="bold"> or </span>-->
+
+    <!--<label for="kinetic_file">Load SBML(URL)</label>:-->
+    <!--<%= text_field_tag(:URL_file)%>-->
+
+    </p>
+    <p><label for="type">Kinetic type</label>: <%= select_tag 'type' , options_from_collection_for_select(kinetic_types, :last, :first, '2') %></p>
+    <%= submit_tag "Convert" %>
+    <br/>
+    <%- if flash.key?(:kinetic) %>
+	    <%= content_tag(:div, flash[:kinetic].html_safe, :class => "flash kinetic") %>
+	  <%- end %>
+<% end %>
+</fieldset>
+<br/>
+<br/>
+
+<fieldset>
+<legend><h3 class="green">Add fluxes</h3></legend>
+<p><div><b> Set automatically the flux values of the rate reactions in the SBML model. </b></p></div>
+
+    <%= form_tag( "#{ENV['RAILS_RELATIVE_URL_ROOT']}/dynamic/fluxes", multipart: true, id: "fluxes" ) do %>
+
+    <p><label for="substitutions_file">Upload SBML (.xml)</label>:
+    <%= file_field_tag 'substitutions_file',:accept => 'application/xml' %> &nbsp;<%= link_to 'see example file 1', "#{ENV['RAILS_RELATIVE_URL_ROOT']}/documentation/Reduced_LinLog_model.xml", class: 'blue', target: "_blank"%></p>
+    <%= render 'sbml_files' %>
+
+    <p><label for="values_file">Upload Fluxes file (.txt)</label>:
+    <%= file_field_tag 'values_file',:accept => 'plain/txt' %>&nbsp;<%= link_to 'see example file 2', "#{ENV['RAILS_RELATIVE_URL_ROOT']}/documentation/new_fluxes.txt", class: 'blue', target: "_blank"%></p>
+
+    <%= render 'txt_files', organisms_list: @reduction_files, name: "fluxes" %>
+    <%= submit_tag "Set" %>
+    <br/>
+     <%- if flash.key?(:fluxes) %>
+	    <%= content_tag(:div, flash[:fluxes].html_safe, :class => "flash fluxes") %>
+	  <%- end %>
+<% end %>
+</fieldset>
+<br/>
+<br/>
+
+<div class="right">
+<%= link_to 'Top', "#top" %>
+</div>
+<br/>

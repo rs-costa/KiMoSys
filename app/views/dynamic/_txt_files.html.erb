@@ -1,0 +1,24 @@
+<div class="one_tab">
+  <%- if organisms_list.size > 0 %>
+    <strong>OR</strong><br/>
+    <div class="one_tab"> load <%= if defined?("name").nil? then "" else name.capitalize end %> from database: <a class="show_next_div" href="javascript:void(0)">show files</a>
+      <div class="expand_on_click" style="opacity: .4; height: 25px; overflow:hidden;">
+        <%- organisms_list.each do |o| %>
+        <% next unless o.src_file_name.ends_with?(".txt") %>
+          <p>
+            <%= radio_button_tag 'fluxes_organism', o.attachable.id  %>
+            <label class="tooltip" for="<%= "fluxes_organism_#{o.id}" %>"><%= o.src_file_name + if o.attachable.class.model_name == Organism.model_name then " (#{o.attachable.organism})" else "" end %>
+              <%- if o.attachable.class.model_name == Organism.model_name %>
+                <%= describe_organism( 'span', o.attachable, true) %>
+              <%- end %>
+            </label>
+          </p>
+        <%- end %>
+        <a href="javascript:void(0)" class="hide_on_click">hide files</a>
+    </div>
+    </div>
+  <%- else %>
+    <div class="one_tab dark-gray">(currently no <%= if defined?("name").nil? then "" else name end %> files are present in database, when added they will appear here)</div>
+  <%- end %>
+
+</div>

@@ -1,0 +1,4129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sbml xmlns="http://www.sbml.org/sbml/level2" level="2" version="1">
+  <model metaid="Ec_core" id="Ec_core">
+    <annotation/>
+    <listOfUnitDefinitions>
+      <unitDefinition id="substance" name="substance">
+        <listOfUnits>
+          <unit kind="mole"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="volume" name="volume">
+        <listOfUnits>
+          <unit kind="litre"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="area" name="area">
+        <listOfUnits>
+          <unit kind="metre" exponent="2"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="length" name="length">
+        <listOfUnits>
+          <unit kind="metre"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="time" name="time">
+        <listOfUnits>
+          <unit kind="second"/>
+        </listOfUnits>
+      </unitDefinition>
+    </listOfUnitDefinitions>
+    <listOfCompartments>
+      <compartment id="default" size="1" units="volume"/>
+    </listOfCompartments>
+    <listOfSpecies>
+      <species id="M_2pg_c" name="M_2pg_c" compartment="default" initialConcentration="0.399" charge="0">
+        <annotation/>
+      </species>
+      <species id="M_3pg_c" name="M_3pg_c" compartment="default" initialConcentration="2.13" charge="0">
+        <annotation/>
+      </species>
+      <species id="M_6pgc_c" name="M_6pgc_c" compartment="default" initialConcentration="0.808" charge="0">
+        <annotation/>
+      </species>
+      <species id="M_6pgl_c" name="M_6pgl_c" compartment="default" initialConcentration="0.0221" charge="0">
+        <annotation/>
+      </species>
+      <species id="M_ac_c" name="M_ac_c" compartment="default" initialConcentration="0.36" charge="0">
+        <annotation/>
+      </species>
+      <species id="M_ac_e" name="M_ac_e" compartment="default" initialConcentration="0.00479" boundaryCondition="true" charge="0">
+        <annotation/>
+      </species>
+      <species id="M_accoa_c" name="M_accoa_c" compartment="default" initialConcentration="0.2473" charge="0">
+        <annotation/>
+      </species>
+      <species id="M_actp_c" name="M_actp_c" compartment="default" initialConcentration="0.4" charge="0">
+        <annotation/>
+      </species>
+      <species id="M_adp_c" name="M_adp_c" compartment="default" initialConcentration="0.595" charge="0">
+        <annotation/>
+      </species>
+      <species id="M_akg_e" name="M_akg_e" compartment="default" initialConcentration="0.0011" boundaryCondition="true" charge="0">
+        <annotation/>
+      </species>
+      <species id="M_amp_c" name="M_amp_c" compartment="default" initialConcentration="0.955" charge="0">
+        <annotation/>
+      </species>
+      <species id="M_atp_c" name="M_atp_c" compartment="default" initialConcentration="4.27" charge="0">
+        <annotation/>
+      </species>
+      <species id="M_co2_c" name="M_co2_c" compartment="default" initialConcentration="0.0221" boundaryCondition="true" charge="0">
+        <annotation/>
+      </species>
+      <species id="M_co2_e" name="M_co2_e" compartment="default" initialConcentration="1" boundaryCondition="true" charge="0">
+        <annotation/>
+      </species>
+      <species id="M_coa_c" name="M_coa_c" compartment="default" initialConcentration="0.07298" charge="0">
+        <annotation/>
+      </species>
+      <species id="M_etoh_c" name="M_etoh_c" compartment="default" initialConcentration="0.0221" charge="0">
+        <annotation/>
+      </species>
+      <species id="M_etoh_e" name="M_etoh_e" compartment="default" initialConcentration="0" boundaryCondition="true" charge="0">
+        <annotation/>
+      </species>
+      <species id="M_f6p_c" name="M_f6p_c" compartment="default" initialConcentration="0.6" charge="0">
+        <annotation/>
+      </species>
+      <species id="M_fad_c" name="M_fad_c" compartment="default" initialConcentration="0.01514" charge="0">
+        <annotation/>
+      </species>
+      <species id="M_fadh2_c" name="M_fadh2_c" compartment="default" initialConcentration="0.0221" charge="0">
+        <annotation/>
+      </species>
+      <species id="M_fdp_c" name="M_fdp_c" compartment="default" initialConcentration="0.272" charge="0">
+        <annotation/>
+      </species>
+      <species id="M_for_c" name="M_for_c" compartment="default" initialConcentration="0.0221" charge="0">
+        <annotation/>
+      </species>
+      <species id="M_for_e" name="M_for_e" compartment="default" initialConcentration="0" boundaryCondition="true" charge="0">
+        <annotation/>
+      </species>
+      <species id="M_fum_e" name="M_fum_e" compartment="default" initialConcentration="0" boundaryCondition="true" charge="0">
+        <annotation/>
+      </species>
+      <species id="M_g6p_c" name="M_g6p_c" compartment="default" initialConcentration="3.48" charge="0">
+        <annotation/>
+      </species>
+      <species id="M_glc_D_e" name="M_glc_D_e" compartment="default" initialConcentration="0.056" boundaryCondition="true" charge="0">
+        <annotation/>
+      </species>
+      <species id="M_glx_c" name="M_glx_c" compartment="default" initialConcentration="0.0001" charge="0">
+        <annotation/>
+      </species>
+      <species id="M_h2o_c" name="M_h2o_c" compartment="default" initialConcentration="58000" charge="0">
+        <annotation/>
+      </species>
+      <species id="M_h2o_e" name="M_h2o_e" compartment="default" initialConcentration="58000" boundaryCondition="true" charge="0">
+        <annotation/>
+      </species>
+      <species id="M_h_c" name="M_h_c" compartment="default" initialConcentration="0.0221" boundaryCondition="true" charge="0">
+        <annotation/>
+      </species>
+      <species id="M_h_e" name="M_h_e" compartment="default" initialConcentration="1" boundaryCondition="true" charge="0">
+        <annotation/>
+      </species>
+      <species id="M_icit_c" name="M_icit_c" compartment="default" initialConcentration="0.21" charge="0">
+        <annotation/>
+      </species>
+      <species id="M_lac_D_c" name="M_lac_D_c" compartment="default" initialConcentration="0.0001" charge="0">
+        <annotation/>
+      </species>
+      <species id="M_lac_D_e" name="M_lac_D_e" compartment="default" initialConcentration="0.001004" boundaryCondition="true" charge="0">
+        <annotation/>
+      </species>
+      <species id="M_mal_L_c" name="M_mal_L_c" compartment="default" initialConcentration="0.3413" charge="0">
+        <annotation/>
+      </species>
+      <species id="M_nad_c" name="M_nad_c" compartment="default" initialConcentration="1.47" charge="0">
+        <annotation/>
+      </species>
+      <species id="M_nadh_c" name="M_nadh_c" compartment="default" initialConcentration="0.1" charge="0">
+        <annotation/>
+      </species>
+      <species id="M_nadp_c" name="M_nadp_c" compartment="default" initialConcentration="0.195" charge="0">
+        <annotation/>
+      </species>
+      <species id="M_nadph_c" name="M_nadph_c" compartment="default" initialConcentration="0.062" charge="0">
+        <annotation/>
+      </species>
+      <species id="M_o2_c" name="M_o2_c" compartment="default" initialConcentration="5.33" boundaryCondition="true" charge="0">
+        <annotation/>
+      </species>
+      <species id="M_o2_e" name="M_o2_e" compartment="default" initialConcentration="5.33" boundaryCondition="true" charge="0">
+        <annotation/>
+      </species>
+      <species id="M_oaa_c" name="M_oaa_c" compartment="default" initialConcentration="0.241" charge="0">
+        <annotation/>
+      </species>
+      <species id="M_pep_c" name="M_pep_c" compartment="default" initialConcentration="2.67" charge="0">
+        <annotation/>
+      </species>
+      <species id="M_pi_c" name="M_pi_c" compartment="default" initialConcentration="1" charge="0">
+        <annotation/>
+      </species>
+      <species id="M_pi_e" name="M_pi_e" compartment="default" initialConcentration="1" boundaryCondition="true" charge="0">
+        <annotation/>
+      </species>
+      <species id="M_pyr_c" name="M_pyr_c" compartment="default" initialConcentration="2.67" charge="0">
+        <annotation/>
+      </species>
+      <species id="M_pyr_e" name="M_pyr_e" compartment="default" initialConcentration="0.001288" boundaryCondition="true" charge="0">
+        <annotation/>
+      </species>
+      <species id="M_q8_c" name="M_q8_c" compartment="default" initialConcentration="0.0221" charge="0">
+        <annotation/>
+      </species>
+      <species id="M_q8h2_c" name="M_q8h2_c" compartment="default" initialConcentration="0.0221" charge="0">
+        <annotation/>
+      </species>
+      <species id="M_r5p_c" name="M_r5p_c" compartment="default" initialConcentration="0.398" charge="0">
+        <annotation/>
+      </species>
+      <species id="M_ru5p_D_c" name="M_ru5p_D_c" compartment="default" initialConcentration="0.111" charge="0">
+        <annotation/>
+      </species>
+      <species id="M_succ_e" name="M_succ_e" compartment="default" initialConcentration="0.006821" boundaryCondition="true" charge="0">
+        <annotation/>
+      </species>
+      <species id="M_xu5p_D_c" name="M_xu5p_D_c" compartment="default" initialConcentration="0.007807" charge="0">
+        <annotation/>
+      </species>
+    </listOfSpecies>
+    <listOfReactions>
+      <reaction id="M3" name="M3" reversible="false">
+        <annotation/>
+        <listOfReactants>
+          <speciesReference species="M_accoa_c"/>
+          <speciesReference species="M_oaa_c"/>
+          <speciesReference species="M_h2o_c"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_icit_c"/>
+          <speciesReference species="M_h_c"/>
+          <speciesReference species="M_coa_c"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> r0_M3 </ci>
+              <apply>
+                <divide/>
+                <ci> e_M3 </ci>
+                <ci> e0_M3 </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <times/>
+                  <ci> E0_M_accoa_c_M3 </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_accoa_c </ci>
+                      <ci> M_accoa_c0_M3 </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> E0_M_oaa_c_M3 </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_oaa_c </ci>
+                      <ci> M_oaa_c0_M3 </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> E0_M_h2o_c_M3 </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_h2o_c </ci>
+                      <ci> M_h2o_c0_M3 </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="r0_M3" value="1"/>
+            <parameter id="e_M3" value="1"/>
+            <parameter id="e0_M3" value="1"/>
+            <parameter id="E0_M_accoa_c_M3" value="1"/>
+            <parameter id="M_accoa_c0_M3" value="0.2473"/>
+            <parameter id="E0_M_oaa_c_M3" value="1"/>
+            <parameter id="M_oaa_c0_M3" value="0.241"/>
+            <parameter id="E0_M_h2o_c_M3" value="1"/>
+            <parameter id="M_h2o_c0_M3" value="58000"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="M7" name="M7" reversible="false">
+        <annotation/>
+        <listOfReactants>
+          <speciesReference species="M_atp_c" stoichiometry="0.0501233531162703"/>
+          <speciesReference species="M_r5p_c" stoichiometry="0.00953380828867638"/>
+          <speciesReference species="M_icit_c" stoichiometry="0.275493866823974"/>
+          <speciesReference species="M_nad_c" stoichiometry="0.735738980453766"/>
+          <speciesReference species="M_oaa_c" stoichiometry="0.0236978942006681"/>
+          <speciesReference species="M_pep_c" stoichiometry="0.00688508248702457"/>
+          <speciesReference species="M_fdp_c" stoichiometry="0.218190992675704"/>
+          <speciesReference species="M_nadp_c" stoichiometry="0.033766592067621"/>
+          <speciesReference species="M_f6p_c" stoichiometry="0.010474164727479"/>
+          <speciesReference species="M_g6p_c" stoichiometry="0.00271901735665582"/>
+          <speciesReference species="M_accoa_c" stoichiometry="0.0497089426793887"/>
+          <speciesReference species="M_fad_c" stoichiometry="0.26118329844976"/>
+          <speciesReference species="M_pyr_c" stoichiometry="0.0375728408191932"/>
+          <speciesReference species="M_h2o_c"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_mal_L_c" stoichiometry="0.26118329844976"/>
+          <speciesReference species="M_3pg_c" stoichiometry="0.407667855030272"/>
+          <speciesReference species="M_xu5p_D_c" stoichiometry="0.00953378262705508"/>
+          <speciesReference species="M_nadph_c" stoichiometry="0.033766592067621"/>
+          <speciesReference species="M_nadh_c" stoichiometry="0.735738980453766"/>
+          <speciesReference species="M_fadh2_c" stoichiometry="0.26118329844976"/>
+          <speciesReference species="M_pi_c" stoichiometry="0.0501233531162703"/>
+          <speciesReference species="M_h_c" stoichiometry="0.971645108797893"/>
+          <speciesReference species="M_adp_c" stoichiometry="0.0501233531162703"/>
+          <speciesReference species="M_coa_c" stoichiometry="0.0497089426793887"/>
+          <speciesReference species="M_co2_c" stoichiometry="0.536677165273734"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> r0_M7 </ci>
+              <apply>
+                <divide/>
+                <ci> e_M7 </ci>
+                <ci> e0_M7 </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <times/>
+                  <ci> E0_M_atp_c_M7 </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_atp_c </ci>
+                      <ci> M_atp_c0_M7 </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> E0_M_r5p_c_M7 </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_r5p_c </ci>
+                      <ci> M_r5p_c0_M7 </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> E0_M_icit_c_M7 </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_icit_c </ci>
+                      <ci> M_icit_c0_M7 </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> E0_M_nad_c_M7 </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_nad_c </ci>
+                      <ci> M_nad_c0_M7 </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> E0_M_oaa_c_M7 </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_oaa_c </ci>
+                      <ci> M_oaa_c0_M7 </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> E0_M_pep_c_M7 </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_pep_c </ci>
+                      <ci> M_pep_c0_M7 </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> E0_M_fdp_c_M7 </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_fdp_c </ci>
+                      <ci> M_fdp_c0_M7 </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> E0_M_nadp_c_M7 </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_nadp_c </ci>
+                      <ci> M_nadp_c0_M7 </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> E0_M_f6p_c_M7 </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_f6p_c </ci>
+                      <ci> M_f6p_c0_M7 </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> E0_M_g6p_c_M7 </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_g6p_c </ci>
+                      <ci> M_g6p_c0_M7 </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> E0_M_accoa_c_M7 </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_accoa_c </ci>
+                      <ci> M_accoa_c0_M7 </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> E0_M_fad_c_M7 </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_fad_c </ci>
+                      <ci> M_fad_c0_M7 </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> E0_M_pyr_c_M7 </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_pyr_c </ci>
+                      <ci> M_pyr_c0_M7 </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> E0_M_h2o_c_M7 </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_h2o_c </ci>
+                      <ci> M_h2o_c0_M7 </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="r0_M7" value="1"/>
+            <parameter id="e_M7" value="1"/>
+            <parameter id="e0_M7" value="1"/>
+            <parameter id="E0_M_atp_c_M7" value="0.0501233531162703"/>
+            <parameter id="M_atp_c0_M7" value="4.27"/>
+            <parameter id="E0_M_r5p_c_M7" value="0.00953380828867638"/>
+            <parameter id="M_r5p_c0_M7" value="0.398"/>
+            <parameter id="E0_M_icit_c_M7" value="0.275493866823974"/>
+            <parameter id="M_icit_c0_M7" value="0.21"/>
+            <parameter id="E0_M_nad_c_M7" value="0.735738980453766"/>
+            <parameter id="M_nad_c0_M7" value="1.47"/>
+            <parameter id="E0_M_oaa_c_M7" value="0.0236978942006681"/>
+            <parameter id="M_oaa_c0_M7" value="0.241"/>
+            <parameter id="E0_M_pep_c_M7" value="0.00688508248702457"/>
+            <parameter id="M_pep_c0_M7" value="2.67"/>
+            <parameter id="E0_M_fdp_c_M7" value="0.218190992675704"/>
+            <parameter id="M_fdp_c0_M7" value="0.272"/>
+            <parameter id="E0_M_nadp_c_M7" value="0.033766592067621"/>
+            <parameter id="M_nadp_c0_M7" value="0.195"/>
+            <parameter id="E0_M_f6p_c_M7" value="0.010474164727479"/>
+            <parameter id="M_f6p_c0_M7" value="0.6"/>
+            <parameter id="E0_M_g6p_c_M7" value="0.00271901735665582"/>
+            <parameter id="M_g6p_c0_M7" value="3.48"/>
+            <parameter id="E0_M_accoa_c_M7" value="0.0497089426793887"/>
+            <parameter id="M_accoa_c0_M7" value="0.2473"/>
+            <parameter id="E0_M_fad_c_M7" value="0.26118329844976"/>
+            <parameter id="M_fad_c0_M7" value="0.01514"/>
+            <parameter id="E0_M_pyr_c_M7" value="0.0375728408191932"/>
+            <parameter id="M_pyr_c0_M7" value="2.67"/>
+            <parameter id="E0_M_h2o_c_M7" value="1"/>
+            <parameter id="M_h2o_c0_M7" value="58000"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_ACKr" name="R_ACKr">
+        <annotation/>
+        <listOfReactants>
+          <speciesReference species="M_atp_c"/>
+          <speciesReference species="M_ac_c"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_actp_c"/>
+          <speciesReference species="M_adp_c"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> r0_R_ACKr </ci>
+              <apply>
+                <divide/>
+                <ci> e_R_ACKr </ci>
+                <ci> e0_R_ACKr </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <times/>
+                  <ci> E0_M_atp_c_R_ACKr </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_atp_c </ci>
+                      <ci> M_atp_c0_R_ACKr </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> E0_M_ac_c_R_ACKr </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_ac_c </ci>
+                      <ci> M_ac_c0_R_ACKr </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> E0_M_actp_c_R_ACKr </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_actp_c </ci>
+                      <ci> M_actp_c0_R_ACKr </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> E0_M_adp_c_R_ACKr </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_adp_c </ci>
+                      <ci> M_adp_c0_R_ACKr </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="r0_R_ACKr" value="1"/>
+            <parameter id="e_R_ACKr" value="1"/>
+            <parameter id="e0_R_ACKr" value="1"/>
+            <parameter id="E0_M_atp_c_R_ACKr" value="1"/>
+            <parameter id="M_atp_c0_R_ACKr" value="4.27"/>
+            <parameter id="E0_M_ac_c_R_ACKr" value="1"/>
+            <parameter id="M_ac_c0_R_ACKr" value="0.36"/>
+            <parameter id="E0_M_actp_c_R_ACKr" value="-1"/>
+            <parameter id="M_actp_c0_R_ACKr" value="0.4"/>
+            <parameter id="E0_M_adp_c_R_ACKr" value="-1"/>
+            <parameter id="M_adp_c0_R_ACKr" value="0.595"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_ACt2r" name="R_ACt2r">
+        <annotation/>
+        <listOfReactants>
+          <speciesReference species="M_h_e"/>
+          <speciesReference species="M_ac_e"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_ac_c"/>
+          <speciesReference species="M_h_c"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> r0_R_ACt2r </ci>
+              <apply>
+                <divide/>
+                <ci> e_R_ACt2r </ci>
+                <ci> e0_R_ACt2r </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <times/>
+                  <ci> E0_M_h_e_R_ACt2r </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_h_e </ci>
+                      <ci> M_h_e0_R_ACt2r </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> E0_M_ac_e_R_ACt2r </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_ac_e </ci>
+                      <ci> M_ac_e0_R_ACt2r </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> E0_M_ac_c_R_ACt2r </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_ac_c </ci>
+                      <ci> M_ac_c0_R_ACt2r </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> E0_M_h_c_R_ACt2r </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_h_c </ci>
+                      <ci> M_h_c0_R_ACt2r </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="r0_R_ACt2r" value="1"/>
+            <parameter id="e_R_ACt2r" value="1"/>
+            <parameter id="e0_R_ACt2r" value="1"/>
+            <parameter id="E0_M_h_e_R_ACt2r" value="1"/>
+            <parameter id="M_h_e0_R_ACt2r" value="1"/>
+            <parameter id="E0_M_ac_e_R_ACt2r" value="1"/>
+            <parameter id="M_ac_e0_R_ACt2r" value="0.00479"/>
+            <parameter id="E0_M_ac_c_R_ACt2r" value="-1"/>
+            <parameter id="M_ac_c0_R_ACt2r" value="0.36"/>
+            <parameter id="E0_M_h_c_R_ACt2r" value="-1"/>
+            <parameter id="M_h_c0_R_ACt2r" value="0.0221"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_ADHEr" name="R_ADHEr">
+        <annotation/>
+        <listOfReactants>
+          <speciesReference species="M_accoa_c"/>
+          <speciesReference species="M_nadh_c" stoichiometry="2"/>
+          <speciesReference species="M_h_c" stoichiometry="2"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_nad_c" stoichiometry="2"/>
+          <speciesReference species="M_etoh_c"/>
+          <speciesReference species="M_coa_c"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> r0_R_ADHEr </ci>
+              <apply>
+                <divide/>
+                <ci> e_R_ADHEr </ci>
+                <ci> e0_R_ADHEr </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <times/>
+                  <ci> E0_M_accoa_c_R_ADHEr </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_accoa_c </ci>
+                      <ci> M_accoa_c0_R_ADHEr </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> E0_M_nadh_c_R_ADHEr </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_nadh_c </ci>
+                      <ci> M_nadh_c0_R_ADHEr </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> E0_M_h_c_R_ADHEr </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_h_c </ci>
+                      <ci> M_h_c0_R_ADHEr </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> E0_M_nad_c_R_ADHEr </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_nad_c </ci>
+                      <ci> M_nad_c0_R_ADHEr </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> E0_M_etoh_c_R_ADHEr </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_etoh_c </ci>
+                      <ci> M_etoh_c0_R_ADHEr </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> E0_M_coa_c_R_ADHEr </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_coa_c </ci>
+                      <ci> M_coa_c0_R_ADHEr </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="r0_R_ADHEr" value="1"/>
+            <parameter id="e_R_ADHEr" value="1"/>
+            <parameter id="e0_R_ADHEr" value="1"/>
+            <parameter id="E0_M_accoa_c_R_ADHEr" value="1"/>
+            <parameter id="M_accoa_c0_R_ADHEr" value="0.2473"/>
+            <parameter id="E0_M_nadh_c_R_ADHEr" value="2"/>
+            <parameter id="M_nadh_c0_R_ADHEr" value="0.1"/>
+            <parameter id="E0_M_h_c_R_ADHEr" value="2"/>
+            <parameter id="M_h_c0_R_ADHEr" value="0.0221"/>
+            <parameter id="E0_M_nad_c_R_ADHEr" value="-2"/>
+            <parameter id="M_nad_c0_R_ADHEr" value="1.47"/>
+            <parameter id="E0_M_etoh_c_R_ADHEr" value="-1"/>
+            <parameter id="M_etoh_c0_R_ADHEr" value="0.0221"/>
+            <parameter id="E0_M_coa_c_R_ADHEr" value="-1"/>
+            <parameter id="M_coa_c0_R_ADHEr" value="0.07298"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_ADK1" name="R_ADK1">
+        <annotation/>
+        <listOfReactants>
+          <speciesReference species="M_atp_c"/>
+          <speciesReference species="M_amp_c"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_adp_c" stoichiometry="2"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> r0_R_ADK1 </ci>
+              <apply>
+                <divide/>
+                <ci> e_R_ADK1 </ci>
+                <ci> e0_R_ADK1 </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <times/>
+                  <ci> E0_M_atp_c_R_ADK1 </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_atp_c </ci>
+                      <ci> M_atp_c0_R_ADK1 </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> E0_M_amp_c_R_ADK1 </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_amp_c </ci>
+                      <ci> M_amp_c0_R_ADK1 </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> E0_M_adp_c_R_ADK1 </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_adp_c </ci>
+                      <ci> M_adp_c0_R_ADK1 </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="r0_R_ADK1" value="1"/>
+            <parameter id="e_R_ADK1" value="1"/>
+            <parameter id="e0_R_ADK1" value="1"/>
+            <parameter id="E0_M_atp_c_R_ADK1" value="1"/>
+            <parameter id="M_atp_c0_R_ADK1" value="4.27"/>
+            <parameter id="E0_M_amp_c_R_ADK1" value="1"/>
+            <parameter id="M_amp_c0_R_ADK1" value="0.955"/>
+            <parameter id="E0_M_adp_c_R_ADK1" value="-2"/>
+            <parameter id="M_adp_c0_R_ADK1" value="0.595"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_ATPM" name="R_ATPM" reversible="false">
+        <annotation/>
+        <listOfReactants>
+          <speciesReference species="M_atp_c"/>
+          <speciesReference species="M_h2o_c"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_pi_c"/>
+          <speciesReference species="M_h_c"/>
+          <speciesReference species="M_adp_c"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> r0_R_ATPM </ci>
+              <apply>
+                <divide/>
+                <ci> e_R_ATPM </ci>
+                <ci> e0_R_ATPM </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <times/>
+                  <ci> E0_M_atp_c_R_ATPM </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_atp_c </ci>
+                      <ci> M_atp_c0_R_ATPM </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> E0_M_h2o_c_R_ATPM </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_h2o_c </ci>
+                      <ci> M_h2o_c0_R_ATPM </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="r0_R_ATPM" value="1"/>
+            <parameter id="e_R_ATPM" value="1"/>
+            <parameter id="e0_R_ATPM" value="1"/>
+            <parameter id="E0_M_atp_c_R_ATPM" value="1"/>
+            <parameter id="M_atp_c0_R_ATPM" value="4.27"/>
+            <parameter id="E0_M_h2o_c_R_ATPM" value="1"/>
+            <parameter id="M_h2o_c0_R_ATPM" value="58000"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_ATPS4r" name="R_ATPS4r">
+        <annotation/>
+        <listOfReactants>
+          <speciesReference species="M_h_e" stoichiometry="4"/>
+          <speciesReference species="M_pi_c"/>
+          <speciesReference species="M_adp_c"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_atp_c"/>
+          <speciesReference species="M_h_c" stoichiometry="3"/>
+          <speciesReference species="M_h2o_c"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> r0_R_ATPS4r </ci>
+              <apply>
+                <divide/>
+                <ci> e_R_ATPS4r </ci>
+                <ci> e0_R_ATPS4r </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <times/>
+                  <ci> E0_M_h_e_R_ATPS4r </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_h_e </ci>
+                      <ci> M_h_e0_R_ATPS4r </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> E0_M_pi_c_R_ATPS4r </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_pi_c </ci>
+                      <ci> M_pi_c0_R_ATPS4r </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> E0_M_adp_c_R_ATPS4r </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_adp_c </ci>
+                      <ci> M_adp_c0_R_ATPS4r </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> E0_M_atp_c_R_ATPS4r </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_atp_c </ci>
+                      <ci> M_atp_c0_R_ATPS4r </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> E0_M_h_c_R_ATPS4r </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_h_c </ci>
+                      <ci> M_h_c0_R_ATPS4r </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> E0_M_h2o_c_R_ATPS4r </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_h2o_c </ci>
+                      <ci> M_h2o_c0_R_ATPS4r </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="r0_R_ATPS4r" value="1"/>
+            <parameter id="e_R_ATPS4r" value="1"/>
+            <parameter id="e0_R_ATPS4r" value="1"/>
+            <parameter id="E0_M_h_e_R_ATPS4r" value="4"/>
+            <parameter id="M_h_e0_R_ATPS4r" value="1"/>
+            <parameter id="E0_M_pi_c_R_ATPS4r" value="1"/>
+            <parameter id="M_pi_c0_R_ATPS4r" value="1"/>
+            <parameter id="E0_M_adp_c_R_ATPS4r" value="1"/>
+            <parameter id="M_adp_c0_R_ATPS4r" value="0.595"/>
+            <parameter id="E0_M_atp_c_R_ATPS4r" value="-1"/>
+            <parameter id="M_atp_c0_R_ATPS4r" value="4.27"/>
+            <parameter id="E0_M_h_c_R_ATPS4r" value="-3"/>
+            <parameter id="M_h_c0_R_ATPS4r" value="0.0221"/>
+            <parameter id="E0_M_h2o_c_R_ATPS4r" value="-1"/>
+            <parameter id="M_h2o_c0_R_ATPS4r" value="58000"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_CO2t" name="R_CO2t">
+        <annotation/>
+        <listOfReactants>
+          <speciesReference species="M_co2_c"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_co2_e"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> r0_R_CO2t </ci>
+              <apply>
+                <divide/>
+                <ci> e_R_CO2t </ci>
+                <ci> e0_R_CO2t </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <times/>
+                  <ci> E0_M_co2_c_R_CO2t </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_co2_c </ci>
+                      <ci> M_co2_c0_R_CO2t </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> E0_M_co2_e_R_CO2t </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_co2_e </ci>
+                      <ci> M_co2_e0_R_CO2t </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="r0_R_CO2t" value="1"/>
+            <parameter id="e_R_CO2t" value="1"/>
+            <parameter id="e0_R_CO2t" value="1"/>
+            <parameter id="E0_M_co2_c_R_CO2t" value="1"/>
+            <parameter id="M_co2_c0_R_CO2t" value="0.0221"/>
+            <parameter id="E0_M_co2_e_R_CO2t" value="-1"/>
+            <parameter id="M_co2_e0_R_CO2t" value="1"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_CYTBD" name="R_CYTBD" reversible="false">
+        <annotation/>
+        <listOfReactants>
+          <speciesReference species="M_o2_c" stoichiometry="0.5"/>
+          <speciesReference species="M_h_c" stoichiometry="2"/>
+          <speciesReference species="M_q8h2_c"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_h_e" stoichiometry="2"/>
+          <speciesReference species="M_h2o_c"/>
+          <speciesReference species="M_q8_c"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> r0_R_CYTBD </ci>
+              <apply>
+                <divide/>
+                <ci> e_R_CYTBD </ci>
+                <ci> e0_R_CYTBD </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <times/>
+                  <ci> E0_M_o2_c_R_CYTBD </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_o2_c </ci>
+                      <ci> M_o2_c0_R_CYTBD </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> E0_M_h_c_R_CYTBD </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_h_c </ci>
+                      <ci> M_h_c0_R_CYTBD </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> E0_M_q8h2_c_R_CYTBD </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_q8h2_c </ci>
+                      <ci> M_q8h2_c0_R_CYTBD </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="r0_R_CYTBD" value="1"/>
+            <parameter id="e_R_CYTBD" value="1"/>
+            <parameter id="e0_R_CYTBD" value="1"/>
+            <parameter id="E0_M_o2_c_R_CYTBD" value="0.5"/>
+            <parameter id="M_o2_c0_R_CYTBD" value="5.33"/>
+            <parameter id="E0_M_h_c_R_CYTBD" value="2"/>
+            <parameter id="M_h_c0_R_CYTBD" value="0.0221"/>
+            <parameter id="E0_M_q8h2_c_R_CYTBD" value="1"/>
+            <parameter id="M_q8h2_c0_R_CYTBD" value="0.0221"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_D_LACt2" name="R_D_LACt2">
+        <annotation/>
+        <listOfReactants>
+          <speciesReference species="M_h_e"/>
+          <speciesReference species="M_lac_D_e"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_lac_D_c"/>
+          <speciesReference species="M_h_c"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> r0_R_D_LACt2 </ci>
+              <apply>
+                <divide/>
+                <ci> e_R_D_LACt2 </ci>
+                <ci> e0_R_D_LACt2 </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <times/>
+                  <ci> E0_M_h_e_R_D_LACt2 </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_h_e </ci>
+                      <ci> M_h_e0_R_D_LACt2 </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> E0_M_lac_D_e_R_D_LACt2 </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_lac_D_e </ci>
+                      <ci> M_lac_D_e0_R_D_LACt2 </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> E0_M_lac_D_c_R_D_LACt2 </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_lac_D_c </ci>
+                      <ci> M_lac_D_c0_R_D_LACt2 </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> E0_M_h_c_R_D_LACt2 </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_h_c </ci>
+                      <ci> M_h_c0_R_D_LACt2 </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="r0_R_D_LACt2" value="1"/>
+            <parameter id="e_R_D_LACt2" value="1"/>
+            <parameter id="e0_R_D_LACt2" value="1"/>
+            <parameter id="E0_M_h_e_R_D_LACt2" value="1"/>
+            <parameter id="M_h_e0_R_D_LACt2" value="1"/>
+            <parameter id="E0_M_lac_D_e_R_D_LACt2" value="1"/>
+            <parameter id="M_lac_D_e0_R_D_LACt2" value="0.001004"/>
+            <parameter id="E0_M_lac_D_c_R_D_LACt2" value="-1"/>
+            <parameter id="M_lac_D_c0_R_D_LACt2" value="0.0001"/>
+            <parameter id="E0_M_h_c_R_D_LACt2" value="-1"/>
+            <parameter id="M_h_c0_R_D_LACt2" value="0.0221"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_ENO" name="R_ENO">
+        <annotation/>
+        <listOfReactants>
+          <speciesReference species="M_2pg_c"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_h2o_c"/>
+          <speciesReference species="M_pep_c"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> r0_R_ENO </ci>
+              <apply>
+                <divide/>
+                <ci> e_R_ENO </ci>
+                <ci> e0_R_ENO </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <times/>
+                  <ci> E0_M_2pg_c_R_ENO </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_2pg_c </ci>
+                      <ci> M_2pg_c0_R_ENO </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> E0_M_h2o_c_R_ENO </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_h2o_c </ci>
+                      <ci> M_h2o_c0_R_ENO </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> E0_M_pep_c_R_ENO </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_pep_c </ci>
+                      <ci> M_pep_c0_R_ENO </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="r0_R_ENO" value="1"/>
+            <parameter id="e_R_ENO" value="1"/>
+            <parameter id="e0_R_ENO" value="1"/>
+            <parameter id="E0_M_2pg_c_R_ENO" value="1"/>
+            <parameter id="M_2pg_c0_R_ENO" value="0.399"/>
+            <parameter id="E0_M_h2o_c_R_ENO" value="-1"/>
+            <parameter id="M_h2o_c0_R_ENO" value="58000"/>
+            <parameter id="E0_M_pep_c_R_ENO" value="-1"/>
+            <parameter id="M_pep_c0_R_ENO" value="2.67"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_ETOHt2r" name="R_ETOHt2r">
+        <annotation/>
+        <listOfReactants>
+          <speciesReference species="M_h_e"/>
+          <speciesReference species="M_etoh_e"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_etoh_c"/>
+          <speciesReference species="M_h_c"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> r0_R_ETOHt2r </ci>
+              <apply>
+                <divide/>
+                <ci> e_R_ETOHt2r </ci>
+                <ci> e0_R_ETOHt2r </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <times/>
+                  <ci> E0_M_h_e_R_ETOHt2r </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_h_e </ci>
+                      <ci> M_h_e0_R_ETOHt2r </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> E0_M_etoh_c_R_ETOHt2r </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_etoh_c </ci>
+                      <ci> M_etoh_c0_R_ETOHt2r </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> E0_M_h_c_R_ETOHt2r </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_h_c </ci>
+                      <ci> M_h_c0_R_ETOHt2r </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="r0_R_ETOHt2r" value="1"/>
+            <parameter id="e_R_ETOHt2r" value="1"/>
+            <parameter id="e0_R_ETOHt2r" value="1"/>
+            <parameter id="E0_M_h_e_R_ETOHt2r" value="1"/>
+            <parameter id="M_h_e0_R_ETOHt2r" value="1"/>
+            <parameter id="E0_M_etoh_c_R_ETOHt2r" value="-1"/>
+            <parameter id="M_etoh_c0_R_ETOHt2r" value="0.0221"/>
+            <parameter id="E0_M_h_c_R_ETOHt2r" value="-1"/>
+            <parameter id="M_h_c0_R_ETOHt2r" value="0.0221"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_EX_ac_e_" name="R_EX_ac_e_" reversible="false">
+        <annotation/>
+        <listOfReactants>
+          <speciesReference species="M_ac_e"/>
+        </listOfReactants>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> r0_R_EX_ac_e_ </ci>
+              <apply>
+                <divide/>
+                <ci> e_R_EX_ac_e_ </ci>
+                <ci> e0_R_EX_ac_e_ </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <times/>
+                  <ci> E0_M_ac_e_R_EX_ac_e_ </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_ac_e </ci>
+                      <ci> M_ac_e0_R_EX_ac_e_ </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="r0_R_EX_ac_e_" value="1"/>
+            <parameter id="e_R_EX_ac_e_" value="1"/>
+            <parameter id="e0_R_EX_ac_e_" value="1"/>
+            <parameter id="E0_M_ac_e_R_EX_ac_e_" value="1"/>
+            <parameter id="M_ac_e0_R_EX_ac_e_" value="0.00479"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_EX_akg_e_" name="R_EX_akg_e_" reversible="false">
+        <annotation/>
+        <listOfReactants>
+          <speciesReference species="M_akg_e"/>
+        </listOfReactants>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> r0_R_EX_akg_e_ </ci>
+              <apply>
+                <divide/>
+                <ci> e_R_EX_akg_e_ </ci>
+                <ci> e0_R_EX_akg_e_ </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <times/>
+                  <ci> E0_M_akg_e_R_EX_akg_e_ </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_akg_e </ci>
+                      <ci> M_akg_e0_R_EX_akg_e_ </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="r0_R_EX_akg_e_" value="1"/>
+            <parameter id="e_R_EX_akg_e_" value="1"/>
+            <parameter id="e0_R_EX_akg_e_" value="1"/>
+            <parameter id="E0_M_akg_e_R_EX_akg_e_" value="1"/>
+            <parameter id="M_akg_e0_R_EX_akg_e_" value="0.0011"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_EX_co2_e_" name="R_EX_co2_e_" reversible="false">
+        <annotation/>
+        <listOfReactants>
+          <speciesReference species="M_co2_e"/>
+        </listOfReactants>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> r0_R_EX_co2_e_ </ci>
+              <apply>
+                <divide/>
+                <ci> e_R_EX_co2_e_ </ci>
+                <ci> e0_R_EX_co2_e_ </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <times/>
+                  <ci> E0_M_co2_e_R_EX_co2_e_ </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_co2_e </ci>
+                      <ci> M_co2_e0_R_EX_co2_e_ </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="r0_R_EX_co2_e_" value="1"/>
+            <parameter id="e_R_EX_co2_e_" value="1"/>
+            <parameter id="e0_R_EX_co2_e_" value="1"/>
+            <parameter id="E0_M_co2_e_R_EX_co2_e_" value="1"/>
+            <parameter id="M_co2_e0_R_EX_co2_e_" value="1"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_EX_etoh_e_" name="R_EX_etoh_e_" reversible="false">
+        <annotation/>
+        <listOfReactants>
+          <speciesReference species="M_etoh_e"/>
+        </listOfReactants>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> r0_R_EX_etoh_e_ </ci>
+              <apply>
+                <divide/>
+                <ci> e_R_EX_etoh_e_ </ci>
+                <ci> e0_R_EX_etoh_e_ </ci>
+              </apply>
+              <cn type="integer"> 1 </cn>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="r0_R_EX_etoh_e_" value="1"/>
+            <parameter id="e_R_EX_etoh_e_" value="1"/>
+            <parameter id="e0_R_EX_etoh_e_" value="1"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_EX_for_e_" name="R_EX_for_e_" reversible="false">
+        <annotation/>
+        <listOfReactants>
+          <speciesReference species="M_for_e"/>
+        </listOfReactants>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> r0_R_EX_for_e_ </ci>
+              <apply>
+                <divide/>
+                <ci> e_R_EX_for_e_ </ci>
+                <ci> e0_R_EX_for_e_ </ci>
+              </apply>
+              <cn type="integer"> 1 </cn>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="r0_R_EX_for_e_" value="1"/>
+            <parameter id="e_R_EX_for_e_" value="1"/>
+            <parameter id="e0_R_EX_for_e_" value="1"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_EX_fum_e_" name="R_EX_fum_e_" reversible="false">
+        <annotation/>
+        <listOfReactants>
+          <speciesReference species="M_fum_e"/>
+        </listOfReactants>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> r0_R_EX_fum_e_ </ci>
+              <apply>
+                <divide/>
+                <ci> e_R_EX_fum_e_ </ci>
+                <ci> e0_R_EX_fum_e_ </ci>
+              </apply>
+              <cn type="integer"> 1 </cn>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="r0_R_EX_fum_e_" value="1"/>
+            <parameter id="e_R_EX_fum_e_" value="1"/>
+            <parameter id="e0_R_EX_fum_e_" value="1"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_EX_glc_e_" name="R_EX_glc_e_" reversible="false">
+        <annotation/>
+        <listOfProducts>
+          <speciesReference species="M_glc_D_e"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> r0_R_EX_glc_e_ </ci>
+              <apply>
+                <divide/>
+                <ci> e_R_EX_glc_e_ </ci>
+                <ci> e0_R_EX_glc_e_ </ci>
+              </apply>
+              <cn type="integer"> 1 </cn>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="r0_R_EX_glc_e_" value="1"/>
+            <parameter id="e_R_EX_glc_e_" value="1"/>
+            <parameter id="e0_R_EX_glc_e_" value="1"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_EX_h2o_e_" name="R_EX_h2o_e_" reversible="false">
+        <annotation/>
+        <listOfReactants>
+          <speciesReference species="M_h2o_e"/>
+        </listOfReactants>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> r0_R_EX_h2o_e_ </ci>
+              <apply>
+                <divide/>
+                <ci> e_R_EX_h2o_e_ </ci>
+                <ci> e0_R_EX_h2o_e_ </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <times/>
+                  <ci> E0_M_h2o_e_R_EX_h2o_e_ </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_h2o_e </ci>
+                      <ci> M_h2o_e0_R_EX_h2o_e_ </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="r0_R_EX_h2o_e_" value="1"/>
+            <parameter id="e_R_EX_h2o_e_" value="1"/>
+            <parameter id="e0_R_EX_h2o_e_" value="1"/>
+            <parameter id="E0_M_h2o_e_R_EX_h2o_e_" value="1"/>
+            <parameter id="M_h2o_e0_R_EX_h2o_e_" value="58000"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_EX_h_e_" name="R_EX_h_e_" reversible="false">
+        <annotation/>
+        <listOfReactants>
+          <speciesReference species="M_h_e"/>
+        </listOfReactants>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> r0_R_EX_h_e_ </ci>
+              <apply>
+                <divide/>
+                <ci> e_R_EX_h_e_ </ci>
+                <ci> e0_R_EX_h_e_ </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <times/>
+                  <ci> E0_M_h_e_R_EX_h_e_ </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_h_e </ci>
+                      <ci> M_h_e0_R_EX_h_e_ </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="r0_R_EX_h_e_" value="1"/>
+            <parameter id="e_R_EX_h_e_" value="1"/>
+            <parameter id="e0_R_EX_h_e_" value="1"/>
+            <parameter id="E0_M_h_e_R_EX_h_e_" value="1"/>
+            <parameter id="M_h_e0_R_EX_h_e_" value="1"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_EX_lac_D_e_" name="R_EX_lac_D_e_" reversible="false">
+        <annotation/>
+        <listOfReactants>
+          <speciesReference species="M_lac_D_e"/>
+        </listOfReactants>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> r0_R_EX_lac_D_e_ </ci>
+              <apply>
+                <divide/>
+                <ci> e_R_EX_lac_D_e_ </ci>
+                <ci> e0_R_EX_lac_D_e_ </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <times/>
+                  <ci> E0_M_lac_D_e_R_EX_lac_D_e_ </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_lac_D_e </ci>
+                      <ci> M_lac_D_e0_R_EX_lac_D_e_ </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="r0_R_EX_lac_D_e_" value="1"/>
+            <parameter id="e_R_EX_lac_D_e_" value="1"/>
+            <parameter id="e0_R_EX_lac_D_e_" value="1"/>
+            <parameter id="E0_M_lac_D_e_R_EX_lac_D_e_" value="1"/>
+            <parameter id="M_lac_D_e0_R_EX_lac_D_e_" value="0.001004"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_EX_o2_e_" name="R_EX_o2_e_" reversible="false">
+        <annotation/>
+        <listOfProducts>
+          <speciesReference species="M_o2_e"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> r0_R_EX_o2_e_ </ci>
+              <apply>
+                <divide/>
+                <ci> e_R_EX_o2_e_ </ci>
+                <ci> e0_R_EX_o2_e_ </ci>
+              </apply>
+              <cn type="integer"> 1 </cn>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="r0_R_EX_o2_e_" value="1"/>
+            <parameter id="e_R_EX_o2_e_" value="1"/>
+            <parameter id="e0_R_EX_o2_e_" value="1"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_EX_pi_e_" name="R_EX_pi_e_" reversible="false">
+        <annotation/>
+        <listOfProducts>
+          <speciesReference species="M_pi_e"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> r0_R_EX_pi_e_ </ci>
+              <apply>
+                <divide/>
+                <ci> e_R_EX_pi_e_ </ci>
+                <ci> e0_R_EX_pi_e_ </ci>
+              </apply>
+              <cn type="integer"> 1 </cn>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="r0_R_EX_pi_e_" value="1"/>
+            <parameter id="e_R_EX_pi_e_" value="1"/>
+            <parameter id="e0_R_EX_pi_e_" value="1"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_EX_pyr_e_" name="R_EX_pyr_e_" reversible="false">
+        <annotation/>
+        <listOfReactants>
+          <speciesReference species="M_pyr_e"/>
+        </listOfReactants>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> r0_R_EX_pyr_e_ </ci>
+              <apply>
+                <divide/>
+                <ci> e_R_EX_pyr_e_ </ci>
+                <ci> e0_R_EX_pyr_e_ </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <times/>
+                  <ci> E0_M_pyr_e_R_EX_pyr_e_ </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_pyr_e </ci>
+                      <ci> M_pyr_e0_R_EX_pyr_e_ </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="r0_R_EX_pyr_e_" value="1"/>
+            <parameter id="e_R_EX_pyr_e_" value="1"/>
+            <parameter id="e0_R_EX_pyr_e_" value="1"/>
+            <parameter id="E0_M_pyr_e_R_EX_pyr_e_" value="1"/>
+            <parameter id="M_pyr_e0_R_EX_pyr_e_" value="0.001288"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_EX_succ_e_" name="R_EX_succ_e_" reversible="false">
+        <annotation/>
+        <listOfReactants>
+          <speciesReference species="M_succ_e"/>
+        </listOfReactants>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> r0_R_EX_succ_e_ </ci>
+              <apply>
+                <divide/>
+                <ci> e_R_EX_succ_e_ </ci>
+                <ci> e0_R_EX_succ_e_ </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <times/>
+                  <ci> E0_M_succ_e_R_EX_succ_e_ </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_succ_e </ci>
+                      <ci> M_succ_e0_R_EX_succ_e_ </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="r0_R_EX_succ_e_" value="1"/>
+            <parameter id="e_R_EX_succ_e_" value="1"/>
+            <parameter id="e0_R_EX_succ_e_" value="1"/>
+            <parameter id="E0_M_succ_e_R_EX_succ_e_" value="1"/>
+            <parameter id="M_succ_e0_R_EX_succ_e_" value="0.006821"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_FBP" name="R_FBP" reversible="false">
+        <annotation/>
+        <listOfReactants>
+          <speciesReference species="M_h2o_c"/>
+          <speciesReference species="M_fdp_c"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_pi_c"/>
+          <speciesReference species="M_f6p_c"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> r0_R_FBP </ci>
+              <apply>
+                <divide/>
+                <ci> e_R_FBP </ci>
+                <ci> e0_R_FBP </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <times/>
+                  <ci> E0_M_h2o_c_R_FBP </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_h2o_c </ci>
+                      <ci> M_h2o_c0_R_FBP </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> E0_M_fdp_c_R_FBP </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_fdp_c </ci>
+                      <ci> M_fdp_c0_R_FBP </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="r0_R_FBP" value="1"/>
+            <parameter id="e_R_FBP" value="1"/>
+            <parameter id="e0_R_FBP" value="1"/>
+            <parameter id="E0_M_h2o_c_R_FBP" value="1"/>
+            <parameter id="M_h2o_c0_R_FBP" value="58000"/>
+            <parameter id="E0_M_fdp_c_R_FBP" value="1"/>
+            <parameter id="M_fdp_c0_R_FBP" value="0.272"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_FORt" name="R_FORt">
+        <annotation/>
+        <listOfReactants>
+          <speciesReference species="M_for_e"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_for_c"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> r0_R_FORt </ci>
+              <apply>
+                <divide/>
+                <ci> e_R_FORt </ci>
+                <ci> e0_R_FORt </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <times/>
+                  <ci> E0_M_for_c_R_FORt </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_for_c </ci>
+                      <ci> M_for_c0_R_FORt </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="r0_R_FORt" value="1"/>
+            <parameter id="e_R_FORt" value="1"/>
+            <parameter id="e0_R_FORt" value="1"/>
+            <parameter id="E0_M_for_c_R_FORt" value="-1"/>
+            <parameter id="M_for_c0_R_FORt" value="0.0221"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_G6PDH2r" name="R_G6PDH2r">
+        <annotation/>
+        <listOfReactants>
+          <speciesReference species="M_nadp_c"/>
+          <speciesReference species="M_g6p_c"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_nadph_c"/>
+          <speciesReference species="M_h_c"/>
+          <speciesReference species="M_6pgl_c"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> r0_R_G6PDH2r </ci>
+              <apply>
+                <divide/>
+                <ci> e_R_G6PDH2r </ci>
+                <ci> e0_R_G6PDH2r </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <times/>
+                  <ci> E0_M_nadp_c_R_G6PDH2r </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_nadp_c </ci>
+                      <ci> M_nadp_c0_R_G6PDH2r </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> E0_M_g6p_c_R_G6PDH2r </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_g6p_c </ci>
+                      <ci> M_g6p_c0_R_G6PDH2r </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> E0_M_nadph_c_R_G6PDH2r </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_nadph_c </ci>
+                      <ci> M_nadph_c0_R_G6PDH2r </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> E0_M_h_c_R_G6PDH2r </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_h_c </ci>
+                      <ci> M_h_c0_R_G6PDH2r </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> E0_M_6pgl_c_R_G6PDH2r </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_6pgl_c </ci>
+                      <ci> M_6pgl_c0_R_G6PDH2r </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="r0_R_G6PDH2r" value="1"/>
+            <parameter id="e_R_G6PDH2r" value="1"/>
+            <parameter id="e0_R_G6PDH2r" value="1"/>
+            <parameter id="E0_M_nadp_c_R_G6PDH2r" value="1"/>
+            <parameter id="M_nadp_c0_R_G6PDH2r" value="0.195"/>
+            <parameter id="E0_M_g6p_c_R_G6PDH2r" value="1"/>
+            <parameter id="M_g6p_c0_R_G6PDH2r" value="3.48"/>
+            <parameter id="E0_M_nadph_c_R_G6PDH2r" value="-1"/>
+            <parameter id="M_nadph_c0_R_G6PDH2r" value="0.062"/>
+            <parameter id="E0_M_h_c_R_G6PDH2r" value="-1"/>
+            <parameter id="M_h_c0_R_G6PDH2r" value="0.0221"/>
+            <parameter id="E0_M_6pgl_c_R_G6PDH2r" value="-1"/>
+            <parameter id="M_6pgl_c0_R_G6PDH2r" value="0.0221"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_GLCpts" name="R_GLCpts" reversible="false">
+        <annotation/>
+        <listOfReactants>
+          <speciesReference species="M_pep_c"/>
+          <speciesReference species="M_glc_D_e"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_pyr_c"/>
+          <speciesReference species="M_g6p_c"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> r0_R_GLCpts </ci>
+              <apply>
+                <divide/>
+                <ci> e_R_GLCpts </ci>
+                <ci> e0_R_GLCpts </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <times/>
+                  <ci> E0_M_pep_c_R_GLCpts </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_pep_c </ci>
+                      <ci> M_pep_c0_R_GLCpts </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> E0_M_glc_D_e_R_GLCpts </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_glc_D_e </ci>
+                      <ci> M_glc_D_e0_R_GLCpts </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="r0_R_GLCpts" value="1"/>
+            <parameter id="e_R_GLCpts" value="1"/>
+            <parameter id="e0_R_GLCpts" value="1"/>
+            <parameter id="E0_M_pep_c_R_GLCpts" value="1"/>
+            <parameter id="M_pep_c0_R_GLCpts" value="2.67"/>
+            <parameter id="E0_M_glc_D_e_R_GLCpts" value="1"/>
+            <parameter id="M_glc_D_e0_R_GLCpts" value="0.056"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_GND" name="R_GND" reversible="false">
+        <annotation/>
+        <listOfReactants>
+          <speciesReference species="M_nadp_c"/>
+          <speciesReference species="M_6pgc_c"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_nadph_c"/>
+          <speciesReference species="M_ru5p_D_c"/>
+          <speciesReference species="M_co2_c"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> r0_R_GND </ci>
+              <apply>
+                <divide/>
+                <ci> e_R_GND </ci>
+                <ci> e0_R_GND </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <times/>
+                  <ci> E0_M_nadp_c_R_GND </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_nadp_c </ci>
+                      <ci> M_nadp_c0_R_GND </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> E0_M_6pgc_c_R_GND </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_6pgc_c </ci>
+                      <ci> M_6pgc_c0_R_GND </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="r0_R_GND" value="1"/>
+            <parameter id="e_R_GND" value="1"/>
+            <parameter id="e0_R_GND" value="1"/>
+            <parameter id="E0_M_nadp_c_R_GND" value="1"/>
+            <parameter id="M_nadp_c0_R_GND" value="0.195"/>
+            <parameter id="E0_M_6pgc_c_R_GND" value="1"/>
+            <parameter id="M_6pgc_c0_R_GND" value="0.808"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_H2Ot" name="R_H2Ot">
+        <annotation/>
+        <listOfReactants>
+          <speciesReference species="M_h2o_c"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_h2o_e"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> r0_R_H2Ot </ci>
+              <apply>
+                <divide/>
+                <ci> e_R_H2Ot </ci>
+                <ci> e0_R_H2Ot </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <times/>
+                  <ci> E0_M_h2o_c_R_H2Ot </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_h2o_c </ci>
+                      <ci> M_h2o_c0_R_H2Ot </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> E0_M_h2o_e_R_H2Ot </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_h2o_e </ci>
+                      <ci> M_h2o_e0_R_H2Ot </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="r0_R_H2Ot" value="1"/>
+            <parameter id="e_R_H2Ot" value="1"/>
+            <parameter id="e0_R_H2Ot" value="1"/>
+            <parameter id="E0_M_h2o_c_R_H2Ot" value="1"/>
+            <parameter id="M_h2o_c0_R_H2Ot" value="58000"/>
+            <parameter id="E0_M_h2o_e_R_H2Ot" value="-1"/>
+            <parameter id="M_h2o_e0_R_H2Ot" value="58000"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_LDH_D" name="R_LDH_D">
+        <annotation/>
+        <listOfReactants>
+          <speciesReference species="M_lac_D_c"/>
+          <speciesReference species="M_nad_c"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_nadh_c"/>
+          <speciesReference species="M_pyr_c"/>
+          <speciesReference species="M_h_c"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> r0_R_LDH_D </ci>
+              <apply>
+                <divide/>
+                <ci> e_R_LDH_D </ci>
+                <ci> e0_R_LDH_D </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <times/>
+                  <ci> E0_M_lac_D_c_R_LDH_D </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_lac_D_c </ci>
+                      <ci> M_lac_D_c0_R_LDH_D </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> E0_M_nad_c_R_LDH_D </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_nad_c </ci>
+                      <ci> M_nad_c0_R_LDH_D </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> E0_M_nadh_c_R_LDH_D </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_nadh_c </ci>
+                      <ci> M_nadh_c0_R_LDH_D </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> E0_M_pyr_c_R_LDH_D </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_pyr_c </ci>
+                      <ci> M_pyr_c0_R_LDH_D </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> E0_M_h_c_R_LDH_D </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_h_c </ci>
+                      <ci> M_h_c0_R_LDH_D </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="r0_R_LDH_D" value="1"/>
+            <parameter id="e_R_LDH_D" value="1"/>
+            <parameter id="e0_R_LDH_D" value="1"/>
+            <parameter id="E0_M_lac_D_c_R_LDH_D" value="1"/>
+            <parameter id="M_lac_D_c0_R_LDH_D" value="0.0001"/>
+            <parameter id="E0_M_nad_c_R_LDH_D" value="1"/>
+            <parameter id="M_nad_c0_R_LDH_D" value="1.47"/>
+            <parameter id="E0_M_nadh_c_R_LDH_D" value="-1"/>
+            <parameter id="M_nadh_c0_R_LDH_D" value="0.1"/>
+            <parameter id="E0_M_pyr_c_R_LDH_D" value="-1"/>
+            <parameter id="M_pyr_c0_R_LDH_D" value="2.67"/>
+            <parameter id="E0_M_h_c_R_LDH_D" value="-1"/>
+            <parameter id="M_h_c0_R_LDH_D" value="0.0221"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_MALS" name="R_MALS" reversible="false">
+        <annotation/>
+        <listOfReactants>
+          <speciesReference species="M_accoa_c"/>
+          <speciesReference species="M_glx_c"/>
+          <speciesReference species="M_h2o_c"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_mal_L_c"/>
+          <speciesReference species="M_h_c"/>
+          <speciesReference species="M_coa_c"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> r0_R_MALS </ci>
+              <apply>
+                <divide/>
+                <ci> e_R_MALS </ci>
+                <ci> e0_R_MALS </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <times/>
+                  <ci> E0_M_accoa_c_R_MALS </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_accoa_c </ci>
+                      <ci> M_accoa_c0_R_MALS </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> E0_M_glx_c_R_MALS </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_glx_c </ci>
+                      <ci> M_glx_c0_R_MALS </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> E0_M_h2o_c_R_MALS </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_h2o_c </ci>
+                      <ci> M_h2o_c0_R_MALS </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="r0_R_MALS" value="1"/>
+            <parameter id="e_R_MALS" value="1"/>
+            <parameter id="e0_R_MALS" value="1"/>
+            <parameter id="E0_M_accoa_c_R_MALS" value="1"/>
+            <parameter id="M_accoa_c0_R_MALS" value="0.2473"/>
+            <parameter id="E0_M_glx_c_R_MALS" value="1"/>
+            <parameter id="M_glx_c0_R_MALS" value="0.0001"/>
+            <parameter id="E0_M_h2o_c_R_MALS" value="1"/>
+            <parameter id="M_h2o_c0_R_MALS" value="58000"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_MDH" name="R_MDH">
+        <annotation/>
+        <listOfReactants>
+          <speciesReference species="M_mal_L_c"/>
+          <speciesReference species="M_nad_c"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_nadh_c"/>
+          <speciesReference species="M_oaa_c"/>
+          <speciesReference species="M_h_c"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> r0_R_MDH </ci>
+              <apply>
+                <divide/>
+                <ci> e_R_MDH </ci>
+                <ci> e0_R_MDH </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <times/>
+                  <ci> E0_M_mal_L_c_R_MDH </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_mal_L_c </ci>
+                      <ci> M_mal_L_c0_R_MDH </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> E0_M_nad_c_R_MDH </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_nad_c </ci>
+                      <ci> M_nad_c0_R_MDH </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> E0_M_nadh_c_R_MDH </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_nadh_c </ci>
+                      <ci> M_nadh_c0_R_MDH </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> E0_M_oaa_c_R_MDH </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_oaa_c </ci>
+                      <ci> M_oaa_c0_R_MDH </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> E0_M_h_c_R_MDH </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_h_c </ci>
+                      <ci> M_h_c0_R_MDH </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="r0_R_MDH" value="1"/>
+            <parameter id="e_R_MDH" value="1"/>
+            <parameter id="e0_R_MDH" value="1"/>
+            <parameter id="E0_M_mal_L_c_R_MDH" value="1"/>
+            <parameter id="M_mal_L_c0_R_MDH" value="0.3413"/>
+            <parameter id="E0_M_nad_c_R_MDH" value="1"/>
+            <parameter id="M_nad_c0_R_MDH" value="1.47"/>
+            <parameter id="E0_M_nadh_c_R_MDH" value="-1"/>
+            <parameter id="M_nadh_c0_R_MDH" value="0.1"/>
+            <parameter id="E0_M_oaa_c_R_MDH" value="-1"/>
+            <parameter id="M_oaa_c0_R_MDH" value="0.241"/>
+            <parameter id="E0_M_h_c_R_MDH" value="-1"/>
+            <parameter id="M_h_c0_R_MDH" value="0.0221"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_ME1" name="R_ME1" reversible="false">
+        <annotation/>
+        <listOfReactants>
+          <speciesReference species="M_mal_L_c"/>
+          <speciesReference species="M_nad_c"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_nadh_c"/>
+          <speciesReference species="M_pyr_c"/>
+          <speciesReference species="M_co2_c"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> r0_R_ME1 </ci>
+              <apply>
+                <divide/>
+                <ci> e_R_ME1 </ci>
+                <ci> e0_R_ME1 </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <times/>
+                  <ci> E0_M_mal_L_c_R_ME1 </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_mal_L_c </ci>
+                      <ci> M_mal_L_c0_R_ME1 </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> E0_M_nad_c_R_ME1 </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_nad_c </ci>
+                      <ci> M_nad_c0_R_ME1 </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="r0_R_ME1" value="1"/>
+            <parameter id="e_R_ME1" value="1"/>
+            <parameter id="e0_R_ME1" value="1"/>
+            <parameter id="E0_M_mal_L_c_R_ME1" value="1"/>
+            <parameter id="M_mal_L_c0_R_ME1" value="0.3413"/>
+            <parameter id="E0_M_nad_c_R_ME1" value="1"/>
+            <parameter id="M_nad_c0_R_ME1" value="1.47"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_ME2" name="R_ME2" reversible="false">
+        <annotation/>
+        <listOfReactants>
+          <speciesReference species="M_mal_L_c"/>
+          <speciesReference species="M_nadp_c"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_nadph_c"/>
+          <speciesReference species="M_pyr_c"/>
+          <speciesReference species="M_co2_c"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> r0_R_ME2 </ci>
+              <apply>
+                <divide/>
+                <ci> e_R_ME2 </ci>
+                <ci> e0_R_ME2 </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <times/>
+                  <ci> E0_M_mal_L_c_R_ME2 </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_mal_L_c </ci>
+                      <ci> M_mal_L_c0_R_ME2 </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> E0_M_nadp_c_R_ME2 </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_nadp_c </ci>
+                      <ci> M_nadp_c0_R_ME2 </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="r0_R_ME2" value="1"/>
+            <parameter id="e_R_ME2" value="1"/>
+            <parameter id="e0_R_ME2" value="1"/>
+            <parameter id="E0_M_mal_L_c_R_ME2" value="1"/>
+            <parameter id="M_mal_L_c0_R_ME2" value="0.3413"/>
+            <parameter id="E0_M_nadp_c_R_ME2" value="1"/>
+            <parameter id="M_nadp_c0_R_ME2" value="0.195"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_NADH11" name="R_NADH11" reversible="false">
+        <annotation/>
+        <listOfReactants>
+          <speciesReference species="M_nadh_c"/>
+          <speciesReference species="M_h_c" stoichiometry="3"/>
+          <speciesReference species="M_q8_c"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_nad_c"/>
+          <speciesReference species="M_h_e" stoichiometry="2"/>
+          <speciesReference species="M_q8h2_c"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> r0_R_NADH11 </ci>
+              <apply>
+                <divide/>
+                <ci> e_R_NADH11 </ci>
+                <ci> e0_R_NADH11 </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <times/>
+                  <ci> E0_M_nadh_c_R_NADH11 </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_nadh_c </ci>
+                      <ci> M_nadh_c0_R_NADH11 </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> E0_M_h_c_R_NADH11 </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_h_c </ci>
+                      <ci> M_h_c0_R_NADH11 </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> E0_M_q8_c_R_NADH11 </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_q8_c </ci>
+                      <ci> M_q8_c0_R_NADH11 </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="r0_R_NADH11" value="1"/>
+            <parameter id="e_R_NADH11" value="1"/>
+            <parameter id="e0_R_NADH11" value="1"/>
+            <parameter id="E0_M_nadh_c_R_NADH11" value="1"/>
+            <parameter id="M_nadh_c0_R_NADH11" value="0.1"/>
+            <parameter id="E0_M_h_c_R_NADH11" value="3"/>
+            <parameter id="M_h_c0_R_NADH11" value="0.0221"/>
+            <parameter id="E0_M_q8_c_R_NADH11" value="1"/>
+            <parameter id="M_q8_c0_R_NADH11" value="0.0221"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_NADTRHD" name="R_NADTRHD" reversible="false">
+        <annotation/>
+        <listOfReactants>
+          <speciesReference species="M_nadph_c"/>
+          <speciesReference species="M_nad_c"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_nadh_c"/>
+          <speciesReference species="M_nadp_c"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> r0_R_NADTRHD </ci>
+              <apply>
+                <divide/>
+                <ci> e_R_NADTRHD </ci>
+                <ci> e0_R_NADTRHD </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <times/>
+                  <ci> E0_M_nadph_c_R_NADTRHD </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_nadph_c </ci>
+                      <ci> M_nadph_c0_R_NADTRHD </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> E0_M_nad_c_R_NADTRHD </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_nad_c </ci>
+                      <ci> M_nad_c0_R_NADTRHD </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="r0_R_NADTRHD" value="1"/>
+            <parameter id="e_R_NADTRHD" value="1"/>
+            <parameter id="e0_R_NADTRHD" value="1"/>
+            <parameter id="E0_M_nadph_c_R_NADTRHD" value="1"/>
+            <parameter id="M_nadph_c0_R_NADTRHD" value="0.062"/>
+            <parameter id="E0_M_nad_c_R_NADTRHD" value="1"/>
+            <parameter id="M_nad_c0_R_NADTRHD" value="1.47"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_O2t" name="R_O2t">
+        <annotation/>
+        <listOfReactants>
+          <speciesReference species="M_o2_e"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_o2_c"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> r0_R_O2t </ci>
+              <apply>
+                <divide/>
+                <ci> e_R_O2t </ci>
+                <ci> e0_R_O2t </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <times/>
+                  <ci> E0_M_o2_e_R_O2t </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_o2_e </ci>
+                      <ci> M_o2_e0_R_O2t </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> E0_M_o2_c_R_O2t </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_o2_c </ci>
+                      <ci> M_o2_c0_R_O2t </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="r0_R_O2t" value="1"/>
+            <parameter id="e_R_O2t" value="1"/>
+            <parameter id="e0_R_O2t" value="1"/>
+            <parameter id="E0_M_o2_e_R_O2t" value="1"/>
+            <parameter id="M_o2_e0_R_O2t" value="5.33"/>
+            <parameter id="E0_M_o2_c_R_O2t" value="-1"/>
+            <parameter id="M_o2_c0_R_O2t" value="5.33"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_PDH" name="R_PDH" reversible="false">
+        <annotation/>
+        <listOfReactants>
+          <speciesReference species="M_nad_c"/>
+          <speciesReference species="M_pyr_c"/>
+          <speciesReference species="M_coa_c"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_accoa_c"/>
+          <speciesReference species="M_nadh_c"/>
+          <speciesReference species="M_co2_c"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> r0_R_PDH </ci>
+              <apply>
+                <divide/>
+                <ci> e_R_PDH </ci>
+                <ci> e0_R_PDH </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <times/>
+                  <ci> E0_M_nad_c_R_PDH </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_nad_c </ci>
+                      <ci> M_nad_c0_R_PDH </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> E0_M_pyr_c_R_PDH </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_pyr_c </ci>
+                      <ci> M_pyr_c0_R_PDH </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> E0_M_coa_c_R_PDH </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_coa_c </ci>
+                      <ci> M_coa_c0_R_PDH </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="r0_R_PDH" value="1"/>
+            <parameter id="e_R_PDH" value="1"/>
+            <parameter id="e0_R_PDH" value="1"/>
+            <parameter id="E0_M_nad_c_R_PDH" value="1"/>
+            <parameter id="M_nad_c0_R_PDH" value="1.47"/>
+            <parameter id="E0_M_pyr_c_R_PDH" value="1"/>
+            <parameter id="M_pyr_c0_R_PDH" value="2.67"/>
+            <parameter id="E0_M_coa_c_R_PDH" value="1"/>
+            <parameter id="M_coa_c0_R_PDH" value="0.07298"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_PFK" name="R_PFK" reversible="false">
+        <annotation/>
+        <listOfReactants>
+          <speciesReference species="M_atp_c"/>
+          <speciesReference species="M_f6p_c"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_h_c"/>
+          <speciesReference species="M_adp_c"/>
+          <speciesReference species="M_fdp_c"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> r0_R_PFK </ci>
+              <apply>
+                <divide/>
+                <ci> e_R_PFK </ci>
+                <ci> e0_R_PFK </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <times/>
+                  <ci> E0_M_atp_c_R_PFK </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_atp_c </ci>
+                      <ci> M_atp_c0_R_PFK </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> E0_M_f6p_c_R_PFK </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_f6p_c </ci>
+                      <ci> M_f6p_c0_R_PFK </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="r0_R_PFK" value="1"/>
+            <parameter id="e_R_PFK" value="1"/>
+            <parameter id="e0_R_PFK" value="1"/>
+            <parameter id="E0_M_atp_c_R_PFK" value="1"/>
+            <parameter id="M_atp_c0_R_PFK" value="4.27"/>
+            <parameter id="E0_M_f6p_c_R_PFK" value="1"/>
+            <parameter id="M_f6p_c0_R_PFK" value="0.6"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_PFL" name="R_PFL" reversible="false">
+        <annotation/>
+        <listOfReactants>
+          <speciesReference species="M_pyr_c"/>
+          <speciesReference species="M_coa_c"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_accoa_c"/>
+          <speciesReference species="M_for_c"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> r0_R_PFL </ci>
+              <apply>
+                <divide/>
+                <ci> e_R_PFL </ci>
+                <ci> e0_R_PFL </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <times/>
+                  <ci> E0_M_pyr_c_R_PFL </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_pyr_c </ci>
+                      <ci> M_pyr_c0_R_PFL </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> E0_M_coa_c_R_PFL </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_coa_c </ci>
+                      <ci> M_coa_c0_R_PFL </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="r0_R_PFL" value="1"/>
+            <parameter id="e_R_PFL" value="1"/>
+            <parameter id="e0_R_PFL" value="1"/>
+            <parameter id="E0_M_pyr_c_R_PFL" value="1"/>
+            <parameter id="M_pyr_c0_R_PFL" value="2.67"/>
+            <parameter id="E0_M_coa_c_R_PFL" value="1"/>
+            <parameter id="M_coa_c0_R_PFL" value="0.07298"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_PGI" name="R_PGI">
+        <annotation/>
+        <listOfReactants>
+          <speciesReference species="M_g6p_c"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_f6p_c"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> r0_R_PGI </ci>
+              <apply>
+                <divide/>
+                <ci> e_R_PGI </ci>
+                <ci> e0_R_PGI </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <times/>
+                  <ci> E0_M_g6p_c_R_PGI </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_g6p_c </ci>
+                      <ci> M_g6p_c0_R_PGI </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> E0_M_f6p_c_R_PGI </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_f6p_c </ci>
+                      <ci> M_f6p_c0_R_PGI </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="r0_R_PGI" value="1"/>
+            <parameter id="e_R_PGI" value="1"/>
+            <parameter id="e0_R_PGI" value="1"/>
+            <parameter id="E0_M_g6p_c_R_PGI" value="1"/>
+            <parameter id="M_g6p_c0_R_PGI" value="3.48"/>
+            <parameter id="E0_M_f6p_c_R_PGI" value="-1"/>
+            <parameter id="M_f6p_c0_R_PGI" value="0.6"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_PGL" name="R_PGL" reversible="false">
+        <annotation/>
+        <listOfReactants>
+          <speciesReference species="M_6pgl_c"/>
+          <speciesReference species="M_h2o_c"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_h_c"/>
+          <speciesReference species="M_6pgc_c"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> r0_R_PGL </ci>
+              <apply>
+                <divide/>
+                <ci> e_R_PGL </ci>
+                <ci> e0_R_PGL </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <times/>
+                  <ci> E0_M_6pgl_c_R_PGL </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_6pgl_c </ci>
+                      <ci> M_6pgl_c0_R_PGL </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> E0_M_h2o_c_R_PGL </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_h2o_c </ci>
+                      <ci> M_h2o_c0_R_PGL </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="r0_R_PGL" value="1"/>
+            <parameter id="e_R_PGL" value="1"/>
+            <parameter id="e0_R_PGL" value="1"/>
+            <parameter id="E0_M_6pgl_c_R_PGL" value="1"/>
+            <parameter id="M_6pgl_c0_R_PGL" value="0.0221"/>
+            <parameter id="E0_M_h2o_c_R_PGL" value="1"/>
+            <parameter id="M_h2o_c0_R_PGL" value="58000"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_PGM" name="R_PGM">
+        <annotation/>
+        <listOfReactants>
+          <speciesReference species="M_3pg_c"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_2pg_c"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> r0_R_PGM </ci>
+              <apply>
+                <divide/>
+                <ci> e_R_PGM </ci>
+                <ci> e0_R_PGM </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <times/>
+                  <ci> E0_M_3pg_c_R_PGM </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_3pg_c </ci>
+                      <ci> M_3pg_c0_R_PGM </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> E0_M_2pg_c_R_PGM </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_2pg_c </ci>
+                      <ci> M_2pg_c0_R_PGM </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="r0_R_PGM" value="1"/>
+            <parameter id="e_R_PGM" value="1"/>
+            <parameter id="e0_R_PGM" value="1"/>
+            <parameter id="E0_M_3pg_c_R_PGM" value="1"/>
+            <parameter id="M_3pg_c0_R_PGM" value="2.13"/>
+            <parameter id="E0_M_2pg_c_R_PGM" value="-1"/>
+            <parameter id="M_2pg_c0_R_PGM" value="0.399"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_PIt" name="R_PIt">
+        <annotation/>
+        <listOfReactants>
+          <speciesReference species="M_pi_e"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_pi_c"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> r0_R_PIt </ci>
+              <apply>
+                <divide/>
+                <ci> e_R_PIt </ci>
+                <ci> e0_R_PIt </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <times/>
+                  <ci> E0_M_pi_e_R_PIt </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_pi_e </ci>
+                      <ci> M_pi_e0_R_PIt </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> E0_M_pi_c_R_PIt </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_pi_c </ci>
+                      <ci> M_pi_c0_R_PIt </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="r0_R_PIt" value="1"/>
+            <parameter id="e_R_PIt" value="1"/>
+            <parameter id="e0_R_PIt" value="1"/>
+            <parameter id="E0_M_pi_e_R_PIt" value="1"/>
+            <parameter id="M_pi_e0_R_PIt" value="1"/>
+            <parameter id="E0_M_pi_c_R_PIt" value="-1"/>
+            <parameter id="M_pi_c0_R_PIt" value="1"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_PPC" name="R_PPC" reversible="false">
+        <annotation/>
+        <listOfReactants>
+          <speciesReference species="M_h2o_c"/>
+          <speciesReference species="M_pep_c"/>
+          <speciesReference species="M_co2_c"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_h_c"/>
+          <speciesReference species="M_oaa_c"/>
+          <speciesReference species="M_pi_c"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> r0_R_PPC </ci>
+              <apply>
+                <divide/>
+                <ci> e_R_PPC </ci>
+                <ci> e0_R_PPC </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <times/>
+                  <ci> E0_M_h2o_c_R_PPC </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_h2o_c </ci>
+                      <ci> M_h2o_c0_R_PPC </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> E0_M_pep_c_R_PPC </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_pep_c </ci>
+                      <ci> M_pep_c0_R_PPC </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> E0_M_co2_c_R_PPC </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_co2_c </ci>
+                      <ci> M_co2_c0_R_PPC </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="r0_R_PPC" value="1"/>
+            <parameter id="e_R_PPC" value="1"/>
+            <parameter id="e0_R_PPC" value="1"/>
+            <parameter id="E0_M_h2o_c_R_PPC" value="1"/>
+            <parameter id="M_h2o_c0_R_PPC" value="58000"/>
+            <parameter id="E0_M_pep_c_R_PPC" value="1"/>
+            <parameter id="M_pep_c0_R_PPC" value="2.67"/>
+            <parameter id="E0_M_co2_c_R_PPC" value="1"/>
+            <parameter id="M_co2_c0_R_PPC" value="0.0221"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_PPCK" name="R_PPCK" reversible="false">
+        <annotation/>
+        <listOfReactants>
+          <speciesReference species="M_atp_c"/>
+          <speciesReference species="M_oaa_c"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_adp_c"/>
+          <speciesReference species="M_pep_c"/>
+          <speciesReference species="M_co2_c"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> r0_R_PPCK </ci>
+              <apply>
+                <divide/>
+                <ci> e_R_PPCK </ci>
+                <ci> e0_R_PPCK </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <times/>
+                  <ci> E0_M_atp_c_R_PPCK </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_atp_c </ci>
+                      <ci> M_atp_c0_R_PPCK </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> E0_M_oaa_c_R_PPCK </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_oaa_c </ci>
+                      <ci> M_oaa_c0_R_PPCK </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="r0_R_PPCK" value="1"/>
+            <parameter id="e_R_PPCK" value="1"/>
+            <parameter id="e0_R_PPCK" value="1"/>
+            <parameter id="E0_M_atp_c_R_PPCK" value="1"/>
+            <parameter id="M_atp_c0_R_PPCK" value="4.27"/>
+            <parameter id="E0_M_oaa_c_R_PPCK" value="1"/>
+            <parameter id="M_oaa_c0_R_PPCK" value="0.241"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_PPS" name="R_PPS" reversible="false">
+        <annotation/>
+        <listOfReactants>
+          <speciesReference species="M_atp_c"/>
+          <speciesReference species="M_pyr_c"/>
+          <speciesReference species="M_h2o_c"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_amp_c"/>
+          <speciesReference species="M_pi_c"/>
+          <speciesReference species="M_h_c" stoichiometry="2"/>
+          <speciesReference species="M_pep_c"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> r0_R_PPS </ci>
+              <apply>
+                <divide/>
+                <ci> e_R_PPS </ci>
+                <ci> e0_R_PPS </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <times/>
+                  <ci> E0_M_atp_c_R_PPS </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_atp_c </ci>
+                      <ci> M_atp_c0_R_PPS </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> E0_M_pyr_c_R_PPS </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_pyr_c </ci>
+                      <ci> M_pyr_c0_R_PPS </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> E0_M_h2o_c_R_PPS </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_h2o_c </ci>
+                      <ci> M_h2o_c0_R_PPS </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="r0_R_PPS" value="1"/>
+            <parameter id="e_R_PPS" value="1"/>
+            <parameter id="e0_R_PPS" value="1"/>
+            <parameter id="E0_M_atp_c_R_PPS" value="1"/>
+            <parameter id="M_atp_c0_R_PPS" value="4.27"/>
+            <parameter id="E0_M_pyr_c_R_PPS" value="1"/>
+            <parameter id="M_pyr_c0_R_PPS" value="2.67"/>
+            <parameter id="E0_M_h2o_c_R_PPS" value="1"/>
+            <parameter id="M_h2o_c0_R_PPS" value="58000"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_PTAr" name="R_PTAr">
+        <annotation/>
+        <listOfReactants>
+          <speciesReference species="M_accoa_c"/>
+          <speciesReference species="M_pi_c"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_actp_c"/>
+          <speciesReference species="M_coa_c"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> r0_R_PTAr </ci>
+              <apply>
+                <divide/>
+                <ci> e_R_PTAr </ci>
+                <ci> e0_R_PTAr </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <times/>
+                  <ci> E0_M_accoa_c_R_PTAr </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_accoa_c </ci>
+                      <ci> M_accoa_c0_R_PTAr </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> E0_M_pi_c_R_PTAr </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_pi_c </ci>
+                      <ci> M_pi_c0_R_PTAr </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> E0_M_actp_c_R_PTAr </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_actp_c </ci>
+                      <ci> M_actp_c0_R_PTAr </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> E0_M_coa_c_R_PTAr </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_coa_c </ci>
+                      <ci> M_coa_c0_R_PTAr </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="r0_R_PTAr" value="1"/>
+            <parameter id="e_R_PTAr" value="1"/>
+            <parameter id="e0_R_PTAr" value="1"/>
+            <parameter id="E0_M_accoa_c_R_PTAr" value="1"/>
+            <parameter id="M_accoa_c0_R_PTAr" value="0.2473"/>
+            <parameter id="E0_M_pi_c_R_PTAr" value="1"/>
+            <parameter id="M_pi_c0_R_PTAr" value="1"/>
+            <parameter id="E0_M_actp_c_R_PTAr" value="-1"/>
+            <parameter id="M_actp_c0_R_PTAr" value="0.4"/>
+            <parameter id="E0_M_coa_c_R_PTAr" value="-1"/>
+            <parameter id="M_coa_c0_R_PTAr" value="0.07298"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_PYK" name="R_PYK" reversible="false">
+        <annotation/>
+        <listOfReactants>
+          <speciesReference species="M_h_c"/>
+          <speciesReference species="M_adp_c"/>
+          <speciesReference species="M_pep_c"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_atp_c"/>
+          <speciesReference species="M_pyr_c"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> r0_R_PYK </ci>
+              <apply>
+                <divide/>
+                <ci> e_R_PYK </ci>
+                <ci> e0_R_PYK </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <times/>
+                  <ci> E0_M_h_c_R_PYK </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_h_c </ci>
+                      <ci> M_h_c0_R_PYK </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> E0_M_adp_c_R_PYK </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_adp_c </ci>
+                      <ci> M_adp_c0_R_PYK </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> E0_M_pep_c_R_PYK </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_pep_c </ci>
+                      <ci> M_pep_c0_R_PYK </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="r0_R_PYK" value="1"/>
+            <parameter id="e_R_PYK" value="1"/>
+            <parameter id="e0_R_PYK" value="1"/>
+            <parameter id="E0_M_h_c_R_PYK" value="1"/>
+            <parameter id="M_h_c0_R_PYK" value="0.0221"/>
+            <parameter id="E0_M_adp_c_R_PYK" value="1"/>
+            <parameter id="M_adp_c0_R_PYK" value="0.595"/>
+            <parameter id="E0_M_pep_c_R_PYK" value="1"/>
+            <parameter id="M_pep_c0_R_PYK" value="2.67"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_PYRt2r" name="R_PYRt2r">
+        <annotation/>
+        <listOfReactants>
+          <speciesReference species="M_h_e"/>
+          <speciesReference species="M_pyr_e"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_pyr_c"/>
+          <speciesReference species="M_h_c"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> r0_R_PYRt2r </ci>
+              <apply>
+                <divide/>
+                <ci> e_R_PYRt2r </ci>
+                <ci> e0_R_PYRt2r </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <times/>
+                  <ci> E0_M_h_e_R_PYRt2r </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_h_e </ci>
+                      <ci> M_h_e0_R_PYRt2r </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> E0_M_pyr_e_R_PYRt2r </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_pyr_e </ci>
+                      <ci> M_pyr_e0_R_PYRt2r </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> E0_M_pyr_c_R_PYRt2r </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_pyr_c </ci>
+                      <ci> M_pyr_c0_R_PYRt2r </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> E0_M_h_c_R_PYRt2r </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_h_c </ci>
+                      <ci> M_h_c0_R_PYRt2r </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="r0_R_PYRt2r" value="1"/>
+            <parameter id="e_R_PYRt2r" value="1"/>
+            <parameter id="e0_R_PYRt2r" value="1"/>
+            <parameter id="E0_M_h_e_R_PYRt2r" value="1"/>
+            <parameter id="M_h_e0_R_PYRt2r" value="1"/>
+            <parameter id="E0_M_pyr_e_R_PYRt2r" value="1"/>
+            <parameter id="M_pyr_e0_R_PYRt2r" value="0.001288"/>
+            <parameter id="E0_M_pyr_c_R_PYRt2r" value="-1"/>
+            <parameter id="M_pyr_c0_R_PYRt2r" value="2.67"/>
+            <parameter id="E0_M_h_c_R_PYRt2r" value="-1"/>
+            <parameter id="M_h_c0_R_PYRt2r" value="0.0221"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_RPE" name="R_RPE">
+        <annotation/>
+        <listOfReactants>
+          <speciesReference species="M_xu5p_D_c"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_ru5p_D_c"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> r0_R_RPE </ci>
+              <apply>
+                <divide/>
+                <ci> e_R_RPE </ci>
+                <ci> e0_R_RPE </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <times/>
+                  <ci> E0_M_xu5p_D_c_R_RPE </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_xu5p_D_c </ci>
+                      <ci> M_xu5p_D_c0_R_RPE </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> E0_M_ru5p_D_c_R_RPE </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_ru5p_D_c </ci>
+                      <ci> M_ru5p_D_c0_R_RPE </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="r0_R_RPE" value="1"/>
+            <parameter id="e_R_RPE" value="1"/>
+            <parameter id="e0_R_RPE" value="1"/>
+            <parameter id="E0_M_xu5p_D_c_R_RPE" value="1"/>
+            <parameter id="M_xu5p_D_c0_R_RPE" value="0.007807"/>
+            <parameter id="E0_M_ru5p_D_c_R_RPE" value="-1"/>
+            <parameter id="M_ru5p_D_c0_R_RPE" value="0.111"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_RPI" name="R_RPI">
+        <annotation/>
+        <listOfReactants>
+          <speciesReference species="M_ru5p_D_c"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_r5p_c"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> r0_R_RPI </ci>
+              <apply>
+                <divide/>
+                <ci> e_R_RPI </ci>
+                <ci> e0_R_RPI </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <times/>
+                  <ci> E0_M_ru5p_D_c_R_RPI </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_ru5p_D_c </ci>
+                      <ci> M_ru5p_D_c0_R_RPI </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> E0_M_r5p_c_R_RPI </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_r5p_c </ci>
+                      <ci> M_r5p_c0_R_RPI </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="r0_R_RPI" value="1"/>
+            <parameter id="e_R_RPI" value="1"/>
+            <parameter id="e0_R_RPI" value="1"/>
+            <parameter id="E0_M_ru5p_D_c_R_RPI" value="1"/>
+            <parameter id="M_ru5p_D_c0_R_RPI" value="0.111"/>
+            <parameter id="E0_M_r5p_c_R_RPI" value="-1"/>
+            <parameter id="M_r5p_c0_R_RPI" value="0.398"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_SUCD4" name="R_SUCD4">
+        <annotation/>
+        <listOfReactants>
+          <speciesReference species="M_fadh2_c"/>
+          <speciesReference species="M_q8_c"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_fad_c"/>
+          <speciesReference species="M_q8h2_c"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> r0_R_SUCD4 </ci>
+              <apply>
+                <divide/>
+                <ci> e_R_SUCD4 </ci>
+                <ci> e0_R_SUCD4 </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <times/>
+                  <ci> E0_M_fadh2_c_R_SUCD4 </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_fadh2_c </ci>
+                      <ci> M_fadh2_c0_R_SUCD4 </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> E0_M_q8_c_R_SUCD4 </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_q8_c </ci>
+                      <ci> M_q8_c0_R_SUCD4 </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> E0_M_fad_c_R_SUCD4 </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_fad_c </ci>
+                      <ci> M_fad_c0_R_SUCD4 </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> E0_M_q8h2_c_R_SUCD4 </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_q8h2_c </ci>
+                      <ci> M_q8h2_c0_R_SUCD4 </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="r0_R_SUCD4" value="1"/>
+            <parameter id="e_R_SUCD4" value="1"/>
+            <parameter id="e0_R_SUCD4" value="1"/>
+            <parameter id="E0_M_fadh2_c_R_SUCD4" value="1"/>
+            <parameter id="M_fadh2_c0_R_SUCD4" value="0.0221"/>
+            <parameter id="E0_M_q8_c_R_SUCD4" value="1"/>
+            <parameter id="M_q8_c0_R_SUCD4" value="0.0221"/>
+            <parameter id="E0_M_fad_c_R_SUCD4" value="-1"/>
+            <parameter id="M_fad_c0_R_SUCD4" value="0.01514"/>
+            <parameter id="E0_M_q8h2_c_R_SUCD4" value="-1"/>
+            <parameter id="M_q8h2_c0_R_SUCD4" value="0.0221"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_THD2" name="R_THD2" reversible="false">
+        <annotation/>
+        <listOfReactants>
+          <speciesReference species="M_nadh_c"/>
+          <speciesReference species="M_h_e" stoichiometry="2"/>
+          <speciesReference species="M_nadp_c"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_nad_c"/>
+          <speciesReference species="M_nadph_c"/>
+          <speciesReference species="M_h_c" stoichiometry="2"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> r0_R_THD2 </ci>
+              <apply>
+                <divide/>
+                <ci> e_R_THD2 </ci>
+                <ci> e0_R_THD2 </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <times/>
+                  <ci> E0_M_nadh_c_R_THD2 </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_nadh_c </ci>
+                      <ci> M_nadh_c0_R_THD2 </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> E0_M_h_e_R_THD2 </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_h_e </ci>
+                      <ci> M_h_e0_R_THD2 </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> E0_M_nadp_c_R_THD2 </ci>
+                  <apply>
+                    <ln/>
+                    <apply>
+                      <divide/>
+                      <ci> M_nadp_c </ci>
+                      <ci> M_nadp_c0_R_THD2 </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="r0_R_THD2" value="1"/>
+            <parameter id="e_R_THD2" value="1"/>
+            <parameter id="e0_R_THD2" value="1"/>
+            <parameter id="E0_M_nadh_c_R_THD2" value="1"/>
+            <parameter id="M_nadh_c0_R_THD2" value="0.1"/>
+            <parameter id="E0_M_h_e_R_THD2" value="2"/>
+            <parameter id="M_h_e0_R_THD2" value="1"/>
+            <parameter id="E0_M_nadp_c_R_THD2" value="1"/>
+            <parameter id="M_nadp_c0_R_THD2" value="0.195"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+    </listOfReactions>
+  </model>
+</sbml>

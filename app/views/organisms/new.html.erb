@@ -1,0 +1,44 @@
+<!--  # KiMoSys - web-based platform for Kinetic Models of biological Systems.
+# Copyright (C) 2013-2013 Rafael Costa
+
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU General Public License
+# as published by the Free Software Foundation; version 2
+# of the License.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+
+
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.-->
+
+<div class="dark-gray italic"><%= link_to "Repository", organisms_path %> » (new data)</div>
+
+<h2 class="green">Data-submission form</h2>
+
+<div class="right">
+<%= link_to "#{image_tag('BackImage.JPG')} Back".html_safe, organisms_path %>
+</div>
+
+<br/>
+<p>After the download and fill out the Excel form to define your data type, you will be ready to submit the data file.</p>
+
+<p>Note that ontologies and controlled vocabulary terms should be used wherever possible, especially for PubMed ID, organism and carbon source fields.</p>
+
+
+	<p> Please fill out the following web-form to submit the data file to the repository. Include as much detail as you can:</p>
+
+
+<%= render 'form' %>
+
+<div class="right">
+<%= link_to "#{image_tag('BackImage.JPG')} Back".html_safe, organisms_path %> |
+<%= link_to 'Top', "#top" %>
+</div>
+<div style="clear:both"></div>

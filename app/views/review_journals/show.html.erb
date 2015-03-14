@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @review_journal.name %>
+</p>
+
+<p>
+  <b>Link:</b>
+  <%= @review_journal.link %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @review_journal.description %>
+</p>
+
+<p>
+  <b>Protect Id of authors:</b>
+  <%= @review_journal.protect_id ? "Check!" : "Not required" %>
+</p>
+
+<%= link_to 'Edit', edit_review_journal_path(@review_journal) %> |
+<%= link_to 'Back', review_journals_path %>

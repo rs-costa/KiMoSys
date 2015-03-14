@@ -1,0 +1,158 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+  # general strings
+  hidden: "user identity is protected"
+
+  formtastic:
+    labels:
+      associated_models:
+        sbml_file_name: 07. Article (choose PDF file with filename "lastname_publicationyear.pdf")
+      organism:
+        growthcondition: 04. Culture mode (use drop down menu)
+    actions:
+      create: Submit
+      cancel: Cancel
+      update: Update
+
+  activerecord:
+    #
+    #
+    #
+    #
+    models:
+    #
+    #
+    #
+    #
+    attributes:
+      associated_model:
+        article: SBML
+        is_public: "Shared as public*."
+        is_private: "Hidden from everyone except me."
+        is_review_journal: "Confidential peer review"
+        combine_archive: 15. COMBINE Archive (please select "COMBINE archive" wich is a "zip" like format with extension .omex to upload with filename pattern "COMBINE_KIMOMODELID[XX].omex")
+
+        keywords: 07. Keywords (general keywords associated with the data; separated by commas)
+
+        manuscript_title: 01. Manuscript title where the model are described (if not published yet, please type an general title)
+        pubmed_id:  02. PubMed ID related to the manuscript (if publication has not been assigned a PubMedID, please leave blank)
+        journal: 03. Journal name
+        authors: 05. Manuscript authors (entire first and last name, and a middle initial if appropriate)
+
+        sbml: 08. Article file (source from where the model comes from; please select PDF file with filename "lastname_publicationyear.pdf")
+        sbml_file_name: 06. Article (choose PDF file with filename "lastname_publicationyear.pdf")
+
+        used_for_list: 10. Data used for (specify how the experimental data was used)
+        model_name: 01. Model name (choose a meaningful general name for the model)
+        main_organism: 02. Scientific organism name from NCBI taxonomy for the model (only one organism can be used per EntryID)
+        model_type: 03. Model type (use drop down menu)
+        category: 04. Category (use drop down menu)
+        reactions: 05. Number of reactions
+        species: 06. Number of species
+        regulators: 07. Number of regulators (activators and inhibitors)
+        parameters: 08. Number of parameters
+        compartments: 09. Number of compartments
+        dilution_rate: "10. Dilution rate (h<sup>-1</sup>)"
+        dilutionrate_html: "Dilution rate (h<sup>-1</sup>)"
+        comments: 12. Comments (specify if model file is obtained from BioModels, JWS online or Physiome Model database and any other pertinent model information)
+        affiliation: 06. Affiliation(s)
+        year: 04. Year of publication
+        project_name: 09. Project name (acronym)
+        software: 13. Software used for model building and/or validation (provide web address and name of the tool)
+        biomodels_id: 14. BioModels ID or JWS online ID (if original model file obtained from BioModels or JWS online database)
+      #
+      #
+      #
+      #
+      organism:
+        is_public: "Shared as public*."
+        is_private: "Hidden from everyone except me."
+        is_review_journal: "Confidential peer review"
+        parameter: "PDF"
+        parameters: "12. Experimental data file (please select structured Excel file to upload with filename pattern \"KIMODATAID[XX]_versionnumber.xlsx\". If the dataset file is >100GB we recommend using .ZIP format. Both formats are supported.)"
+        organism: 01. Scientific organism name from NCBI taxonomy for the data (only one organism can be used per Entry ID)
+        organism_html: "Organism"
+        strain: 02. Strain/variant of the organism studied
+        strain_html: Strain
+        type_param: 03. Data type (use drop down menu)
+        type_param_html: "Data type"
+        upload: 04. Upload data file (.txt or .xlsx)
+        upload_2: 10. Upload article file (.pdf)
+
+        pubmed_id_html: "PubMed ID"
+        pubmed_id: 02. PubMed ID related to the manuscript (if publication has not been assigned a PubMedID, please leave blank)
+        temperature2_html: "01. Temperature (<sup>0</sup>C)"
+        ph: 02. pH
+        ph_html: "pH"
+        carbonsource: 03. Carbon source name(s) (e.g. glucose, lactate)
+        carbonsource_html: "Carbon source"
+        chebi_id: ChEBI ID (for the carbon source)
+        growthcondition_html: "Culture mode"
+        dilutionrate_html: "Dilution rate (h<sup>-1</sup>)"
+        dilutionrate2_html: "06. Dilution rate (h<sup>-1</sup>)"
+        dilutionrate: 06. Dilution rate
+        temperature_html: "Temperature (<sup>0</sup>C)"
+        comments: 11. Notes - Detailed protocol description (taken and adapted from the original manuscript)
+        comments_html: Methods description - Notes
+        enteredby: Entered by
+        associatedby: Associated by
+        dataadded: Created
+        updated_at: Updated
+        file: 04. File
+        file_html: " Download data"
+        manuscript_title: 01. Manuscript or other publication title where the data are described (if not published yet, please type an general title)
+        manuscript_title_html: "Manuscript title"
+        journal: 03. Journal name
+        journal_html: "Journal"
+        year: 04. Year of publication
+        year_html: "Year"
+        author: 05. Manuscript authors (entire first and last name, and a middle initial if appropriate)
+        author_html: "Authors"
+        affiliation: 06. Affiliation(s)
+        affiliation_html: "Affiliations"
+
+        keywords_html: "Keywords"
+        keywords: 07. Keywords (general keywords associated with the data; separated by commas)
+
+        Full text article: 07. Full text article
+        Full text article_html: "Full text article"
+        article: 08. Article file (source from where the data comes from; please select PDF file with filename "lastname_publicationyear.pdf")
+        medium_html: "Medium composition"
+        medium: 09. Medium composition
+        attached_files: 13. Alternative data formats to the Excel data file (you may add alternative files; please select delimited text files *.csv and/or *.txt with filename pattern "KIMODATAID[XX]_worksheetname_tablename_SBtab.csv" and/or "KIMODATAID[XX]_worksheetname.txt". Make sure you use the same worksheet name in your alternalive data file as the one in your Excel file!)
+
+        project: 09. Project name (acronym)
+        project_html: "Project name"
+        experiment_html: "Experiment type"
+        volume: 07. Working volume (L)
+        volume_html: "Working volume (L)"
+        biomass: 08. Biomass concentration (gDW/L)
+        biomass_html: "Biomass concentration (g/L)"
+        execution_html: "Execution date"
+        execution: 05. Execution date
+        data_units: 04. Data units (SI)
+        data_units_html: Data units
+        analysis_list: Sample analyzing method
+        extraction_list: Extraction technique
+        quenching: Quenching procedure
+        sampling_method: Sampling method
+        type_analysis_list: Flux analysis method
+        platform_list: Platform
+        conditions: 05. Process condition (use drop down menu)
+        conditions_html: "Process condition"
+      #
+      #
+      #
+      #
+      quick:
+          description: 01. Description about your data
+          file: 02. Your file (choose any file format)
+          email: 03. Your email address
+      #
+      #
+      #
+      #
+      user:
+           home_page: Homepage or ORCID iD

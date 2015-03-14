@@ -1,0 +1,68 @@
+<% if @duplicate_list.present? %>
+<fieldset class="noborder">
+	<legend><h3 class="green">Existing Models</h3></legend>
+	<table id="duplicatesTable">
+		<thead>
+			<tr>
+				<th></th>
+				<th>Model Name</th>
+				<th>PubMed ID</th>
+				<th>Associated with</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @duplicate_list.each do |dup|%>
+			<tr>
+				<% if @organism.associated_models.include? dup %>
+				  <td class="tooltip">
+				    <span><%= link_to "goto >", organism_associated_model_path(@organism,dup)%></span>
+				    <span class="tooltiptext">Already associated with this organism.</span>
+				  </td>
+				<% else %>
+				  <td class="tooltip"><%= link_to "choose >", associate_organism_associated_model_path(@organism,dup)%></td>
+				<% end %>
+				<td>
+				    <span class="tooltip"><%= dup.model_name%>
+    				    <span class="tooltiptext">
+							<i>Model EntryID: </i><%= dup.id%><br/><br/>
+            			    <i>Original title: </i><%= dup.manuscript_title%><br/><br/>
+            				<i>Journal: </i><%= dup.journal%><br/><br/>
+            				<i>Model type: </i><%= dup.model_type%><br/><br/>
+        				</span>
+    				</span>
+				</td>
+				<td>
+				    <span class="tooltip">
+				        <%= dup.pubmed_id%>
+				        <span class="tooltiptext">
+            				<i>Journal: </i><%= dup.journal%><br/><br/>
+        				</span>
+			        </span>        
+		        </td>
+				<td>
+				    <% if dup.organisms.blank? || dup.organisms.size == 0  %>
+				        <i class="dark-gray">Not associated with any organism.</i>
+				    <% else %>
+				        <% dup.organisms.each do |o| %>
+				            <span class="tooltip">
+				                <%= word_wrap("#{o.organism} " + "<i class=\"small dark-gray\">" + "(DataID:#{o.id})</i>",50).html_safe %>
+				                <span class="tooltiptext">
+				                    <i>Strain: </i><%= o.strain %><br/><br/>
+				                    <i>Data type: </i><%= o.type_param_obj.title %><br/><br/>
+				                    <i>Project Name: </i><%= o.project %><br/><br/>
+				                </span>
+				            </span>
+				        <% end.join("; ") %>
+				    <% end %>
+				</td>
+				</td>
+			</tr>
+			<%end%>
+		</tbody>
+	</table>
+	
+	<div class="dark-gray">Note: you can continue and create a new model by not choosing any of the above and fill the fields in the form.</div> 
+</fieldset>
+<br/>
+<br/>
+<% end %>

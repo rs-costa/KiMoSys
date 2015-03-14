@@ -1,0 +1,22 @@
+<div class="one_tab">
+  <%- if @sbml_files.size > 0 %>
+    <b>OR</b>
+    <div class="one_tab"> SBML from database: <a class="show_next_div" href="javascript:void(0)">show files</a>
+      <div class="expand_on_click" style="opacity: .4; height: 25px; overflow:hidden;">
+        <% @sbml_files.each do |m| %>
+        <% next unless m.articles.last.file_file_name.ends_with?(".xml") %>
+            <p>
+              <%= radio_button_tag 'sbml_model', m.id  %>
+              <label class="tooltip" for="<%= "sbml_model_#{m.id}" %>">
+                <%= "#{string_trim(m.articles.last.file_file_name , true , 30)} (#{m.model_name}" + if m.main_organism.blank? then ')' else " | #{m.main_organism})" end %>
+                <%= describe_model( 'span', m, true) %>
+              </label>
+            </p>
+        <%- end %>
+        <a href="javascript:void(0)" class="hide_on_click">hide files</a>  
+      </div>
+    </div>
+  <%- else %>
+    <div class="one_tab dark-gray">(currently no sbml files are present in databse, when added they will appear here)</div>
+  <%- end %>
+</div>

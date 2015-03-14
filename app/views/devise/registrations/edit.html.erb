@@ -1,0 +1,59 @@
+<!--  # KiMoSys - web-based platform for Kinetic Models of biological Systems.
+# Copyright (C) 2013-2013 Rafael Costa
+
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU General Public License
+# as published by the Free Software Foundation; version 2
+# of the License.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+
+
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.-->
+
+<h2 class="green">Edit <%= resource_name.to_s.humanize %></h2>
+</br> 
+
+<%= semantic_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
+  <%= devise_error_messages! %>
+
+  <%= f.inputs do %>
+    <%= f.input :first_name %>
+    <%= f.input :last_name %>
+    <%= f.input :affiliation %>
+    <%= f.input :research_interests %>
+    <%= f.input :home_page %>
+    <%= f.input :email %>
+    <%= f.input :password, as: :password %>
+    <%= f.input :password_confirmation, as: :password %>
+    
+    <%= f.input :current_password, as: :password, required: true, hint: "(we need your current password to confirm your changes)"  %>
+    
+  
+  <% end %>
+
+  <%= f.actions do %>
+    <%= f.action :submit, label: "Update account"  %>
+  <% end %>
+
+<% end %>
+</br> 
+</br>
+</br>
+<h2 class="green">Cancel my account</h2>
+</br>
+<p>Unhappy? &nbsp; <%= link_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure you want to cancel this KiMoSys account?" }, :method => :delete %></p>
+</br>
+</br>
+<div class="right">
+	<%= link_to "#{image_tag('BackImage.JPG')} Back".html_safe, organisms_path %>
+
+</div>
+<br/>

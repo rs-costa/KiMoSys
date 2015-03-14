@@ -1,0 +1,119 @@
+
+<!--<p> &bull; Dataset file name - name of the data file.</p>-->
+<br/>
+<span class="light-gray"><p>To order by any of the first five columns, click the table header.</p></span>
+
+<table id="organismsTable" class="stripe order-column row-border">
+<!--<th><h3>General information</h3></th> class="space"-->
+  <thead>
+    <tr>
+      <th class="bluelight">Data<br/>EntryID</th>
+      <th class="bluelight">Organism</th>
+      <th class="bluelight">Strain</th>
+      <th class="bluelight">Data type</th>
+      <!--<th class="bluelight" >Dataset file name</th>-->
+    	<th class="bluelight">Project name</th>
+    	<th class="bluelight">Access</th>
+    	<th class="bluelight">Associated models</th>
+    	<th style="display:none;">All metadata</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @organisms.each do |organism| %>
+       <% if !can?(:show,organism) || (current_user && !organism.review_journal.nil? && organism.review_journal.is_reviewer?(current_user)) %>
+       	<% next %>
+       <% end -%>
+    <tr data-organism_id='<%= organism.id %>'>
+      <td class="space4 center"><span><%= link_to organism.id, organism,  title: "click to view details" %> </span>
+
+      </td>
+      <td class="space2"><i><%= link_to_taxonomy organism.organism %></td>
+      <td class="space3 not_justified"><%= organism.strain %></td>
+      <td class="space3 not_justified"><%=organism.type_param_obj.title %></td>
+     <!-- <td class="space3"><%= string_trim(organism.parameters_file_name) %></td>-->
+      <td class="space4"><%= notspecified(organism.project,"&mdash;".html_safe) %></td>
+      <td class="space4 center"><%= if organism.is_public? then image_tag('Visto4.JPG') else image_tag('remove_figure2.JPG') end%></td>
+      <td class="space4 center">
+        <% if organism.associated_models.size == 0 %>
+          [no]
+        <% else %>
+          <span>[<%= link_to "yes", organism_path( organism, anchor: "organismsTable"), title: "go to associated models" %>]</span>|<span class="pop_modal">[<a title="preview associated models" href="javascript:void(0)" >more</a>]</span>
+        <%-end%>
+      </td>
+      <td style="display:none">
+        <!-- organism json -->
+        <%= organism.as_json(:except => [:parameters_content_type, :parameters_file_size,
+                                         :parameters_updated_at, :user_email,
+                                         :updated_at, :user_id, :created_at,
+                                         :comments, :medium,
+                                         :attached_files]).values.to_s %>
+         <span><%= unless organism.user.nil? then "#{organism.user.first_name} #{organism.user.last_name}" end %></span>
+         <span>Data AccessID<%= organism.id %> / EntryID<%= organism.id %></span>
+        <!-- associated models json -->
+        <%- organism.associated_models.each do |m| %>
+          <!-- id <%= m.id %> -->
+          <%= m.as_json(:except => [:sbml_content_type, :sbml_file_size,
+                                    :sbml_updated_at, :article_content_type,
+                                    :article_file_size, :article_updated_at,
+                                    :updated_at,
+                                    :is_private, :user_email,
+                                    :user_id, :public,
+                                    :compartments, :species,
+                                    :reactions, :parameters,
+                                    :regulators]).values.to_s %>
+          <span><%= unless m.user.nil? then "#{m.user.first_name} #{m.user.last_name}" end %></span>
+          <span>Model AccessID<%= m.id %> / EntryID<%= m.id %></span>
+        <%- end %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<!-- hidden model information -->
+<div class="delay_tables" style="display:none">
+  <%- @organisms.each do |organism| %>
+  <%- next if organism.associated_models.count <= 0 %>
+  <div id="pop_me_<%= organism.id %>">
+    <%= render 'models', organism: organism, associated_models: organism.associated_models, html_id: "pop_me_table_#{organism.id}", html_class: 'delay_table color_even' %>
+  </div>
+  <%- end %>
+</div>
+
+<hr />
+<br/>
+<br/>
+
+<h2 id="contribute" class="green line"><b>Contribute to Database</b></h2>
+
+<p class="size2">Want to submit data? </p>
+<p class="size2">You can submit data using the following:</p>
+
+<br/>
+<fieldset>
+<legend><h3 class="green"><b> Web platform submission</b></h3></legend>
+<p>- By embedding your data into our database.
+Download a copy and complete the <%= link_to 'Excel template','documentation/KiMoSysSubmissionForms.zip', class: 'blue'%> form. See instructions in the form.</p>
+<p><%= link_to "#{image_tag('Add.jpg')} Electronic Data-Submission ".html_safe, new_organism_path %></p>
+<br/>
+<p>- Suggest a dataset (in any format) to be added to the database.
+<p><%= link_to "#{image_tag('Add.jpg')} Quick Submit ".html_safe, new_quick_path %></p>
+</fieldset>
+<br/>
+<fieldset>
+<legend><h3 class="green"><b>  Paper submission form</b></h3></legend>
+<p>- Submit the data file via email to be added to the database.
+</br>Fill out the <%= link_to 'Excel template','documentation/KiMoSysSubmissionForms.zip', class: 'blue'%> and email to <%= mail_to "kimosys@kdbio.inesc-id.pt"%>.</p>
+<br/>
+</fieldset>
+
+<br/>
+<span class="light-gray"><p><b>Questions?</b> If you need assistance in submitting your data, please contact <%= link_to 'KiMoSys curators', contact_documentation_index_path( anchor: "")%> or consult <%= link_to 'FAQ', documentation_index_path( anchor: "submission")%>.</p></span>
+
+<br/>
+<br/>
+
+<div class="right">
+<%= link_to 'Top', "#top" %>
+</div>
+<br/>

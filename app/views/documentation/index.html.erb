@@ -1,0 +1,292 @@
+<!--  # KiMoSys - web-based platform for Kinetic Models of biological Systems.
+# Copyright (C) 2013-2013 Rafael Costa
+
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU General Public License
+# as published by the Free Software Foundation; version 2
+# of the License.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+
+
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.-->
+
+<h2 class="green"> Guides &amp; Help</h2>
+	<br/>
+
+<p>
+<b><%= link_to 'Site Development and Manual', documentation_index_path( anchor: "Site Development and Manual")%></b>
+<br/>
+<br/>
+<b><%= link_to 'Citation', documentation_index_path( anchor: "cite2")%></b>
+<br/>
+<br/>
+<b><%= link_to 'Content Summary', documentation_index_path( anchor: "summary")%></b>
+<br/>
+<br/>
+<b><%= link_to 'FAQ', documentation_index_path( anchor: "FAQ")%></b>
+<br/>
+<%= link_to '1. What is KiMoSys?', documentation_index_path( anchor: "1")%><br/>
+<%= link_to '2. How to Register?', documentation_index_path( anchor: "2")%><br/>
+<%= link_to '3. How do I update my KiMoSys account?', documentation_index_path( anchor: "3")%><br/>
+<%= link_to '4. Who can use data and models?', documentation_index_path( anchor: "4")%><br/>
+<%= link_to '5. How to search and use data and associated models?', documentation_index_path( anchor: "5")%><br/>
+<%= link_to '6. What kind of data are stored in KiMoSys?', documentation_index_path( anchor: "6")%><br/>
+<%= link_to '7. What submission options do I have and how to submit data?', documentation_index_path( anchor: "7")%><br/>
+<%= link_to '8. How to associate models with data?', documentation_index_path( anchor: "8")%><br/>
+<%= link_to '9. What file formats can I submit to the KiMoSys repository?', documentation_index_path( anchor: "9")%><br/>
+<%= link_to '10. Are the uploaded data and models kept private by default?', documentation_index_path( anchor: "10")%><br/>
+<%= link_to '11. Can I update my data or model after submit?', documentation_index_path( anchor: "11")%><br/>
+<%= link_to '12. How to delete my data and/or models?', documentation_index_path( anchor: "12")%><br/>
+<%= link_to '13. Are my data and models secure?', documentation_index_path( anchor: "13")%><br/>
+<%= link_to '14. Is there any example files I can use to try KiMoSys tools?', documentation_index_path( anchor: "14")%><br/>
+<%= link_to '15. Is the research I put on KiMoSys citable?', documentation_index_path( anchor: "15")%><br/>
+<%= link_to '16. Benefits of depositing experimental data sets and models in KiMoSys?', documentation_index_path( anchor: "16")%><br/>
+<%= link_to '17. Terms and Condition of use.', documentation_index_path( anchor: "17")%><br/>
+
+
+
+<br/>
+<b><%= link_to 'Acknowledgements and Funding', documentation_index_path( anchor: "Acknowledgements")%></b>
+<br/>
+<br/>
+</p>
+	<fieldset>
+<legend><h3 id="Site Development and Manual" class="green">Site Development and Manual</h3></legend>
+
+
+	<p> &bull; This site is maintained and hosted by <b><i>Ki</i>MoSys</b> team at <%= link_to 'INESC-ID','http://inesc-id.pt', class: "blue", target:"_blank"%>.</p>
+	<p> &bull; Access to <b><i>Ki</i>MoSys</b> is granted free of charge for academic purposes.  Users for commercial
+		purpose please contact the authors before download the data sets.</p>
+	<p> &bull; <b><i>Ki</i>MoSys</b> has the following pages:
+		<p>&nbsp;&nbsp;&nbsp;- <i>Home</i>: the default page which provides the brief introduction about the platform and also main features.</b>
+		<p>&nbsp;&nbsp;&nbsp;- <i>Repository</i>: this page helps in search and browse experimental data and associated kinetic models.</b>
+		<p>&nbsp;&nbsp;&nbsp;- <i>Tools</i>: provides a number of operations to the first metabolic kinetic modeling steps.</b>
+		<p>&nbsp;&nbsp;&nbsp;- <i>Documentation</i>: gives information "how to use and cite <b><i>Ki</i>MoSys</b>".
+		<p>&nbsp;&nbsp;&nbsp;- <i>Links</i>: this page provides links to other resources so that the user can get more information related to dynamic modeling.</b>
+		<p>&nbsp;&nbsp;&nbsp;- <i>Contact us</i>: for questions, comments or suggestions.</p>
+	<p>&bull; <b><i>Ki</i>MoSys</b> is described in details in the following <%= link_to "#{image_tag('Manual.png', class: 'middle', height: '33', style: 'padding-right: 1px;' )}".html_safe,'documentation/Documentation_v_1.2.pdf' , class: "azul", target:"_blank", title: "download as PDF"%>.</p>
+<%- if current_user %>
+<p>&bull;Source code can be downloaded <%= link_to "#{image_tag('SourceCode.png', class: 'middle', height: '33' )}".html_safe,'documentation/source_kimosys.zip' , class: "azul"%>.</p>
+<%- end %>
+		</fieldset>
+	<br/>
+	<br/>
+
+	<fieldset>
+<legend><h3 id="cite2" class="green">Citation</h3></legend>
+	<p id="cite" class="green"><b>Do you want to cite  <b><i>Ki</i>MoSys</b> since you have referred it in your work?</b></p>
+
+	<p>Please add the following citation to your scholary references:<br/></p>
+    <p>[1] R.S. Costa, A. Verissimo, S. Vinga,	<b><i>Ki</i>MoSys: a web-based repository
+    of experimental data for KInetic MOdels of biological SYStems.</b> BMC Systems Biology, 2014, 8:85. doi:10.1186/s12918-014-0085-3. <%= link_to 'BMC Systems Biology','http://www.biomedcentral.com/1752-0509/8/85/abstract', class: "blue link_out", target: "_blank"%> | <%= link_to 'PubMed','http://www.ncbi.nlm.nih.gov/pubmed/25115331', class: "blue link_out", target: "_blank"%></p>
+     <br/>
+
+	<p class="green"><b>How to cite a specific data and/or associated model in <b><i>Ki</i>MoSys</b> repository?</b></p>
+<p>If you use these, please <b>cite the original article reference</b>, and additionaly cite the data or model using a format similar to the following (typically in the "Material and Methods" section):</p>
+	<p><b>1) Example to reference a specific data</b><br/></p>
+    <p><i>"The data was downloaded from <i>Ki</i>MoSys respository <%= link_to 'http://kimosys.org','http://www.kimosys.org', class: "blue"%> [1] (November 2013, Data EntryID 30, URL: http://kimosys.org/repository/30)"</i>
+<span class="light-gray">(i.e., specify the date on which you downloaded the data file, Data EntryID number and the static URL to the data).</span></p>
+     <br/>
+
+<p><b>2) Example to reference a specific associated model</b><br/></p>
+    <p><i>"The model was downloaded from <i>Ki</i>MoSys repository <%= link_to 'http://kimosys.org','http://www.kimosys.org', class: "blue"%> [1] (November 2013, Model EntryID 13, URL: http://kimosys.org/repository/30/associated_models/13)"</i>
+<span class="light-gray">(i.e., specify the date on which you downloaded the model file, Model EntryID number and the static URL to the model).</span></p>
+     <br/>
+     <p class="green"><b>How to cite your submitted data or associated model?</b></p>
+     <p>Be default we recommend to add the following to your manuscript:   <br/></p>
+     <p><i>"The data (or model) have been deposited to the <i>Ki</i>MoSys repository (<%= link_to 'http://kimosys.org','http://www.kimosys.org', class: "blue"%>) [1] with the dataset identifier Data EntryID XX (or model identifier Model EntryID xx)."</i></p>
+  </fieldset>
+
+  <br/>
+	<br/>
+
+	  <fieldset>
+<legend><h3 id="summary" class="green">Content summary</h3></legend>
+
+	  <p>
+	<TR>
+  <TD class="bluelight"><b>Organisms</b></TD>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<TD class="bluelight1">6</TD>
+  </TR>
+</p>
+<p>
+	<TR>
+  <TD class="bluelight"><b>Time series data of metabolites</b></TD>
+  &nbsp;&nbsp;&nbsp;<TD class="bluelight1">16</TD>
+  </TR>
+</p>
+
+<p>
+	<TR>
+  <TD class="bluelight"><b>Flux measurements</b></TD>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;<TD class="bluelight1">10</TD>
+  </TR>
+</p>
+<p>
+	<TR>
+  <TD class="bluelight"><b>Metabolites at seady-state</b></TD>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<TD class="bluelight1">7</TD>
+  </TR>
+</p>
+	  <p>
+	<TR>
+  <TD class="bluelight"><b>Enzyme / Protein concentrations</b></TD>
+  &nbsp;&nbsp;<TD class="bluelight1">3</TD>
+  </TR>
+</p>
+	  <p>
+	<TR>
+  <TD class="bluelight"><b>Associated kinetic models</b></TD>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<TD class="bluelight1">14</TD>
+  </TR>
+</p>
+	  </fieldset>
+
+	  <br/>
+	<br/>
+
+  <fieldset>
+<legend><h3 id="FAQ" class="green">F.A.Q.</h3></legend>
+
+<b><h4 id="1" class="green">1. What is <i>Ki</i>MoSys?</h4></b>
+<p><b><i>Ki</i>MoSys</b> is a user-friendly platform that includes a public data repository of relevant published
+measurements, including metabolite concentrations, flux data, and enzyme measurements and tools in order to
+build ODE-based kinetic model. It is designed to search, exchange and disseminate experimental data
+(and associated kinetic models) for the systems modeling community. Our mission is to promote scientific sharing and to facilitate research.</p>
+
+<b><h4 id="2" class="green">2. How to Register?</h4></b>
+<p>If you do not already have a <b><i>Ki</i>MoSys</b> account, create one <%= link_to 'here', new_user_registration_path( anchor: "")%>.
+Registration for the user is free and simple, having to provide a first and last name, affiliation,
+research interests, homepage or <%= link_to 'ORCID iD','http://www.orcid.org', class: "blue link_out", target: "_blank" %>, a valid email address and a password.</p>
+
+<b><h4 id="3" class="green">3. How do I update my <i>Ki</i>MoSys account?</h4></b>
+<p><%= link_to 'Log into', new_user_session_path( anchor: "")%> the <b><i>Ki</i>MoSys</b> website with your user account details.
+Then click 'edit user' to change your account details.</p>
+
+
+<b><h4 id="4" class="green">4. Who can use data and models?</h4></b>
+<p>Anybody can access and download public data and associated models. There are no login requirements.
+For more information, please read <%= link_to 'Terms and Condition of use', documentation_index_path( anchor: "terms")%>.</p>
+
+<b><h4 id="5" class="green">5. How to search and use data and associated models?</h4></b>
+<p>
+In order to perform a term-based search, a term or a set of terms have to be entered in the
+<%= link_to 'Search box', organisms_path( anchor: "search")%> in the top-right part of the repository
+table for each data or model. <br/>Upon open the <%= link_to 'Repository', organisms_path( anchor: "")%> tab and clicking the corresponding <i>EntryID</i> the user will display the link(s) for the
+the data/model files. For each <i>EntryID</i> the user can also "Download all" (article + data files) for the data or "Download full archive"
+(article + data + model files) for the model.</p>
+
+<b><h4 id="6" id="submission" class="green">6. What kind of data are stored in <b><i>Ki</i>MoSys</b>?</h4></b>
+
+<p>Time-series data of metabolites, metabolites at steady-state, flux data and protein levels.</p>
+
+<b><h4 id="7" id="submission" class="green">7. What submission options do I have and how to submit data?</h4></b>
+<p>Users can contribute and submit data to the database using the manually-assisted "web platform submission" form
+or the "paper submission form". The submitted data will be checked by <b><i>Ki</i>MoSys</b> curators</p>.
+
+<p><i><b>Web-submission form:</b></i><br/>
+1.	Create a <%= link_to 'User account', new_user_registration_path( anchor: "")%> or <%= link_to 'Login', new_user_session_path( anchor: "")%>.<br/>
+2.	Select <%= link_to 'Electronic Data-Submission', new_organism_path( anchor: "")%>.<br/>
+3.	Download the <%= link_to '"Excel template"','documentation/KiMoSysSubmissionForms.zip'%> copy.<br/>
+4.	Choose appropriated data type template.<br/>
+5.	Complete the Excel spreadsheet template (metadata + data).<br/>
+6.	Fill out the web-form and upload the data file.<br/>
+7.	Submit the data.<br/>
+8.	Needs to be confirmed by a curator.<br/>
+9.	After the curation process the <i>Data EntryID</i> are marked "reviewed".<br/>
+10. Curator emails the submitter to inform that the <i>Data EntryID</i> is "reviewed".<br/>
+<br/>
+<i><b>Quick submit form:</b></i><br/>
+Alert us to publications (datasets and associated kinetic models) that we might have missed. Select <%= link_to 'Quick submit', 'http://www.kimosys.org/quicks/new',target: ""%>. <br/>
+In this case you don´t need a <b><i>Ki</i>MoSys</b> account.<br/>
+<br/>
+<i><b>Paper submission form:</b></i><br/>
+1.	Download the <%= link_to '"Excel template"','documentation/KiMoSysSubmissionForms.zip'%> copy.<br/>
+2.	Choose appropriated data type template. <br/>
+3.	Complete the Excel spreadsheet template (metadata + data).<br/>
+4.	Submit the data file via email to <%= mail_to "kimosys@kdbio.inesc-id.pt"%>.<br/>
+5.  Fill a <%= link_to 'term of agreement and responsability','documentation/AgreementTerm_KiMoSys.docx'%>.<br/>
+6.	We curate, assign accession number and add data to the database.<br/></p>
+
+<b><h4 id="8" class="green">8. How to associate models with data?</h4></b>
+<p>Registered users can only associate kinetic model to existing data (<i>Data Entry ID</i>). For each <i>Data Entry ID</i>, you can associate several models. <br/>
+
+1.	Create a <%= link_to 'User account', new_user_registration_path( anchor: "")%> or <%= link_to 'Login', new_user_session_path( anchor: "")%>.<br/>
+2.	Fill out the web-form and upload the model file(s).<br/>
+3.	Submit the model.<br/>
+4.	After the curation process the <i>Model EntryID</i> are marked “reviewed”.<br/>
+5.  Curator emails the submitter to inform that the <i>Model EntryID</i> is reviewed. </p>
+
+<b><h4 id="9" class="green">9. What file formats can I submit to the <b><i>Ki</i>MoSys</b> repository?</h4></b>
+<p>For data: <%= link_to ' structured Excel','documentation/KiMoSysSubmissionForms.zip', class: 'blue'%> file, <%= link_to 'SBtab','http://www.sbtab.net', class: "blue link_out", target: "_blank" %> file (.csv), text data file (time series) for parameter estimation in <%= link_to 'COPASI','http://www.copasi.org', class: "blue link_out", target: "_blank" %>.</p>
+<p>For models: <%= link_to 'SBML','http://sbml.org/Main_Page', class: "blue link_out", target: "_blank" %>, <%= link_to 'CellML','http://www.cellml.org', class: "blue link_out", target: "_blank" %>, <%= link_to 'COMBINE Archive','http://co.mbine.org/documents/archive', class: "blue link_out", target: "_blank" %>, <%= link_to 'Matlab','http://www.mathworks.com/products/matlab', class: "blue link_out", target: "_blank" %> and <%= link_to 'COPASI','http://www.copasi.org/tiki-index.php?page_ref_id=128', class: "blue link_out", target: "_blank" %> files.</p>
+
+
+
+
+<b><h4 id="10" class="green">10. Are the uploaded data and models kept private by default?</h4></b>
+<p>Yes. All submissions to <b><i>Ki</i>MoSys</b> repository are private by default.</p>
+
+<b><h4 id="11" class="green">11. Can I update my data or model after submit?</h4></b>
+<p>Yes. <b><i>Ki</i>MoSys</b> supports version control, and any stored data or model can be altered as you wish.</p>
+
+<b><h4 id="12" class="green">12. How to delete my data and/or models?</h4></b>
+<p>The submitter can just use the delete button when they are displayed (i.e. for data and models <i>EntryID</i>
+that have been made private). Otherwise, the submitter is not permitted to remove public shared data from
+<b><i>Ki</i>MoSys</b>.</p>
+
+<b><h4 id="13" class="green">13. Are my data and models secure?</h4></b>
+<p>All uploads that are privately stored can only be accessed by the submitter, when they are logged in.</p>
+
+<b><h4 id="14" class="green">14. Is there any example files I can use to try <b><i>Ki</i>MoSys</b> tools?</h4></b>
+<p>Yes. In the <%= link_to 'tools page', new_dynamic_path( anchor: "")%>, download a "example file" that can be used with the tools.</p>
+
+<b><h4 id="15" class="green">15. Is the research I put on <b><i>Ki</i>MoSys</b> citable?</h4></b>
+<p>Yes. All research made publicly available can be <%= link_to 'cited', documentation_index_path( anchor: "cite2")%> using a static URL.</p>
+
+<b><h4 id="16" id="terms" class="green">16. Benefits of depositing experimental data sets and models in <b><i>Ki</i>MoSys</b>?</h4></b>
+<p>Your research will be highlighted and other scientists will begin using your work and citing your articles.</p>
+
+
+<b><h4 id="17" id="terms" class="green">17. Terms and Condition of use.</h4></b>
+<p><b><i>Ki</i>MoSys</b> platform is copyrighted by the team developing the resource under <%= link_to 'license GNU GPL v2','http://www.gnu.org/licenses/gpl-2.0.html', class: "blue link_out", target: "_blank" %>.
+	However, each individual data and model file retains the copyright assigned by the biologists that measures the
+	 data and the creators of the kinetic model, as well as the author(s) of the reference publication. Moreover,
+	 when the data (and/or model) files are shared by the submitter as public, they understand that public data
+	 (and/or model) is freely available by any other user and for any purpose under the term of
+	 the <%= link_to 'Creative Commons Attribution License','http://creativecommons.org/licenses/by/4.0/', class: "blue link_out", target: "_blank" %>.
+	 <b><i>Ki</i>MoSys</b> team not assumes responsibility for any purpose for which they are used and for copyrighted material.
+	 <b><i>Ki</i>MoSys</b> assumes that the submitter has received any necessary consent authorizations required prior to
+	 submitting the data and/or model.
+All users accept the risk and responsibility for the accuracy, completeness, or lack thereof, of any submitted
+information. In addition, any contribution to KiMoSys repository must be appropriate for sharing with the systems
+biology community. Access to the <b><i>Ki</i>MoSys</b> web site is granted free of charge for academic purposes.
+For any questions regarding our privacy or data usage policies feel free to
+<%= link_to 'Contact Us', contact_documentation_index_path( anchor: "")%>.</p>
+</fieldset>
+<br/>
+<br/>
+<fieldset>
+<legend><h3 id="Acknowledgements" class="green">Acknowledgements and Funding</h3></legend>
+<p>The <b><i>Ki</i>MoSys</b> team would like to thank all data and models submitters for their contributions. <b><i>Ki</i>MoSys</b> is funded by <%= link_to 'FCT','http://www.fct.pt', class: "blue link_out", target: "_blank" %> and supported at present
+by the European Union Framework Program 7 <%= link_to 'BacHBERRY','http://www.bachberry.eu', class: "blue link_out", target: "_blank" %> project (FP7-613793).</p>
+
+<br/>
+<p><%= link_to image_tag("logos/fct.png"), "http://www.fct.pt/", target: '_blank' %> <%= link_to image_tag("logos/kdbio.png", height: 100 ), "http://www.inesc-id.pt/intranet/laboratoriogrupo/view/group_generalinfo.php?CC=II10", target: '_blank', class: 'one_tab' %></p>
+</fieldset>
+  <br/>
+
+  <div class="right">
+  <%= link_to 'Top', "#top" %>
+  </div>
+<br/>

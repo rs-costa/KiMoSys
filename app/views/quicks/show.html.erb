@@ -1,0 +1,40 @@
+<!--  # KiMoSys - web-based platform for Kinetic Models of biological Systems.
+# Copyright (C) 2013-2013 Rafael Costa
+
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU General Public License
+# as published by the Free Software Foundation; version 2
+# of the License.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+
+
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.-->
+
+<legend><h2 class="green">Detail View - Quick submit <%= @quick.id %></h2></legend>
+
+<h2>Created at</h2>
+<p><%= @quick.created_at%></p>
+
+<h2>Description</h2>
+<p><%= @quick.description%></p>
+
+<h2>File</h2>
+<p><%= link_to "download file" , @quick.file.url %></p>
+
+<h2>Email of submitter</h2>
+<p><%= @quick.email%></p>
+
+<br/>
+<div class="right">
+<%= link_to "#{image_tag('BackImage.JPG')} Back".html_safe, organisms_path %> |
+<%= link_to 'Top', "#top" %>
+</div>
+<br/>

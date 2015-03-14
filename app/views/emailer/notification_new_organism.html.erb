@@ -1,0 +1,15 @@
+<p><b>Confirmation</b></p>
+
+<p><b>The following experimental data was successful submitted to the repository</b></p>
+
+<p>Data EntryID: <%= @organism_mail.id %></p>
+<p>Organism: <%= @organism_mail.organism %></p>
+<p>Access: <%- if @organism_mail.is_private %><!-- Private: true -->Private (hidden from all)<%- elsif @organism_mail.is_public %><!-- Public: true -->Public<%- else %><!-- Visible but not public -->Visible for reviewers, but not public<% end -%>
+<p>Type of Data: <%= @organism_mail.type_param_obj.title %></p>
+<p>Dataset file name: <%= @organism_mail.parameters_file_name %></p>
+<p>User:  <%= @organism_mail.user.email %></p>
+
+<p><%= link_to "Data URL" , organism_path(@organism_mail,:only_path => false) %></p>
+<%- if @organism_mail.is_public %><!-- Public: true --><p> This will be now checked by <i>Ki</i>MoSys admins to ensure that all are consistent with the repository.</p><%- end %>
+<p><b>Thank you for supporting <i>Ki</i>MoSys repository!!</b></p>
+<p><b>KiMoSys team.</b></p>

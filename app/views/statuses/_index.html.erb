@@ -1,0 +1,31 @@
+<%- if table.size > 0 %>
+<table class="format_table">
+  <thead>
+    <th>Identifier</th>
+    <th>Reviewed?</th>
+    <th>Comment</th>
+    <th></th>
+  </thead>
+  <tbody>
+  <% table.each do |obj| %>
+    <tr>
+      <td>
+        <% if obj.statusable.nil? then debugger end  %>
+        <span class="tooltip"><%= obj.statusable_name %> (<%= obj.statusable.class.model_name.human.downcase %>: <%= link_to_associated_model_or_organism obj.statusable %>)
+          <span class="tooltiptext">
+            <i>pubmed_id:</i> <%= obj.statusable.pubmed_id %>
+            <i>manuscript_title:</i> <%= obj.statusable.manuscript_title %>
+          </span>
+        </span>
+      </td>
+      <td><%= obj.is_reviewed ? "Yes" : "No" %></td>
+      <td><%= obj.comment.present? ? simple_format(obj.comment) : "n/a" %></td>
+      <td><%= link_to 'edit', [:edit,obj] %></td>
+    </tr>
+  <% end %>
+  </tbody>
+
+</table>
+<% else %>
+<p>No items</p>
+<%end%>

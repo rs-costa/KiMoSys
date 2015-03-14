@@ -1,0 +1,22 @@
+<%= semantic_form_for(@review_journal, :multipart => true )  do |f| %>
+  <%= form_errors(f) %>
+  <%= f.inputs do%>
+
+    <%= f.input :name %>
+    <%= f.input :link %>
+    <%= f.input :description %>
+    <%= f.input :protect_id, label: "Hide author's name and affiliation" %>
+    <%= f.input :users, as: :check_boxes, :member_label => :email %><br/>
+
+  <%- end  %>
+
+  <%= f.actions do %>
+    <% if @review_journal.new_record? %>
+      <%= f.action :submit, label: "Send Data" %>
+    <% else %>
+      <%= f.action :submit, label: "Update Data" %>
+    <% end -%>
+    <%= f.action :cancel %>
+  <% end %>
+
+<% end %>

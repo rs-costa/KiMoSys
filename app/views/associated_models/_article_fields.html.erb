@@ -1,0 +1,15 @@
+<fieldset class="article">
+  <% if f.object.new_record? -%>
+  <%= f.file_field :file%><br/>
+
+  <%= f.text_field :comment, class: "w-55", placeholder: "Insert comment about this version..." %>
+  <span class="">
+  <% else %>
+  <%= string_trim(f.object.file_file_name,true,30) %> <%= link_to "Download Model", [:download,@organism,f.object.associated_model,f.object] %>
+  <span>
+  <% end -%>
+  <%= f.hidden_field :_destroy %><%= link_to "remove", "#" , class: "remove_fields" %>
+  <%- if f.object.new_record? %>
+  <%- end %>
+  </span>
+</fieldset>

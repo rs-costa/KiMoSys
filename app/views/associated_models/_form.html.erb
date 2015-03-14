@@ -1,0 +1,217 @@
+<!--  # KiMoSys - web-based platform for Kinetic Models of biological Systems.
+# Copyright (C) 2013-2013 Rafael Costa
+
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU General Public License
+# as published by the Free Software Foundation; version 2
+# of the License.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+
+
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.-->
+
+<%= semantic_form_for [@organism,@associated_model] do |f| %>
+	<%= form_errors(f) %>
+
+  <%= f.inputs do %>
+    <fieldset class="noborder">
+      <legend><h3 class="green"> General Information</h3></legend>
+
+      <%= f.input :manuscript_title %>
+      <%= f.input :pubmed_id %>
+      <p class="light-gray">
+        <b>Note:</b> Click <%= link_to "here", "http://www.ncbi.nlm.nih.gov/pubmed", class: "blue link_out", target: "_blank" %> to search ID.
+      </p>
+      <br/>
+
+      <div id="duplicate" data-new-record="<%= @associated_model.new_record? %>" data-url=<%= new_organism_associated_model_path([@organism,@associated_model], format: :js) %>>
+      	<%= render "duplicate"%>
+      </div>
+
+      <%= f.input :journal %>
+      <%= f.input :year %>
+      <%= f.input :authors %>
+      <%= f.input :affiliation %>
+      <%= f.input :keywords %>
+      <%= f.input :sbml%>
+            <% if @associated_model.sbml.present? %>
+        <div class="one_tab">
+          <span><%= @associated_model.sbml_file_name %></span>
+          <div class="one_tab">
+            <%= f.input :delete_article, label: "Remove Article?", as: :boolean %>
+          </div>
+        </div>
+      <% end %>
+      <%= f.input :project_name %>
+      <%= f.input :used_for_list , as: :check_boxes, collection: ["Model building","Model refining","Model validation"]%>
+    </fieldset>
+
+    <fieldset class="noborder">
+      <legend><h3 class="green"> Model Information</h3></legend>
+
+      <%= f.input :model_name %>
+      <p class="light-gray">
+        <b>Important:</b> If the original model file is obtained from
+        <%= link_to "BioModels", "http://www.ebi.ac.uk/biomodels-main", class: "blue link_out", target: "_blank" %>
+        , <%= link_to "JWS Online", "http://jjj.bio.vu.nl:8080", class: "blue link_out", target: "_blank" %>
+        or <%= link_to "Physiome Model", "http://models.physiomeproject.org/welcome", class: "blue link_out", target: "_blank" %>
+        database the same model name must be maintained.
+      </p>
+      </br>
+      <%= f.input :main_organism %>
+      <p class="light-gray">
+        <b>Note:</b> Click <%= link_to "here", "http://www.ncbi.nlm.nih.gov/taxonomy", class: "blue link_out", target: "_blank" %> to search NCBI taxonomy.
+      </p>
+      <br/>
+      <%= f.input :model_type , as: :select, collection: ["ordinary differential equations","stochastic differential equations","partial differential equations"], :include_blank => "(please select)"%>
+      <%= f.input :category , as: :select, collection: ["Metabolism","Signal","Enzymology","Cell cycle","Gene expression"], :include_blank => "(please select)"%>
+      <%= f.input :reactions %>
+      <%= f.input :species %>
+      <%= f.input :regulators %>
+      <%= f.input :parameters %>
+      <%= f.input :compartments %>
+      <%= f.input :dilution_rate %>
+
+      <li class="text input">
+        <label class="label">11. Model file(s) (please select SBML, CellML, CopasiML or Matlab-ZIP with filename pattern "KIMOMODELID[XX].extension"; you can upload several intermediate version files of the final model and specify differences between the model versions)<abbr title="required">*</abbr> <br /></label>
+        <div class="text w-70">
+          <%= f.semantic_fields_for :articles do |builder| %>
+              <%= render 'article_fields', f: builder %>
+          <% end %>
+          <%= link_to_add_fields "#{image_tag('Add.jpg')} New Version".html_safe, f, :articles %>
+        </div>
+        <br />
+        <p class="light-gray">
+          <b>Important:</b> If the model file is obtained from
+          <%= link_to "BioModels", "http://www.ebi.ac.uk/biomodels-main" , class: "blue link_out", target: "_blank"%>,
+          <%= link_to "JWS online", "http://jjj.bio.vu.nl:8080", class: "blue link_out", target: "_blank" %>
+          or <%= link_to "Physiome Model", "http://models.physiomeproject.org/welcome", class: "blue link_out", target: "_blank" %>
+          database, original model file name must be maintained (e.g. BIOMD0000000051.xml).
+          Check that your model is valid according to the format you choose. Models
+          (<%= link_to "SBML", "http://www.sbml.org" , class: "blue link_out", target: "_blank"%>
+          and <%= link_to "CellML", "http://www.cellml.org" , class: "blue link_out", target: "_blank"%>)
+          are recomended to follow the Minimum Information Requested in the Annotation of Models
+          (<%= link_to "MIRIAM", "http://www.ebi.ac.uk/miriam", class: "blue link_out", target: "_blank" %>).
+        </p>
+		  </li>
+    	<%= f.input :comments, :input_html => { :rows => '7' } %>
+    	<%= f.input :software, hint: "" %>
+<p class="light-gray"><b>Note:</b> Introduce a valid URL, such as "http://www.copasi.org" followed by any text (e.g. COPASI).</p>
+    	<br/>
+    	<% if current_user && current_user.admin %>
+    	  <%= f.input :biomodels_id , hint: "" %>
+    <p class="light-gray"><b>Important:</b> Original model ID must be retained (e.g. BIOMD0000000051 or levering1).</p>
+      <br/>
+      <% end -%>
+			<%= f.input :combine_archive , hint: "" %>
+<p class="light-gray">
+          <b>Note:</b> The description of the "COMBINE archive" format is available <%= link_to "here", "http://co.mbine.org/documents/archive" , class: "blue link_out", target: "_blank"%>.</p>
+    <br/>
+    </fieldset>
+  	<p class="size">
+  	  <%= image_tag("danger2.JPG")%> <b>Note:</b> All fields marked with (<sup class="red">*</sup>) are mandatory.
+  	  Must be filled out before the form can be submitted.<br/>
+    	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;You are responsible for any
+    	content that you upload and submit.<br/>
+    	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To find out more information
+    	about <b>Terms and Conditions</b>, please visit our <%= link_to 'documentation section',  documentation_index_path( anchor: "terms"),target: "_blank"%>.
+  	</p>
+
+    <%- if  !@associated_model.new_record? && !@associated_model.can_remove?(current_user)  %>
+      <!-- cannot change sharing permissions -->
+    <%- else %>
+
+      <br/>
+
+      <b>Sharing:</b>
+      <!-- Public -->
+      <br/>
+      <br/>
+			<div class="one-tab">
+				<div class="hide_review_journal">
+					<%= radio_button_tag "associated_model[visibility]", AssociatedModel::VISIBILITY[:public], @associated_model.visibility == AssociatedModel::VISIBILITY[:public] %>
+					<label for="associated_model_visibility_1"><b><%= t("activerecord.attributes.associated_model.is_public") %></b></label><br/><br/>
+					<p class="size upper">  (if checked then <b>model file(s) is public</b>)</p>
+				</div>
+				<!--  -->
+				<b class="light-gray">OR</b><br/><br/>
+				<!-- Private -->
+				<div class="hide_review_journal">
+					<%= radio_button_tag "associated_model[visibility]", AssociatedModel::VISIBILITY[:private], @associated_model.visibility == AssociatedModel::VISIBILITY[:private] %>
+					<label for="associated_model_visibility_2"><b><%= t("activerecord.attributes.associated_model.is_private") %></b></label><br/><br/>
+					<p class="size upper">  (if checked then model file(s) is <b>private and EntryID not visible</b>)</p>
+				</div>
+				<!--  -->
+				<b class="light-gray">OR</b><br/><br/>
+				<!-- Review -->
+				<div class="show_review_journal">
+				<%= radio_button_tag "associated_model[visibility]", AssociatedModel::VISIBILITY[:review_journal], @associated_model.visibility == AssociatedModel::VISIBILITY[:review_journal] %>
+				<label for="associated_model_visibility_3"><b><%= t("activerecord.attributes.associated_model.is_review_journal") %></b></label><br/><br/>
+				<p class="size upper">  (if checked then model file(s) is <b>private and EntryID not visible, except for reviewers</b>)</p>
+				<div id="review_journal" class="<%= @associated_model.visibility != AssociatedModel::VISIBILITY[:review_journal] ? 'hide' : '' %>">
+					<%= f.input :review_journal, required: true, as: :select, label: "Journal name", hint: "Please only use drop down list to submit model for the selected journal.", :include_blank => "(please select)" %>
+				</div>
+				</div>
+<br/>
+				<!--  -->
+				<p class="light-gray">
+					<b>Important</b><br/>
+					1) *Curation process is started only if the model is made public.<br/>
+					2) Please change to "public" if your model has been accepted or published.<br/>
+					3) Please upload the article file if your model has been accepted or published.
+				</p>
+
+				</div>
+
+
+    <% end -%>
+  <% end -%>
+
+  <%if @associated_model.can_edit?(current_user) %>
+    <p>
+    <br/>
+    <br/>
+    <% unless @associated_model.new_record? -%>
+
+      <b>Share with specific users:</b>
+      <div class="one-tab">
+        <%- if @associated_model.is_admin?(current_user) %>
+          <br/>
+          <%= link_to "#{image_tag('AddUser_2.JPG')} Add user".html_safe, new_organism_associated_model_authorization_path(@organism,@associated_model) %>
+          <br/>
+          <br/>
+        <%- end %>
+        <br/>
+
+        <% if @list_users && @list_users.size > 0 -%>
+          <p class="size upper"><b>Users with permissions:</b>
+            <%= @list_users.collect { |u| %>
+            <% rem_link = link_to('(x)', [@organism,@associated_model,u], confirm: 'Are you sure you want to remove this user?', method: :delete) if @associated_model.is_admin?(current_user) %>
+            <% u.user.email_dot + " " + (if !rem_link.nil? then rem_link.to_s else "" end) %>
+            <% }.join("| ").html_safe %>
+          </p>
+        <% end -%>
+      </div>
+    <% end -%>
+  <% end %>
+
+  <br/>
+  <%= f.actions do %>
+    <% if @associated_model.new_record? %>
+    	<%= f.action :submit, label: "Send Model" %>
+    <% else %>
+    	<%= f.action :submit, label: "Update Model" %>
+    <% end -%>
+    <%= f.action :cancel %>
+  <% end %>
+  <br/>
+  <br/>
+<% end %>

@@ -1,0 +1,11 @@
+<fieldset class="attached_file">
+  <% if f.object.new_record? -%>
+  <%= f.file_field :src%>
+  <span class="move_forty">
+  <% else %>
+  <%= string_trim(f.object.src_file_name,true,30) %> <%= link_to "Download Model", [:download,attachable,f.object] %>
+  <span> 
+  <% end -%>
+  <%= f.hidden_field :_destroy %><%= link_to "remove", "#" , class: "remove_fields" %>
+  </span>
+</fieldset>

@@ -1,0 +1,424 @@
+// Place all the styles related to the stoichiometric_controller controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+a {
+  color: #666; // link color
+  &:visited {
+    color: #666; // visited link color
+  }
+  &:hover {
+  	color: #000; // hover link color
+  }
+}
+
+.formtastic .input input, .formtastic .input textarea, .formtastic .input select, .formtastic .input .text {
+
+  & .article input .w-60 { @extend .w-60 }
+  &.w-100 { @extend .w-100; }
+  &.w-90 { @extend .w-90; }
+  &.w-80 { @extend .w-80; }
+  &.w-70 { @extend .w-70; }
+  &.w-60 { @extend .w-60; }
+  &.w-55 { @extend .w-55; }
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.w-55 {
+  width: 55%;
+}
+
+.w-60 {
+  width: 60%;
+}
+
+.w-70 {
+  width: 70%;
+}
+
+.w-80 {
+  width: 80%;
+}
+
+.w-90 {
+  width: 90%;
+}
+
+img.middle {
+  display:inline-block;
+  vertical-align: middle;
+}
+
+.M-top-2em{
+  margin-top: 2em;
+}
+
+.M-bottom-2em{
+  margin-bottom: 2em;
+}
+
+.P-top {
+  padding-top: 1em;
+}
+.P {
+  padding-right: 1em;
+}
+
+.M-right-6em {
+  margin-right: 6em;
+}
+
+.center {
+  text-align: center;
+}
+
+a.blue {
+  color: #00f; // link color
+  &:visited {
+    color: #00f; // visited link color
+  }
+  &:hover {
+    color: #666; // hover link color
+  }
+}
+
+.move_forty {
+  margin-left: 20%;
+}
+
+.dataTables_filter {
+  label {
+    font-weight: bold;
+    color: blue;
+  }
+}
+
+.formtastic fieldset.article {
+  margin-top: 1em;
+}
+
+div#footer {
+  color:#777;
+
+}
+
+.red {
+  color:red;
+}
+
+hr.footer {
+  border-color:#777;
+  width:40%;
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
+  border-width: 1px;
+}
+
+.upper {
+  position:relative;
+  top: -1.2em;
+}
+
+div
+{text-align:justify;
+text-justify:inter-word;}
+
+.not_justified
+{text-align:left;}
+
+
+.line {
+ border-bottom: 2px solid #eee;
+ padding-bottom:0.5em;
+}
+
+hr.thick {
+border-width:0.5em;
+left: -13px;
+position: relative;
+}
+
+a:hover {
+  background-color: none !important;
+}
+
+#header {
+  padding-left:0px;
+  background-color:rgb(173,216,230);
+
+  #header a.img:hover,#header a.img:focus{
+    text-decoration: none!important;
+    border: none;
+    background-color:inherit;
+  }
+
+}
+
+.related {
+  padding-left: 17px;
+  background-image: image-url('css/related.png');
+  background-repeat: no-repeat;
+  background-position: left top;
+}
+
+.link_out {
+  padding-right: 12px;
+  background-image: image-url('css/link_out.png');
+  background-repeat: no-repeat;
+  background-position: right top;
+}
+
+.normal-weight {
+  font-weight: 400;
+}
+
+a.red {color:red}
+
+b.space3 {width:10%}
+
+//ul.menu li{margin-right:10px}
+
+p.red {color:red;font-size:200%;}
+p.size {font-size:80%;}
+p.size2 {font-size:115%;}
+p.green {color:#00CC00}
+
+span.bold{font-weight:bold}
+
+.ui-widget-header {
+  background-image: none;
+  background-color: transparent;
+  border: 0px solid transparent;
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+  background: none;
+  border: none;
+  color: #555555;
+  font-weight: normal;
+}
+
+TABLE.space {width:100%}
+
+table, table.dataTable {
+
+  &#organismsTable tbody td { height: 36px}
+
+  & tbody td{
+    &.bluelight{background-color:#99CCCC;width:25%;text-align:left;}
+    &.bluelight1{background-color:#F8F8F8;width:65%;}
+    &.bluelight2{background-color:#FF0000;width:65%;}
+    &.space1 {width:10%}
+    &.space3 {width:15%}
+    &.space2 {width:20%}
+    &.space4 {width:5%}
+    &.spaceA {width:70px}
+    &.space10 {width:50%}
+    &.first{width:300px;}
+    &.second{width:600px;}
+  }
+  & thead th {
+    &.bluelight{background-color:#99CCCC}
+  }
+}
+
+table.space {width:100%}
+
+.dark-gray {
+    color: #666;
+}
+
+.italic {
+  font-style: italic;
+}
+
+h2.green {color:#00CC00}
+h3.green {color:#00CC00}
+h4.green {color:#00CC00}
+
+.light-gray { color: #999999;}
+.strong-gray { color: #4863A0;}
+.strong-gray1 { color: #9933CC;}
+.strong-gray2 { color: #339933;}
+.strong-gray3 { color: #C68E17;}
+.strong-gray4 { color: #A52A2A;}
+.strong-gray5 { color: #808000;}
+.strong-gray6 { color: #484848;}
+.flash {
+  background-color: red;
+  display: inline-block;
+}
+
+.formtastic .input .label {
+  float:none;
+  width: 100%;
+  font-weight: bold;
+}
+
+.formtastic .subpoint .input .label {
+  font-weight: bold;
+}
+
+
+.formtastic li.choice {
+  display: inline-block;
+}
+
+.formtastic .fragments .label label, .formtastic .choices .label label {
+    position: relative;
+}
+
+.formtastic .fragments .label, .formtastic .choices .label,
+.formtastic ol.fragments-group {
+    position: relative;
+    padding-left:0px;
+    margin-left:0px;
+}
+.formtastic .choices-group {
+    padding-left: 2em;
+}
+.formtastic .input .fragment select{
+ width: 100%;
+}
+
+.one-tab {
+  margin-left: 2em;
+}
+
+.formtastic .input input, .formtastic .input textarea,.formtastic .input select,.formtastic .input .text{
+  width: 40%;
+  margin-left: 2em;
+  &.long {
+    width: 70%;
+  }
+}
+
+li.check_boxes fieldset.choices ol.choices-group li.choice label input {
+  width:auto;
+  margin-bottom: 1em;
+  margin-left: 1em;
+}
+
+
+
+.formtastic .input .label abbr {
+  font-size: 80%;
+  vertical-align:super;
+  color: red;
+}
+
+.small-font {
+  font-size:80%;
+}
+
+div.small p {
+  font-size:80%;
+}
+
+form.formtastic {
+  width:100%;
+}
+
+div.links_right {
+  float: right;
+  padding-right: 10%;
+}
+
+div.right {
+  float: right;
+
+}
+
+div.right1 {
+  float: right;
+  padding-right: 0%;
+}
+
+.formtastic .boolean label {
+  padding: 0px;
+  input {
+    width: auto;
+  }
+}
+
+.formtastic .input .inline-hints {
+ margin-left: 2em;
+}
+
+hr {
+  border-width: 2px 0px 0px;
+  border-style: solid solid solid;
+  border-color: #eee;
+}
+
+#content {
+  margin-top: 30px;
+  border-top: 2px solid #eee;
+  border-left: 2px solid #eee;
+  min-height: 300px;
+  padding: 1em;
+
+}
+
+.notice, .alert, .success, .info {
+    padding: 20px 20px;
+    margin-top: 1em;
+}
+
+.tooltiptext {
+  @extend .hide;
+}
+
+#duplicatesTable {
+  padding: 1em;
+}
+
+//#login_menu ul.menu {
+//  margin-top: -1em;
+//}
+
+table.color_even tr.color_even {
+  background-color: #E2E4FF;
+}
+
+.no-margin-left {
+ margin-left: 0px;
+}
+
+.block {
+  display: block;
+}
+
+.tooltip-info {
+  background-image: image-url('info.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 20px;
+  min-height: 15px;
+  display:inline-block;
+  a {
+    display: block;
+    min-height: 15px;
+    min-width: 20px;
+  }
+  a span {
+    display: none;
+  }
+}
+
+.qtip{
+	max-width: 700px;
+}
+
+
+.dataTables_filter input {
+  width: 300px;
+}
+
+.hide {
+  display:none;
+}

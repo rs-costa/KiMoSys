@@ -1,0 +1,334 @@
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$header: 29px;
+$header_line: 27px;
+$tab: 3em; // also in results.css / custom_tables.css
+$width: 1000px;
+
+//
+//
+//
+//
+//
+// Structure
+////////////////////////////////
+
+body {
+  margin: 0px;
+  padding:0px;
+}
+
+#login_menu {
+  @extend #content;
+  height: 2em;
+}
+
+#content {
+  margin-left:auto;
+  margin-right:auto;
+  width: $width;
+  //border: 1px solid black;
+}
+
+#fixed-header {
+  opacity: 1;
+  padding-left:1em;
+  padding-right:1em;
+//  position: fixed;
+//  top: 0;
+  width: $width +26;
+  z-index: 990;
+  margin-left:auto;
+  margin-right:auto;
+}
+#header {
+  color: white;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  font-size: 75%;
+  padding-left: 40px;
+}
+
+#footer {
+  text-align:center;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  span {
+    font-size: 85%;
+  }
+  ul.menu{
+    text-align: center;;
+    padding-left: 0px;
+    margin-top: 0px;
+    display: block;
+    list-style: none outside none;
+  }
+  li {
+      display: inline-block;
+      line-height: $header_line;
+      padding: 0;
+      position: relative;
+      vertical-align: top;
+      a {
+        display: block;
+        padding-right: 5px;
+        padding-left: 5px;
+      }
+
+    }
+}
+
+//
+//
+//
+//
+//
+// Menu
+////////////////////////////////
+
+#login_menu ul.menu {
+  float: right;
+  margin: 0px;
+  border-right: 1px solid #5EB935;
+  border-left: 1px solid #5EB935;
+  border-bottom: 1px solid #5EB935;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  //background-color: #5EB935;
+  margin-left: auto;
+  margin-right: 0px;
+  line-height: $header_line + 6;
+    li {
+      color: gray;
+      span {
+        padding: 5px;
+      }
+      a {
+        border-top: 2px solid transparent;
+        color: gray;
+        text-decoration: none;
+        &:hover,
+        &:active,
+        &:focus {
+          color:white;
+          background-color: #8FB77C;
+        }
+        &.selected {
+          &:hover,
+          &:active,
+          &:focus {
+            color:white;
+          }
+          border-top: 2px solid #DD4B39;
+          color: gray;
+        }
+      }
+    }
+}
+
+#menu {
+  background-color: #00CC99;
+  border-bottom: 0px solid #000000;
+  height: $header;
+  margin:0px;
+  padding:0px;
+  padding-left: 40px;
+  span {
+      margin-left: 10px;
+      vertical-align: middle;
+      color:#DD4B39;
+      float:left;
+      line-height: $header_line + 6;
+      font-size:1.5em;
+      padding-right:10px;
+    }
+  div.menu-wrapper {
+    float:left;
+  }
+  ul.menu {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    li {
+      line-height: $header_line;
+      padding: 0;
+      position: relative;
+      vertical-align: top;
+      a {
+        border-top: 2px solid transparent;
+        color: white;
+        text-decoration: none;
+        &:hover,
+        &:active,
+        &:focus {
+          background-color: #8FB77C;
+        }
+        &.selected {
+          border-top: 2px solid #DD4B39;
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+div.menu {
+  ul.menu {
+    padding-left: 0px;
+    display: inline-block;
+    list-style: none outside none;
+    li {
+      display: inline-block;
+      a {
+        display: block;
+        padding-right: 7px;
+        padding-left: 7px;
+        &.selected {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+
+//
+//
+//
+//
+//
+// General
+////////////////////////////////
+
+.notice,
+.alert,
+.success,
+.info {
+  padding: 50px 20px;
+  margin-top: 1em;
+}
+
+.notice {
+  background-color: #FFF6BF;
+  border: 1px #FFD324 solid;
+}
+
+.alert {
+  background-color: #FFCBBC;
+  border: 1px #FF4332 solid;
+}
+
+.success {
+  background-color: #D7FFCC;
+  border: 1px #62FF47 solid;
+}
+
+
+.center {
+  margin: 0 auto;
+}
+
+.text-center {
+  text-align:center;
+}
+
+img {
+  //border: 1px solid #333;
+  //margin-left: 2em;
+}
+
+fieldset.noborder {
+  border:1px #000 solid;
+      padding: 2px;
+    margin: 2px;
+  legend {
+    padding: 4px;
+    margin: 2px;
+    }
+    
+}
+
+
+img.noborder{
+  border: none;
+  margin-left: 0em;
+}
+
+p,dl {
+  margin-left: $tab;
+}
+
+
+.dim {
+  color: #777;
+}
+
+// links
+
+
+a {
+  //text-decoration: none;
+  color: blue;
+  &:visited { }
+  &:active,
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+    color: blue;
+  }
+}
+
+h5.button {
+  padding-left:1em;
+  background-image: image-url('plus.png');
+  background-repeat:no-repeat;
+}
+
+
+form {
+  display:inline-block;
+}
+
+div.actions {
+  margin-left: auto;
+  text-align: right;
+}
+
+div.field {
+  label {
+    font-weight: bold;
+  }
+  
+  input,
+  textarea,
+  select {
+    @extend p;
+  }
+}
+
+
+.one_tab {
+  margin-left: $tab;
+}
+
+.download {
+  color:#666666;
+}
+
+//
+//
+//
+//
+//
+// Specific
+////////////////////////////////
+
+.proxy_dyna_model_chart, .options {
+  width: 900px;  
+}
+
+
+div#experiment_chart {
+  width: $width;
+}
+
+

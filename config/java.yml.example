@@ -1,0 +1,15 @@
+development:
+  java_home: "/usr/lib/jvm/java-7-openjdk-amd64/"
+  ld_library_path: "#{ENV['LD_LIBRARY_PATH']}:#{ENV['JAVA_HOME']}/jre/lib/amd64:#{ENV['JAVA_HOME']}/jre/lib/amd64/client"
+  
+test:
+  java_home: "/usr/lib/jvm/java-7-openjdk-amd64/"
+  ld_library_path: "#{ENV['LD_LIBRARY_PATH']}:#{ENV['JAVA_HOME']}/jre/lib/amd64:#{ENV['JAVA_HOME']}/jre/lib/amd64/client"
+  
+pre-production:
+  java_home: "/usr/lib/jvm/java-7-openjdk-amd64/"
+  ld_library_path: "#{ENV['LD_LIBRARY_PATH']}:#{ENV['JAVA_HOME']}/jre/lib/amd64:#{ENV['JAVA_HOME']}/jre/lib/amd64/client"
+
+production:
+  java_home: "/usr/lib/jvm/java-7-openjdk-amd64/"
+  ld_library_path: "#{ENV['LD_LIBRARY_PATH']}:#{ENV['JAVA_HOME']}/jre/lib/amd64:#{ENV['JAVA_HOME']}/jre/lib/amd64/client"

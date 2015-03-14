@@ -1,0 +1,116 @@
+<!--  # KiMoSys - web-based platform for Kinetic Models of biological Systems.
+# Copyright (C) 2013-2013 Rafael Costa
+
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU General Public License
+# as published by the Free Software Foundation; version 2
+# of the License.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+
+
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <% if content_for?(:title) %>
+        <title><%= yield(:title) %> | KiMoSys </title>
+        <% else %>
+        <title> KiMoSys: a web-based repository of experimental data for Kinetic Models of biological Systems</title>
+        <% end %>
+
+        <!-- Custom head -->
+      <% if content_for?(:head) %>
+      <%= yield(:head) %>
+      <% end %>
+
+      <%= stylesheet_link_tag    "application" %>
+      <%= javascript_include_tag "application"  %>
+      <%= csrf_meta_tags %>
+
+      <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+    </head>
+    <body>
+  		<div id="top"></div>
+        <div id="fixed-header">
+            <div id="header" >
+                <% if Rails.env != "production" %>
+                <div <% if Rails.env != "production" %>style="background-color: #F00!important;"<%end%>>
+                	<strong><%=Rails.env%> environment</strong> <%=Rails.env%> environment <strong><%=Rails.env%> environment</strong> <%=Rails.env%> environment <strong><%=Rails.env%> environment</strong> <%=Rails.env%> environment
+                </div>
+            	<%end%>
+            	<!-- logo -->
+            		<a class="img" href="<%= root_url %>"><%= image_tag('logos/logo.png', title: "back to homepage") %></a>
+        		<!-- logo -->
+
+            </div>
+
+            <div id="menu" class="menu" >
+                <div class="menu-wrapper">
+                    <%= render_navigation %>
+                </div>
+        </div>
+        </div>
+         <div id="login_menu" class="menu">
+           <div class="menu-wrapper">
+             <%= render_navigation context: "login" %>
+           </div>
+         </div>
+
+        <div id="content">
+
+			<% if current_user && current_user.admin -%>
+				<div style="background-color:#f00; text-align: center;padding:2em;margin:2em;width:200px;margin-left:auto;margin-right: auto;">
+					This is an admin that can edit everything
+					</div>
+			<% end -%>
+
+          <%- flash.each do |key, value| %>
+            <%- if value.is_a?(String)%>
+                <%= content_tag(:div, value.html_safe, :class => "flash #{key}") %>
+            <%- else %>
+                <%= content_tag(:div, value.join("<br/>").html_safe, :class => "flash #{key}") %>
+            <%- end %>
+          <%- end %>
+
+
+            <%= yield %>
+        </div>
+
+        <div id="footer">
+
+            <hr class="footer"/>
+        	<span>Last updated: 2014-11-10 by KiMoSys team ( kimosys [at]  kdbio.inesc-id.pt )</span>
+        	<br/>
+        	<span>Code licensed under <%= link_to 'GNU GPL v2','http://www.gnu.org/licenses/gpl-2.0.html', class: "blue", target:"_blank"%> and documentation under <%= link_to 'CC BY 4.0','https://creativecommons.org/licenses/by/4.0/', class: "blue", target:"_blank"%>.</span>
+        	<br/>
+        	<span>Copyright &copy; 2013-2014. <%= link_to 'KDBIO','http://kdbio.inesc-id.pt', class: "blue", target:"_blank"%> | <%= link_to 'INESC-ID','http://inesc-id.pt', class: "blue", target:"_blank"%></span>
+        <br/>
+        	<span>Created using <%= link_to 'Ruby on Rails','http://rubyonrails.org', class: "blue", target:"_blank"%>.</span>
+
+        </div>
+
+
+      <%- if Rails.env == "production" %>
+      <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-52272362-1', 'kimosys.org');
+      ga('send', 'pageview');
+
+      </script>
+      <%- end %>
+    </body>
+</html>

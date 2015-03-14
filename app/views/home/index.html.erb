@@ -1,0 +1,99 @@
+<!--  # KiMoSys - web-based platform for Kinetic Models of biological Systems.
+# Copyright (C) 2013-2013 Rafael Costa
+
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU General Public License
+# as published by the Free Software Foundation; version 2
+# of the License.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+
+
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.-->
+
+<h2 class="green"> WELCOME!</h2>
+
+
+
+<div style="clear:both"></div>
+	
+<div style="float:left; width:675px; margin-right: 15px">
+<p>Welcome to the Systems Biology web-based platform <b><i>Ki</i>MoSys</b>, a web application for quantitative KInetic MOdels of biological SYStems. Kinetic models, with the aim to understand 
+and subsequently design the metabolism of organism of interest are constructed iteratively and require accurate 
+experimental data for both the generation and verification of hypotheses. 
+Therefore, there is a growing requirement for exchanging experimental data and models between the systems biology community,
+and to automate as much as possible the kinetic model building, editing, simulation and analysis steps.</p>
+<br/>
+<br/>
+
+<h3 class="green"> What is <i>Ki</i>MoSys?</h3>
+
+<p><b><i>Ki</i>MoSys</b> is a freely accessible web site that combines <b>tasks for experimental data-store, search</b> and <b>share</b>,
+ and <b>tools in order to build ODE-based kinetic models</b> into a single platform. It is intended to 
+ support the systems biology community when doing experimental and computational research.
+<br/>
+<br/>
+<p>The future goal of <b><i>Ki</i>MoSys</b> is to provide an integrated platform that enables users to access experimental 
+data and supports for the overall kinetic modeling tasks, so that tools that are used at different stages of the 
+computational workflow can be easily used together.</p>
+
+<p class="center M-top-2em"><%= link_to "#{image_tag('HowSearch.png', width: '150', class: 'M-right-6em' )}".html_safe , organisms_path( anchor: "search")%> <%= link_to "#{image_tag('Submit.png', width: '150')}".html_safe, organisms_path( anchor: "contribute")%></p>
+
+</div>
+&nbsp;&nbsp;&nbsp;<span class="light-gray">News</span>
+
+
+<div style="float:right;width:300px; font-size:30%">
+<a class="twitter-timeline"  href="https://twitter.com/KiMoSys_"  data-widget-id="357940532921643008">Tweets de @KiMoSys_</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+</div>
+
+<div style="clear: both;"></div>
+
+<h3 class="green"> Features</h3>
+<h4> <%=image_tag ('Visto_Features3.PNG')%> <span class="strong-gray">Open-access</span></h4>
+<p> &diams; Allows to use the platform freely.</p>
+<p> &diams; <b>Public repository of published data</b> to ensure high <b>accessibility</b> and <b>reuse</b>.</p>
+<p>	&diams; Capability to <b>associate kinetic models with data</b>; supports upload of intermediate versions of the final model.</p>
+<p> &diams; Invites the community to: experimental data and model files submissions. <b>Submit your own data or from older articles</b> whether or not 
+	you are an author.</p> 
+<p> &diams; <b>All data are citable.</b>
+
+<h4> <%=image_tag ('Visto_Features3.PNG')%> <span class="strong-gray1">User-friendly</span></h4>
+<p> &diams; Upload facility to <b>share data & associated models</b> in a secure manner.</p>
+<p> &diams; Partner with Nature on <%= link_to 'Scientific Data','http://www.nature.com/sdata', class: "blue link_out", target: "_blank" %> journal: <%= link_to 'deposit data', new_organism_path( anchor: "")%> in <b><i>Ki</i>MoSys</b> at the same time of submitting a <%= link_to 'Sci Data','http://http://mts-scidata.nature.com/cgi-bin/main.plex', class: "blue link_out", target: "_blank" %> article.</p>
+<p> &diams; Integrate tools to help the kinetic models construction process of metabolic networks.</p>
+<p> &diams; Facilitates its users even with little background in informatics.</p>
+
+<h4> <%=image_tag ('Visto_Features3.PNG')%> <span class="strong-gray2">Assistance in annotation</span></h4>
+<p> &diams; <b>Metadata collection</b> to establish standards.</p>
+<p> &diams; Store essential properties about the data (conditions under which were obtained).</p>
+<p> &diams; Links to external databases.</p>
+
+<h4> <%=image_tag ('Visto_Features3.PNG')%> <span class="strong-gray3">Support standard formats</span></h4>
+<p> &diams; Structured spreadsheet data format with consistent annotations (including names, units and <b>database identifiers </b> such as <%= link_to 'ChEBI','http://www.ebi.ac.uk/chebi', class: "blue link_out", target:"_blank" %>, <%= link_to 'KEGG','http://www.genome.jp/kegg/kegg2.html', class: "blue link_out", target: "_blank" %> or <%= link_to 'UniProt','http://www.uniprot.org', class: "blue link_out", target: "_blank" %> that are linked directly).</p>
+<p> &diams; XML (<%= link_to 'SBML','http://sbml.org/Main_Page', class: "blue link_out", target: "_blank" %> and <%= link_to 'CellML','http://www.cellml.org', class: "blue link_out", target: "_blank" %> models).</p>
+<p> &diams; <%= link_to 'CopasiML','http://www.copasi.org/tiki-index.php?page_ref_id=128', class: "blue link_out", target: "_blank" %> (COPASI models).</p>
+<p> &diams; <%= link_to 'COMBINE Archive','http://co.mbine.org/documents/archive', class: "blue link_out", target: "_blank" %>.</p>
+<p> &diams; <%= link_to 'SBtab','http://sbtab.net', class: "blue link_out", target: "_blank" %>.</p>
+<p> &diams; <%= link_to 'BioSharing','http://biosharing.org/biodbcore-000631', class: "blue link_out", target: "_blank" %> entry.
+
+<h4> <%=image_tag ('Visto_Features3.PNG')%> <span class="strong-gray4">Access control</span></h4>
+<p> &diams; Keep <b>data and models private</b>, share with <b>specific users</b> or the <b>global community</b>.</p>
+<p> &diams; Receive a stable and unique accession number that can be used as a publication reference.</p>
+
+<h4> <%=image_tag ('Visto_Features3.PNG')%> <span class="strong-gray5">Flexible</span></h4>
+<p> &diams; Based on <%= link_to 'Ruby on Rails','http://rubyonrails.org', class: "blue link_out", target: "_blank" %>. Facilitate the addition of other tools in the future.</p>
+
+ 
+<br/>
+<br/>
+

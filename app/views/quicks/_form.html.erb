@@ -1,0 +1,50 @@
+<!--  # KiMoSys - web-based platform for Kinetic Models of biological Systems.
+# Copyright (C) 2013-2013 Rafael Costa
+
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU General Public License
+# as published by the Free Software Foundation; version 2
+# of the License.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+
+
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.-->
+
+<%= semantic_form_for(@quick, :multipart => true )  do |f| %>
+  <%= form_errors(f) %>
+    <%= f.inputs do%>
+        <fieldset class="noborder">
+      <legend><h3 class="green"> General Information</h3></legend>
+	<%= f.input :description, :input_html => { :rows => '7' }%>
+	<%= f.input :file, required: true %>
+	<%= f.input :email %>
+	
+	<% end %>
+	
+	<p class="size"> <%= image_tag("danger2.JPG")%>   <b>Note:</b> All fields marked with 
+  	(<sup class="red">*</sup>) are mandatory.
+  	Must be filled out before the form can be submitted.<br/>
+  	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;You are responsible for any content that you upload and submit.<br/>
+  	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To find out more information about <b>Terms and Conditions</b>, please visit our <%= link_to 'documentation section', documentation_index_path( anchor: "terms"),target: "_blank"%>.</p>
+  	</p>
+	</br>
+	</br>
+	
+	<%= f.actions %>
+	
+	
+	
+       
+  
+  	        
+<% end %>
+
+<div style="clear:both"></div>

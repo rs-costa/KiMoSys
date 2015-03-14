@@ -1,0 +1,19 @@
+<%= semantic_form_for(@type_param) do |f| %>
+	<%= form_errors(f) %>  
+    
+    <%= f.inputs do %>
+      <%= f.input :title %>
+      <%= f.input :type_small, as: :select, collection: OrganismsHelper.type_params_mapping.uniq, hint: "to add new types, please see OrganismsHelper.rb" %>
+      <%= f.input :image, as: :file , required: true%>
+      <% unless @type_param.image_file_name.blank? %>
+      <p>Current image: <%= image_tag @type_param.image.url %></p>
+      <% end -%>
+    <% end -%>
+    
+    
+    <%= f.actions do %>
+  	  <%= f.action :submit %>
+	  <%= f.action :cancel %>
+  	<% end %>
+<% end %>
+

@@ -1,0 +1,410 @@
+<!--  # KiMoSys - web-based platform for Kinetic Models of biological Systems.
+# Copyright (C) 2013-2013 Rafael Costa
+
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU General Public License
+# as published by the Free Software Foundation; version 2
+# of the License.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+
+
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.-->
+
+<div class="dark-gray italic"><%= link_to "Repository", organisms_path %> » Data AccessID <%= @organism.id %></div>
+
+<legend><h2 class="green">Detail View - Data AccessID <%= @organism.id %></h2></legend>
+
+<%= show_message(@organism, "Note: This data is UNDER REVIEW by a publisher", "and the user identity is protected") %>
+
+<div class="right">
+	<%- if can? :edit, @organism %>
+		<%= link_to "#{image_tag('edit2.jpg')} Edit".html_safe, edit_organism_path(@organism) %> |
+	<%- end %>
+  <%- if can? :destroy, @organism %>
+		<%= link_to "#{image_tag('remove_figure.jpg')} Remove".html_safe, @organism , confirm: 'Are you sure you want to delete this Data EntryID?', method: :delete %> |
+	<%- end %>
+	<%- if @organism.is_admin?(current_user) %>
+		<%= link_to "#{image_tag('AddUser_2.JPG')} Invite".html_safe, new_organism_organism_association_path(@organism) %> |
+	<%- end %>
+	<%= link_to "#{image_tag('BackImage.JPG')} Back".html_safe, organisms_path %></div>
+
+
+<br/>
+
+<h3 class="green line">
+  General Information
+  <span class="tooltip-info">
+    <a href="javascript:void(0)"><span>info</span></a>
+    <span class="tooltiptext" style="display:none;">
+      <p>This section provides useful information about the provenance of the data</p>
+<b>Manuscript title</b> – title of the original publication where the data are published or a general title if not published yet.<br/>
+<b>PubMed ID</b> - the PubMed ID related to this manuscript.<br/>
+<b>Journal</b> - the journal name of the manuscript.<br/>
+<b>Year</b> - the year of publication.<br/>
+<b>Authors</b> - the authors of the manuscript.<br/>
+<b>Affiliations</b> - the affilation(s) of the first author.<br/>
+<b>Keywords</b> - general keywords that characterize the data.<br/>
+<b>Full text article</b> - article file where the data are described.<br/>
+<b>Project name</b> - the comprehensive name (acronym) of the project (if the data is part of a general project).<br/>
+    </span>
+  </span>
+</h3>
+
+<TABLE class="space">
+	<TR>
+	  <TD class="bluelight"><b><%= Organism.human_attribute_name("manuscript_title_html")%></b></TD>
+	  <TD class="bluelight1"><%= @organism.manuscript_title %></TD>
+	  </TR>
+	<TR>
+	  <TD class="bluelight"><b><%= Organism.human_attribute_name("pubmed_id_html")%></b></TD>
+	  <TD class="bluelight1"><%= goto_model "http://www.ncbi.nlm.nih.gov/pubmed/", @organism.pubmed_id,  target: "_blank" ,title: "link to PubMed" %></TD>
+	  </TR>
+	<TR>
+	  <TD class="bluelight"><b><%= Organism.human_attribute_name("journal_html")%></b></TD>
+	  <TD class="bluelight1"><%= notspecified @organism.journal %></TD>
+	  </TR>
+	<TR>
+	  <TD class="bluelight"><b><%= Organism.human_attribute_name("year_html")%></b></TD>
+	  <TD class="bluelight1"><%= notspecified @organism.year %></TD>
+	  </TR>
+	<TR>
+	  <TD class="bluelight"><b><%= Organism.human_attribute_name("author_html")%></b></TD>
+	  <TD class="bluelight1"><%= can?(:see_id,@organism) ? @organism.author : content_tag( :span, t("hidden"), class: "red") %></TD>
+	  </TR>
+	<TR>
+	  <TD class="bluelight"><b><%= Organism.human_attribute_name("affiliation_html")%></b></TD>
+	  <TD class="bluelight1">
+			<%= can?(:see_id,@organism) ? notspecified(@organism.affiliation) : content_tag( :span, t("hidden"), class: "red") %>
+		</TD>
+	  </TR>
+	<TR>
+	  <TD class="bluelight"><b><%= Organism.human_attribute_name("keywords_html")%></b></TD>
+	  <TD class="bluelight1"><%= notspecified @organism.keywords %></TD>
+	  </TR>
+	<TR>
+	  <TD class="bluelight"><b><%= Organism.human_attribute_name("Full text article_html")%></b></TD>
+		<TD class="bluelight1">
+			<% if @organism.article.present? %>
+				<%- if can?(:see_id, @organism) %>
+				  <%= link_to image_tag('DownloadArticle.png'), @organism.article.url, class: "blue", target: "_blank", title: "full text" %>
+					<%= @organism.article_file_name %>
+				<%- else %>
+					<%= content_tag( :span, t("hidden"), class: "red") %>
+				<%- end %>
+			<% else %>
+			  no file uploaded
+			<% end %>
+		</TD>
+	</TR>
+	<TR>
+	  <TD class="bluelight"><b><%= Organism.human_attribute_name("project_html")%></b></TD>
+	  <TD class="bluelight1"><i><%= notspecified @organism.project %></i></TD>
+	</TR>
+</TABLE>
+
+<h3 class="green line">
+  Experiment Description
+  <span class="tooltip-info">
+    <a href="javascript:void(0)"><span>info</span></a>
+    <span class="tooltiptext" style="display:none;">
+      <p>This section provides basic information about the data.</p>
+<b>Organism</b> - scientific name of the organism used to generate the data.<br/>
+<b>Strain</b> - name of the strain used to generate the data.  <br/>
+<b>Data type</b> - experimental data type uploaded in this <i>EntryID</i>.<br/>
+<b>Data units</b> - units of the data set.<br/>
+<b>Execution date</b> - experimental start date of the data.<br/>
+    </span>
+  </span>
+</h3>
+
+<TABLE class="space">
+	<TR>
+	  <TD class="bluelight"><b> <%= Organism.human_attribute_name("organism_html")%></b></TD>
+	   <TD class="bluelight1"><i><%= link_to_taxonomy @organism.organism %></i></TD>
+	</TR>
+	<TR>
+	  <TD class="bluelight"><b><%= Organism.human_attribute_name("strain_html")%></b></TD>
+	  <TD class="bluelight1"><%= @organism.strain %></TD>
+	  </TR>
+	<TR>
+	  <TD class="bluelight"><b><%= Organism.human_attribute_name("type_param_html")%></b></TD>
+	  <TD class="bluelight1"><%= @organism.type_param_obj.title %></TD>
+	  </TR>
+	<TR>
+	  <TD class="bluelight"><b><%= Organism.human_attribute_name("data_units_html")%></b></TD>
+	  <TD class="bluelight1"><%= notspecified @organism.data_units %></TD>
+	  </TR>
+	<TR>
+	  <TD class="bluelight"><b><%= Organism.human_attribute_name("execution_html")%></b></TD>
+	  <TD class="bluelight1"><%= notspecified @organism.execution %></TD>
+	</TR>
+</TABLE>
+
+<h3 class="green line">
+  Experimental Details
+  <span class="tooltip-info">
+    <a href="javascript:void(0)"><span>info</span></a>
+    <span class="tooltiptext" style="display:none;">
+      <p>This section provides experimental details.</p>
+<b>Temperature</b> - the temperature of the experimental conditions in this data.<br/>
+<b>pH</b> - the pH of the experimental conditions in this data.<br/>
+<b>Carbon source</b> - the carbon source name used in this study.<br/>
+<b>Culture mode</b> - how the culture growth in the experiment.<br/>
+<b>Process condition</b> - process condition of the experiment. <br/>
+<b>Dilution rate</b> - dilution rate of the experiment for chemostat culture. <br/>
+<b>Working volume</b> - working volume used.<br/>
+<b>Biomass concentration</b> - biomass concentration used in this experiment.<br/>
+<b>Medium composition</b> - detailed concentration components used in the culture medium.<br/>
+<b>General protocol information</b> - overview about the experimental techniques and instrument type.<br/>
+<b>Methods description and Notes</b> - a summary description of the overall experiment, protocolos steps that have been performed and any other pertinent information helpful for researches. Description taken and adapted from the original manuscript.<br/>
+<b>Data file</b> - freely available structured Excel data file (contains metadata + dataset).<br/>
+<b>Alternative format(s)</b> - freely available data for download in delimited format files (.txt and/or .csv) as part of the normal Excel data file (contains dataset). The .txt files can be used as input for the <i>"Tools"</i> tab
+and the .csv files are in the SBtab (<%= link_to "http://www.sbtab.net.", "http://www.sbtab.net", class: "blue link_out", target: "_blank"%>) format. The time-series data files (.csv) are specified in the machine-readable format for <%= link_to "Copasi", "http://www.copasi.org", class: "blue link_out", target: "_blank"%> tool.<br/>
+<b>Related Data</b> (if available)- data entities with the same PubMed ID, organism or project name.
+    </span>
+  </span>
+</h3>
+
+<TABLE class="space">
+	<TR>
+		<TD class="bluelight"><b><%= Organism.human_attribute_name("temperature_html").html_safe%></b></TD>
+		<TD class="bluelight1"><%= notspecified @organism.temperature %></TD>
+	</TR>
+	<TR>
+		<TD class="bluelight"><b><%= Organism.human_attribute_name("ph_html")%></b></TD>
+		<TD class="bluelight1"><%= notspecified @organism.ph %></TD>
+	</TR>
+	<TR>
+		<TD class="bluelight"><b><%= Organism.human_attribute_name("carbonsource_html")%></b></TD>
+		<TD class="bluelight1"><%= notspecified link_to_chebi_id(@organism.chebi_id, @organism.carbonsource) %></TD>
+	</TR>
+	<TR>
+		<TD class="bluelight"><b><%= Organism.human_attribute_name("growthcondition_html")%></b></TD>
+		<TD class="bluelight1"><%= notspecified @organism.growthcondition %></TD>
+	</TR>
+	<TR>
+		<TD class="bluelight"><b><%= Organism.human_attribute_name("conditions_html")%></b></TD>
+		<TD class="bluelight1"><%= notspecified @organism.conditions %></TD>
+	</TR>
+	<TR>
+		<TD class="bluelight"><b><%= Organism.human_attribute_name("dilutionrate_html").html_safe%></b></TD>
+		<TD class="bluelight1"><%= notspecified @organism.dilutionrate %></TD>
+	</TR>
+	<TR>
+		<TD class="bluelight"><b><%= Organism.human_attribute_name("volume_html").html_safe%></b></TD>
+		<TD class="bluelight1"><%= notspecified @organism.volume %></TD>
+	</TR>
+	<TR>
+		<TD class="bluelight"><b><%= Organism.human_attribute_name("biomass_html").html_safe%></b></TD>
+		<TD class="bluelight1"><%= notspecified @organism.biomass %></TD>
+	</TR>
+
+
+	<TR>
+		<TD class="bluelight"><b><%= Organism.human_attribute_name("medium_html")%></b></TD>
+		<TD class="bluelight1"><%= simple_format notspecified(@organism.medium), class: "no-margin-left" %></TD>
+	</TR>
+
+	<% if can_show?("metabolites")%>
+
+	<TR>
+		<TD class="bluelight"><b>General protocol information</b></TD>
+		<TD class="bluelight1">
+			<b><%= Organism.human_attribute_name("sampling_method")%>:</b>
+			<%= notspecified @organism.sampling_method %><br/><br/>
+			<b><%= Organism.human_attribute_name("quenching")%>:</b>
+			<%= notspecified @organism.quenching %><br/><br/>
+			<b><%= Organism.human_attribute_name("extraction_list")%>:</b>
+			<%= notspecified show_list @organism.extraction_list %><br/><br/>
+			<b><%= Organism.human_attribute_name("analysis_list")%>:</b>
+			<%= notspecified show_list @organism.analysis_list %><br/><br/>
+		</TD>
+	</TR>
+
+	<% elsif can_show?("fluxes") %>
+
+	<TR>
+		<TD class="bluelight"><b>General protocol information</b></TD>
+		<TD class="bluelight1">
+
+			<b><%= Organism.human_attribute_name("type_analysis_list")%>:</b>
+			<%= notspecified show_list @organism.type_analysis_list %><br/><br/>
+			<b><%= Organism.human_attribute_name("platform_list")%>:</b>
+			<%= notspecified show_list @organism.platform_list %><br/><br/>
+		</TD>
+	</TR>
+
+	<% elsif can_show?("proteomic") %>
+
+	<TR>
+		<TD class="bluelight"><b>General protocol information</b></TD>
+		<TD class="bluelight1">
+
+			<b><%= Organism.human_attribute_name("measurement_method")%>:</b>
+			<%= notspecified show_list @organism.measurement_method_list %><br/><br/>
+		</TD>
+	</TR>
+
+	<%end %>
+
+	<TR>
+		<TD class="bluelight"><b><%= Organism.human_attribute_name("comments_html")%></b></TD>
+		<TD class="bluelight1"><%= hyperlink_parser(simple_format(notspecified(@organism.comments), class: "no-margin-left")).html_safe %></TD>
+	</TR>
+
+	<TR>
+		<TD class="bluelight"><b>Data file </b><br/></TD>
+		<TD class="bluelight1">
+			<% if @organism.parameters.present? && can?(:download, @organism) %>
+			<%= link_to "#{image_tag( @organism.type_param_obj.image.url)}".html_safe, [:download,@organism], title: "save complete file (contains metadata + data)"%> <%=@organism.parameters_file_name %>
+			<% elsif @organism.parameters.present? %>
+			<%="#{image_tag('PrivateData.jpg')}".html_safe %>
+			<% end %>
+		</TD>
+	</TR>
+
+	<TR>
+		<TD class="bluelight"><b>Alternative format(s)</b><br/></TD>
+		<TD class="bluelight1">
+			<%- if !can?(:download, @organism) %>
+			<%="#{image_tag('PrivateData.jpg')}".html_safe %>
+			<%- elsif @organism.attached_files.size == 0 %>
+			no file uploaded
+			<%- else %>
+			<%- version_list(@organism.attached_files,"src").reverse.each do |article| %>
+			<%= link_to article[:filename], [:download,@organism,article[:obj]] , title: "save individual worksheet (delimited format file)"%><br/>
+			<%- end %>
+			<%- end %>
+		</TD>
+	</TR>
+
+	<%- if @organism.is_public? || @organism.can_edit?(current_user) %>
+	<TR class="">
+		<TD class="">
+			<!--Change here to add text -->
+		</TD>
+	</TR>
+</TABLE>
+
+<div class="right">
+<%= link_to 'Cite', documentation_index_path( anchor: "cite"), title: "view how to cite"%>|<%= link_to 'Share','http://twitter.com/share', target: "_blank", title: "click to Tweet this data" %>
+</div>
+<br/>
+<TD class="P-top">
+		<!-- download all link -->
+		<p><%- if @organism.article || @organism.parameters || @organism.attached_files.count > 0 %>
+		<%= link_to image_tag("download_all/organism.png", height: 25), [:download_all,@organism], title: "save all available files (data + article) as zip" %>
+		<%- end %>
+		<!-- end of download all link -->
+		</p>
+	</TD>
+</TR>
+<%- end  %>
+</TABLE>
+
+<br/>
+
+<% if (related = @organism.related_organism).size > 0 %>
+<p>
+<b>Related Data: </b>
+<%= related.collect { |o| link_to( "AccessID " + o.id.to_s, o) }.join(" | ").html_safe%>
+</p>
+<% end -%>
+
+</br>
+
+<div class="small">
+
+	<fieldset>
+		<legend><h5 class="span.light-gray"><b> Submission and curation</b>
+		<span class="tooltip-info">
+	    <a href="javascript:void(0)"><span>info</span></a>
+	    <span class="tooltiptext" style="display:none;">
+	    	<p>This subsection provides information about the submission and curation</p>
+	<b>Entered by</b> - user who created this <i>Data EntryID</i>, and who manages it.<br/>
+	<b>Created</b> - indicating the date that the <i>EntryID</i> was created and the data file(s) submitted.<br/>
+	<b>Team</b> - invited users with permissions (if available) for this <i>Data EntryID</i>.<br/>
+	<b>Updated</b> - date that the data file was updated by an user.<br/>
+	<b>Version</b> - version number of the data file.<br/>
+	<b>Status</b> - "status" indicates whether the <i>Data EntryID</i> has been manually annotated from the original publication by <i>Ki</i>MoSys curators ("reviewed" and date) or awaiting review ("unreviewed").
+		</span>
+	  </span>
+	  </h5>
+		</legend>
+
+		<p>
+			<b><%= Organism.human_attribute_name("enteredby")%></b>
+				<%= show_user( @organism.user, @organism.user_email,true, can?(:see_id, @organism) ) %>
+		</p>
+
+		<p>
+		  <b><%= Organism.human_attribute_name("dataadded")%></b>
+		  <%= @organism.created_at %>
+		</p>
+
+		<% if can?(:see_id, @organism) && @list_users && @list_users.size > 0 -%>
+				<p class=""> <b>Team</b>
+					<%= @list_users.collect { |u| %>
+					<% rem_link = link_to('(x)', [@organism,u], confirm: 'Are you sure you want to remove this user?', method: :delete) if @organism.is_admin?(current_user) %>
+					<% show_user(u.user,nil,false) + " " + (if !rem_link.nil? then rem_link.to_s else "" end) %>
+					<% }.join("| ").html_safe %>
+				</p>
+				<% end -%>
+
+		<p>
+		  <b><%= Organism.human_attribute_name("updated_at")%></b>
+		  <%= @organism.updated_at %>
+		</p>
+
+		<p>
+		  <b>Version</b> <%= ver=@organism.versions.where(:event=>"update").size %>
+		  <%= "".pluralize( ver )%>
+		</p>
+
+		<p>
+		  <b>Status</b> <% unreviewed(@organism, current_user) %>
+		</p>
+	</fieldset>
+</div>
+
+</br>
+
+
+<hr class="thick"/>
+<br/>
+<h2 class="green line">Associated Models</h2>
+
+
+</br>
+<p>Here we can find relevant models associated with <b>Data EntryID <%= @organism.id %>:</b></p>
+
+
+<p></p>
+<%= render 'models', associated_models: @associated_models, organism: @organism, html_id: 'organismsTable', html_class: 'stripe order-column row-border'%>
+
+<br/>
+<br/>
+<br/>
+<fieldset>
+<legend><h3 class="green"><b> Associate models to data </b></h3></legend>
+<p>- Several models can be associated.</p>
+<p><%= link_to "#{image_tag('Add.jpg')} New Model".html_safe, new_organism_associated_model_path(@organism) %></p>
+</fieldset>
+
+
+<div style="clear:both"></div>
+<br/>
+<br/>
+<div class="right">
+<%= link_to "#{image_tag('BackImage.JPG')} Back".html_safe, organisms_path %> |
+<%= link_to 'Top', "#top" %>
+</div>
+<br/>

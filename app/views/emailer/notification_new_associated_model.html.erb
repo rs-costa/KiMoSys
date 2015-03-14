@@ -1,0 +1,17 @@
+<p><b>Confirmation</b></p>
+
+<p><b>The following model was successful submitted to the repository</b></p>
+
+<p>Model EntryID: <%= @associated_model_mail.id %></p>
+<p>Organism: <%= @organism_mail.organism %></p>
+<p>Model associated to: Data EntryID <%= @organism_mail.id %></p>
+<p>Model Name: <%= @associated_model_mail.model_name %></p>
+<p>Model Type: <%= @associated_model_mail.model_type %></p>
+<p>Category: <%= @associated_model_mail.category %></p>
+<p>Access: <%- if @associated_model_mail.is_private %><!-- Private: true -->Private (hidden from all)<%- elsif @associated_model_mail.is_public %><!-- Public: true -->Public<%- else %><!-- Visible but not public -->Visible for reviewers, but not public<% end -%></p>
+<p>User:  <%= @associated_model_mail.user.email %></p>
+
+<p><%= link_to "Model URL" , organism_associated_model_path(@organism_mail,@associated_model_mail,:only_path => false) %></p>
+<%- if @associated_model_mail.is_public %><!-- Public: true --><p> This will be now checked by <i>Ki</i>MoSys admins to ensure that all are consistent with the repository.</p><%- end %>
+<p><b>Thank you for supporting <i>Ki</i>MoSys repository!!</b></p>
+<p><b>KiMoSys team.</b></p>
