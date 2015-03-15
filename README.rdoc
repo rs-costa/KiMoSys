@@ -1,17 +1,17 @@
-== KiMoSys v1.2
+== <i>Ki</i>MoSys v1.2
 
-KiMoSys is a user-friendly platform that includes a public data repository of relevant published measurements, 
+<i>Ki</i>MoSys is a user-friendly platform that includes a public data repository of relevant published measurements, 
 including metabolite concentrations, flux data, and enzyme measurements in order to build ODE-based kinetic model.
 It is designed to search, exchange and disseminate experimental data (and associated kinetic models) 
 for the systems modeling community. Our mission is to promote scientific sharing and to facilitate research.
 
 == Need help?
 
-Please contact the KiMoSys team at kimosys@kdbio.inesc-id.pt (mailto:kimosys@kdbio.inesc-id.pt) .
+Please contact the KiMoSys team at mailto:kimosys@kdbio.inesc-id.pt.
 
-== Citing KiMoSys
+== Citing <i>Ki</i>MoSys
 
-Please add the following to cite KiMoSys:
+Please add the following to cite <i>Ki</i>MoSys:
 
 R.S. Costa, A. Verissimo, S. Vinga, KiMoSys: a web-based repository of experimental data for KInetic MOdels of 
 biological SYStems. BMC Systems Biology, 2014, 8:85. BMC Systems Biology | PubMed
