@@ -9,6 +9,8 @@ for the systems modeling community. Our mission is to promote scientific sharing
 
 Please contact the KiMoSys team at mailto:kimosys@kdbio.inesc-id.pt.
 
+See http://www.kimosys.org/documentation for additional information.
+
 == Citing <i>Ki</i>MoSys
 
 Please add the following to cite <i>Ki</i>MoSys:
