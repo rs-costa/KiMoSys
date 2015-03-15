@@ -16,7 +16,7 @@ See http://www.kimosys.org/documentation for additional information.
 Please add the following to cite <i>Ki</i>MoSys:
 
 R.S. Costa, A. Verissimo, S. Vinga, KiMoSys: a web-based repository of experimental data for KInetic MOdels of 
-biological SYStems. BMC Systems Biology, 2014, 8:85. BMC Systems Biology | PubMed
+biological SYStems. BMC Systems Biology, 2014, 8:85. doi: 10.1186/s12918-014-0085-3.
 
 == Ruby on Rails
 
