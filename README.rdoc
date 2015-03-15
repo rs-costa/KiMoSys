@@ -7,7 +7,7 @@ for the systems modeling community. Our mission is to promote scientific sharing
 
 == Need help?
 
-Please contact the KiMoSys team at kimosys@kdbio.inesc-id.pt(mailto:kimosys@kdbio.inesc-id.pt).
+Please contact the KiMoSys team at kimosys@kdbio.inesc-id.pt.
 
 == Citing KiMoSys
 
