@@ -24,4 +24,4 @@
 //= require organisms
 //= require rafael
 
-//= require active_admin/application
+//= require active_admin
