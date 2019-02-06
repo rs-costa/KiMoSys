@@ -60,7 +60,7 @@ gem 'rjb', '1.5.3'
 
 gem 'listen', '2.8.5' # needs to be fixed to support ruby 2.1
 
-gem 'activeadmin', github: 'gregbell/active_admin'
+gem 'activeadmin', '1.0.0.pre4'
 
 gem 'cancan', github: 'ryanb/cancan', branch: "2.0"
 
@@ -75,3 +75,9 @@ end
 
 # Necessary for current rails version
 
+gem 'timers', '4.1.2'
+gem 'nokogiri', '1.7.0.1'
+gem 'rb-inotify', '0.9.8'
+gem 'actionpack', '3.2.17'
+gem 'bourbon', '4.3.3'
+gem 'hitimes', '1.2.4'
