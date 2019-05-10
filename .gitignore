@@ -14,7 +14,6 @@
 /log/*.log
 /tmp
 /public/system
-Gemfile.lock
 /public/assets
 /lib/sbmlj.jar
 /lib/libsbmlj.jar.c9revisions/
