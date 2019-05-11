@@ -8,6 +8,7 @@ ActionMailer::Base.smtp_settings = {
   :password             => EMAIL_CONFIG['password'],
   :authentication       => EMAIL_CONFIG['authentication'],
   :enable_starttls_auto => EMAIL_CONFIG['enable_starttls_auto'],
-  :openssl_verify_mode  => EMAIL_CONFIG['openssl_verify_mode']
+  :openssl_verify_mode  => EMAIL_CONFIG['openssl_verify_mode'],
+  :ssl                  => EMAIL_CONFIG['ssl']
 }
 
