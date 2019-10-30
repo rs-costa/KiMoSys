@@ -76,7 +76,7 @@ end
 # Necessary for current rails version
 
 gem 'timers', '4.1.2'
-gem 'nokogiri', '1.7.0.1'
+gem 'nokogiri', '1.10.4'
 gem 'rb-inotify', '0.9.8'
 gem 'actionpack', '3.2.17'
 gem 'bourbon', '4.3.3'
