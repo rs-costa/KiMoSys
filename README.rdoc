@@ -22,10 +22,10 @@ biological SYStems.</i> BMC Systems Biology, 2014, 8:85. {doi: 10.1186/s12918-01
 
 <i>Ki</i>MoSys is maintained by:
 
-- R.Costa (CSI/IDMEC, IST-UL and FCT-NOVA)
+- R.Costa (CSI/IDMEC, IST-UL and FCT-NOVA University Lisbon)
 - A.Verissimo (CSI/IDMEC, IST-UL)
-- H.Mochão (FCT-NOVA)
-- P.Barahona (FCT-NOVA)
+- H.Mochão (FCT-NOVA University Lisbon)
+- P.Barahona (FCT-NOVA University Lisbon)
 
 == Ruby on Rails
 
