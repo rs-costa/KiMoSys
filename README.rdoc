@@ -18,13 +18,14 @@ Please add the following to cite <i>Ki</i>MoSys:
 R.S. Costa, A. Verissimo, S. Vinga, <i>KiMoSys: a web-based repository of experimental data for KInetic MOdels of 
 biological SYStems.</i> BMC Systems Biology, 2014, 8:85. {doi: 10.1186/s12918-014-0085-3}[http://www.biomedcentral.com/1752-0509/8/85/abstract] | {PubMed}[http://www.ncbi.nlm.nih.gov/pubmed/25115331].
 
-== <i>Ki</i>Mosys team
+== Current <i>Ki</i>Mosys team
 
-<i>Ki</i>MoSys was developed by:
+<i>Ki</i>MoSys is maintained by:
 
-- Rafael Costa (INESC-ID / IST)
-- André Verissimo (CSI / IST)
-- Susana Vinga (CSI / IST)
+- R. Costa (CSI/IDMEC, IST-UNL and FCT-NOVA)
+- A. Verissimo (CSI/IDMEC, IST-UNL)
+- H. Mochão (FCT-NOVA)
+- P. Barahona (FCT-NOVA)
 
 == Ruby on Rails
 
