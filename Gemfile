@@ -47,7 +47,7 @@ gem "paperclip", "3.5.4"
 
 gem 'formtastic', "3.1.3"
 
-gem 'rubyzip', '1.1.6' # will load new rubyzip version
+gem 'rubyzip', '1.3.0' # will load new rubyzip version
 gem 'zip-zip', '0.3' # will load compatibility for old rubyzip API.
 
 gem 'quiet_assets', :group => :development
