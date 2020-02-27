@@ -22,7 +22,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'jquery-rails', '3.1.2'
+gem 'jquery-rails', '3.1.5'
 gem 'jquery-datatables-rails', github: 'rweng/jquery-datatables-rails'#, ref: '4610f6978fbc48b07df916ccd26ae79816d0bb5a'
 gem 'jquery-ui-rails', '5.0.3'
 
