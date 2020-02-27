@@ -43,7 +43,7 @@ gem 'byebug', '3.5.1'
 
 gem 'devise', '3.4.1'
 
-gem "paperclip", "3.5.4"
+gem "paperclip", "4.3.7"
 
 gem 'formtastic', "3.1.3"
 
