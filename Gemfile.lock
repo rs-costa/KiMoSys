@@ -1,12 +1,12 @@
 GIT
-  remote: git://github.com/andi/simple-navigation.git
-  revision: 3df3a88fd65645eba1d9fd8dcfd59804e9f6232c
+  remote: https://github.com/andi/simple-navigation.git
+  revision: cbac5478991292c9ce237e408990c63c4677680c
   specs:
-    simple-navigation (4.0.5)
+    simple-navigation (4.4.0)
       activesupport (>= 2.3.2)
 
 GIT
-  remote: git://github.com/rweng/jquery-datatables-rails.git
+  remote: https://github.com/rweng/jquery-datatables-rails.git
   revision: d486b31b192a2924b1913e080ad23460e6b96d31
   specs:
     jquery-datatables-rails (3.4.0)
@@ -16,7 +16,7 @@ GIT
       sass-rails
 
 GIT
-  remote: git://github.com/ryanb/cancan.git
+  remote: https://github.com/ryanb/cancan.git
   revision: e6bf4c8d12dca316eb4f0923ca30b6d3dfedb7ae
   branch: 2.0
   specs:
@@ -66,8 +66,8 @@ GEM
     activesupport (3.2.17)
       i18n (~> 0.6, >= 0.6.4)
       multi_json (~> 1.0)
-    addressable (2.6.0)
-      public_suffix (>= 2.0.2, < 4.0)
+    addressable (2.8.1)
+      public_suffix (>= 2.0.2, < 6.0)
     arbre (1.1.1)
       activesupport (>= 3.0.0)
     arel (3.0.3)
@@ -212,7 +212,7 @@ GEM
     pry (0.12.2)
       coderay (~> 1.1.0)
       method_source (~> 0.9.0)
-    public_suffix (3.0.3)
+    public_suffix (5.0.0)
     quiet_assets (1.1.0)
       railties (>= 3.1, < 5.0)
     rack (1.4.7)
